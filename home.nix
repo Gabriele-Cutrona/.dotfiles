@@ -72,6 +72,8 @@
     # # symlink to the Nix store copy.
     ".zshrc".source = dotFiles/zshrc;
     ".themes".source = dotFiles/themes;
+    ".config/wofi".source = dotFiles/wofi;
+    ".config/hypr".source = dotFiles/hypr;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

@@ -35,3 +35,4 @@ sudo pacman -S libnotify
 sudo pacman -S topgrade
 
 sudo pacman -S nautilus
+sudo pacman -S wofi
