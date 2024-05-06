@@ -16,6 +16,11 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-gtk ];
+  };
+
   programs.git = {
     enable = true;
     userName = "Gabriele-Cutrona";
@@ -32,11 +37,10 @@
   };
   gtk.enable = true;
   gtk.catppuccin.enable = true;
+  gtk.iconTheme.name = "Papirus";
+  gtk.iconTheme.package = pkgs.papirus-icon-theme;
   services.mako.enable = true;
   services.mako.catppuccin.enable = true;
-
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-gtk ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -74,6 +78,7 @@
     ".themes".source = dotFiles/themes;
     ".config/wofi".source = dotFiles/wofi;
     ".config/hypr".source = dotFiles/hypr;
+    ".config/waybar".source = dotFiles/waybar;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

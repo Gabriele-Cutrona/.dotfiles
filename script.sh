@@ -35,4 +35,9 @@ sudo pacman -S libnotify
 sudo pacman -S topgrade
 
 sudo pacman -S nautilus
-sudo pacman -S wofi
+sudo pacman -S wofi waybar
+
+sudo pacman -S xwaylandvideobridge
+sudo pacman -S gnome-keyring seahorse
+
+systemctl --user start fcitx5-daemon.service
