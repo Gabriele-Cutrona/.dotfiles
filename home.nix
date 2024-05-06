@@ -20,22 +20,23 @@
     enable = true;
     userName = "Gabriele-Cutrona";
     userEmail = "106313541+Gabriele-Cutrona@users.noreply.github.com";
-
-    extraConfig = {
-      color.ui = "auto";
-      init.defaultBranch = "main";
-    };
+    extraConfig.color.ui = "auto";
+    extraConfig.init.defaultBranch = "main";
   };
+
 
   xdg.enable = true;
-  catppuccin.flavour = "mocha";
-  catppuccin.accent = "lavender";
-  gtk = {
-    enable = true;
-    catppuccin.enable = true;
+  catppuccin = {
+    flavour = "mocha";
+    accent = "lavender";
   };
+  gtk.enable = true;
+  gtk.catppuccin.enable = true;
   services.mako.enable = true;
   services.mako.catppuccin.enable = true;
+
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-gtk ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -44,8 +45,10 @@
     # # "Hello, world!" when run.
     pkgs.fastfetch
     pkgs.eza
+    pkgs.bat
     pkgs.unzip
     pkgs.zoxide
+    pkgs.floorp
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
