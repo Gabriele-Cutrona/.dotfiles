@@ -27,6 +27,14 @@
     };
   };
 
+  xdg.enable = true;
+  catppuccin.flavour = "mocha";
+  catppuccin.accent = "lavender";
+  gtk = {
+    enable = true;
+    catppuccin.enable = true;
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
