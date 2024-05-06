@@ -18,6 +18,7 @@
   programs.git = {
     enable = true;
     userName = "Gabriele-Cutrona";
+    userEmail = "106313541+Gabriele-Cutrona@users.noreply.github.com";
 
     extraConfig = {
       color.ui = "auto";
