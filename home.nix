@@ -34,6 +34,8 @@
     enable = true;
     catppuccin.enable = true;
   };
+  services.mako.enable = true;
+  services.mako.catppuccin.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -42,6 +44,8 @@
     # # "Hello, world!" when run.
     pkgs.hello
     pkgs.fastfetch
+    pkgs.eza
+    pkgs.unzip
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
