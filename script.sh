@@ -31,3 +31,7 @@ flatpak install net.nokyan.Resources
 flatpak install WareHouse
 flatpak install flatseal
 sudo pacman -S libnotify
+
+sudo pacman -S topgrade
+
+sudo pacman -S nautilus

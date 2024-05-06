@@ -71,6 +71,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     ".zshrc".source = dotFiles/zshrc;
+    ".themes".source = dotFiles/themes;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
