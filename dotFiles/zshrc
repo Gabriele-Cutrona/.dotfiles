@@ -114,7 +114,7 @@ alias z="zoxide"
 alias zbackup="cp -r ~/.local/share/zoxide /run/media/gabriele-cutrona/USB\ 128GB/Other"
 #alias u="topgrade -y && nvm install --lts && cd ~/.cloning/Hyprland && sudo make uninstall && git pull && make all && sudo make install"
 
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

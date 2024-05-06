@@ -42,10 +42,10 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
     pkgs.fastfetch
     pkgs.eza
     pkgs.unzip
+    pkgs.zoxide
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

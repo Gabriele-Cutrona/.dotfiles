@@ -1,4 +1,9 @@
 sudo pacman -S hyprland
+sudo pacman -S polkit-kde-agent
+sudo systemctl enable --now systemd-timesyncd
+
+sudo pacman -S timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
+sudo pacman -S fcitx5-im fcitx5-mozc noto-fonts-cjk
 
 ### Chaotic AUR ###
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -18,6 +23,8 @@ sudo pacman -S extra/ttf-jetbrains-mono-nerd
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sudo pacman -S zsh
 sudo chsh gabriele-cutrona
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 sudo pacman -S flatpak # https://github.com/catppuccin/gtk
 flatpak install net.nokyan.Resources
