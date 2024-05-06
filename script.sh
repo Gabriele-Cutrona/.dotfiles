@@ -12,3 +12,8 @@ sudo echo "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 sh <(curl -L https://nixos.org/nix/install) --daemon
 sudo echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 sudo pacman -S blackbox-terminal
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+sudo pacman -S extra/ttf-jetbrains-mono-nerd
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
