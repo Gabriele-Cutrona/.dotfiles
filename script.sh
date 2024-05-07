@@ -42,4 +42,4 @@ sudo pacman -S wofi waybar
 sudo pacman -S xwaylandvideobridge
 sudo pacman -S gnome-keyring seahorse
 
-systemctl --user start fcitx5-daemon.service
+# systemctl --user start fcitx5-daemon.service # idk
