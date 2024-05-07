@@ -35,10 +35,13 @@
     flavour = "mocha";
     accent = "lavender";
   };
-  gtk.enable = true;
-  gtk.catppuccin.enable = true;
-  gtk.iconTheme.name = "Papirus";
-  gtk.iconTheme.package = pkgs.papirus-icon-theme;
+
+  gtk = {
+    enable = true;
+    catppuccin.enable = true;
+    iconTheme.name = "Papirus";
+    iconTheme.package = pkgs.papirus-icon-theme;
+  };
   services.mako.enable = true;
   services.mako.catppuccin.enable = true;
 
@@ -52,7 +55,8 @@
     pkgs.bat
     pkgs.unzip
     pkgs.zoxide
-    pkgs.floorp
+    
+    pkgs.neovim
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -79,6 +83,8 @@
     ".config/wofi".source = dotFiles/wofi;
     ".config/hypr".source = dotFiles/hypr;
     ".config/waybar".source = dotFiles/waybar;
+    ".local/share/blackbox/schemes/Catppuccin-Mocha.json".source = dotFiles/Catppuccin-Mocha.json;
+
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
