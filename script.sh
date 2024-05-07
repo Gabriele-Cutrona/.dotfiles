@@ -55,3 +55,6 @@ distrobox create -i ubuntu:24.04 -n Ubuntu-24.04 --home ~/Ubuntu
 distrobox enter Ubuntu-24.04
 sudo apt install nala
 exit
+
+sudo pacman -S catppuccin-cursors-mocha nwg-look
+sudo cp /usr/share/icons ~/.icons -r
