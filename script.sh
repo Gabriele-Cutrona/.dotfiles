@@ -17,6 +17,8 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 sh <(curl -L https://nixos.org/nix/install) --daemon
 sudo sh -c "echo \"experimental-features = nix-command flakes\" >> /etc/nix/nix.conf"
 
+nix run home-manager/master -- init --switch
+
 sudo pacman -S blackbox-terminal
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo pacman -S extra/ttf-jetbrains-mono-nerd
