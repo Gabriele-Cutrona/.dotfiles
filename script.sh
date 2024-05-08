@@ -1,7 +1,5 @@
-sudo pacman -S hyprland polkit-kde-agent
+sudo pacman -S hyprland polkit-kde-agent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 sudo systemctl enable --now systemd-timesyncd
-
-sudo pacman -S noto-fonts-cjk
 
 ### Chaotic AUR ###
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -13,35 +11,44 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 ### End Chaotic AUR ###
 sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
 
+### Nix ###
 sh <(curl -L https://nixos.org/nix/install) --daemon
 sudo sh -c "echo \"experimental-features = nix-command flakes\" >> /etc/nix/nix.conf"
 
-nix run home-manager/master -- init --switch
-
 bash
+nix run home-manager/master -- init --switch
+### End Nix ###
 
-sudo pacman -S blackbox-terminal
-sudo pacman -S zsh
+### Terminal ###
+sudo pacman -S blackbox-terminal zsh github-desktop
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo pacman -S extra/ttf-jetbrains-mono-nerd # Set this font into blackbox
+sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji # Set this font into blackbox
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-sudo chsh gabriele-cutrona
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+### End Terminal ###
 
-sudo pacman -S flatpak # https://github.com/catppuccin/gtk
+sudo pacman -S flatpak
+### Flatpak User Theming ###
+flatpak -u override --filesystem=/usr/share/icons/:ro
+flatpak -u override --filesystem=/home/$USER/.icons/:ro 
+flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
+flatpak -u override --filesystem=$HOME/.themes
+flatpak -u override --env=GTK_THEME=Catppuccin-Mocha-Standard-Lavender-Dark
+flatpak -u override --env=XCURSOR_PATH=~/.icons
+### End Flatpak User Theming ###
+
 flatpak install net.nokyan.Resources
-flatpak install flathub io.github.shiftey.Desktop
 flatpak install WareHouse
 flatpak install flatseal
+
 sudo pacman -S libnotify
 
 sudo pacman -S topgrade floorp
 
-sudo pacman -S nautilus
-sudo pacman -S wofi waybar
-
+sudo pacman -S nautilus wofi waybar
 sudo pacman -S xwaylandvideobridge
+
 sudo pacman -S gnome-keyring seahorse
 
 sudo pacman -S rustup
@@ -58,3 +65,16 @@ exit
 
 sudo pacman -S catppuccin-cursors-mocha nwg-look
 sudo cp /usr/share/icons ~/.icons -r
+
+sudo pacman -S gedit pavucontrol
+sudo pacman -S bluez bluez-utils blueman
+sudo systemctl enable --now bluetooth
+
+paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+
+wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
+sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
+cd /usr/share/sddm/themes/
+sudo unzip /usr/share/sddm/themes/catppuccin-mocha.zip
+sudo sh -c "echo \"[Theme]\" >> /etc/sddm.conf"
+sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"

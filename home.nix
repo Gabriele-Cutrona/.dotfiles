@@ -53,8 +53,12 @@
     pkgs.fastfetch
     pkgs.eza
     pkgs.bat
-    pkgs.unzip
+    pkgs.sl
     pkgs.zoxide
+
+    pkgs.pamixer
+    pkgs.brightnessctl
+    pkgs.grimblast
     
     pkgs.neovim
     # # It is sometimes useful to fine-tune packages, for example, by applying
