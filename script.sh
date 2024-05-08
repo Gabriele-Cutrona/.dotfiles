@@ -41,6 +41,7 @@ flatpak -u override --env=XCURSOR_PATH=~/.icons
 flatpak install net.nokyan.Resources
 flatpak install WareHouse
 flatpak install flatseal
+flatpak install anki
 
 sudo pacman -S libnotify
 
@@ -63,14 +64,20 @@ distrobox enter Ubuntu-24.04
 sudo apt install nala
 exit
 
-sudo pacman -S catppuccin-cursors-mocha nwg-look
-sudo cp /usr/share/icons ~/.icons -r
-
 sudo pacman -S gedit pavucontrol
 sudo pacman -S bluez bluez-utils blueman
 sudo systemctl enable --now bluetooth
 
+systemctl enable --now pipewire --user
+systemctl enable --now pipewire-pulse --user
+
 paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+
+sudo pacman -S catppuccin-cursors-mocha nwg-look
+sudo cp /usr/share/icons ~/.icons -r
+
+sudo pacman -S kvantum
+sudo pacman -S qt5ct qt6ct
 
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
@@ -78,3 +85,17 @@ cd /usr/share/sddm/themes/
 sudo unzip /usr/share/sddm/themes/catppuccin-mocha.zip
 sudo sh -c "echo \"[Theme]\" >> /etc/sddm.conf"
 sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
+
+git clone https://github.com/catppuccin/grub.git && cd grub
+sudo cp -r src/catppuccin-mocha-grub-theme /boot
+sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+sudo pacman -S waydroid python-pyclip
+sudo waydroid init
+
+wget https://github.com/ppy/osu/releases/latest/download/osu.AppImage
+AppImageLauncher osu.AppImage
+
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
+AppImageLauncher Obsidian-1.5.12.AppImage

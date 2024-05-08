@@ -57,6 +57,7 @@
     pkgs.zoxide
 
     pkgs.pamixer
+    pkgs.asciiquarium-transparent
     pkgs.brightnessctl
     pkgs.grimblast
     
