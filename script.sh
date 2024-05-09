@@ -42,6 +42,7 @@ flatpak install net.nokyan.Resources
 flatpak install WareHouse
 flatpak install flatseal
 flatpak install anki
+flatpak install telegram
 
 sudo pacman -S libnotify
 

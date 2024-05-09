@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
+  # Home Manager needs a bit of information about you and the paths it shouldflake.lock
   # manage.
   home.username = "gabriele-cutrona";
   home.homeDirectory = "/home/gabriele-cutrona";
@@ -29,6 +29,48 @@
     extraConfig.init.defaultBranch = "main";
   };
 
+  programs.nixvim = {
+    enable = true;
+    vimAlias = true;
+    viAlias = true;
+    opts.number = true;
+    opts.relativenumber = true;
+
+    clipboard.register = "unnamedplus";
+    clipboard.providers.wl-copy.enable = true;
+
+    keymaps = [ { key = "<Space>e"; action = "<cmd>NvimTreeToggle<CR>"; } { key = "<Space>w"; action = "<cmd>ToggleTerm<CR>"; } ];
+
+    plugins = {
+      telescope.enable = true;
+      luasnip.enable = true;
+      bufferline.enable = true;
+      lualine.enable = true;
+      leap.enable = true;
+      nvim-tree.enable = true;
+      nix.enable = true;
+      nvim-autopairs.enable = true;
+      toggleterm.enable = true;
+      which-key.enable = true;
+
+      lsp.enable = true;
+      lsp.servers.tsserver.enable = true;
+
+      cmp.enable = true;
+      cmp.settings.sources = [{name = "nvim_lsp";} {name = "path";} {name = "buffer";}];
+      cmp.settings.mapping = {
+        "<CR>" = "cmp.mapping.confirm({ select = true })";
+        "<C-n>" = "cmp.mapping.select_next_item()";
+        "<C-p>" = "cmp.mapping.select_prev_item()";
+        "<Tab>" = "cmp.mapping.confirm({ select = true })";
+      };
+    };
+
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
+};
 
   xdg.enable = true;
   catppuccin = {
@@ -60,8 +102,6 @@
     pkgs.asciiquarium-transparent
     pkgs.brightnessctl
     pkgs.grimblast
-    
-    pkgs.neovim
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
