@@ -35,6 +35,10 @@
     viAlias = true;
     opts.number = true;
     opts.relativenumber = true;
+    opts.tabstop = 3;
+    opts.shiftwidth = 3;
+    opts.softtabstop = 3;
+    opts.expandtab = true;
 
     clipboard.register = "unnamedplus";
     clipboard.providers.wl-copy.enable = true;
