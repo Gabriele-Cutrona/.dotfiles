@@ -29,64 +29,6 @@
     extraConfig.init.defaultBranch = "main";
   };
 
-  programs.nixvim = {
-    enable = true;
-    vimAlias = true;
-    viAlias = true;
-    opts.number = true;
-    opts.relativenumber = true;
-    opts.tabstop = 3;
-    opts.shiftwidth = 3;
-    opts.softtabstop = 3;
-    opts.expandtab = true;
-
-    clipboard.register = "unnamedplus";
-    clipboard.providers.wl-copy.enable = true;
-
-    keymaps = [
-      { key = "<Space>e"; action = "<cmd>NvimTreeToggle<CR>"; }
-      { key = "<Space>w"; action = "<cmd>ToggleTerm<CR>"; }
-      { key = "<Space>i"; action = "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>"; }
-      { key = "<Space>o"; action = "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>"; }
-      { key = "<Space>p"; action = "<cmd>set tabstop=4 | set shiftwidth=4 | set softtabstop=4<CR>"; }
-    ];
-
-    plugins = {
-      telescope.enable = true;
-      luasnip.enable = true;
-      bufferline.enable = true;
-      lualine.enable = true;
-      leap.enable = true;
-      nvim-tree.enable = true;
-      nix.enable = true;
-      nvim-autopairs.enable = true;
-      toggleterm.enable = true;
-      which-key.enable = true;
-
-      lsp = {
-        enable = true;
-        servers.tsserver.enable = true;
-        servers.pylsp.enable = true;
-      };
-
-      cmp = {
-        enable = true;
-        settings.sources = [{name = "nvim_lsp";} {name = "path";} {name = "buffer";}];
-        settings.mapping = {
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<C-n>" = "cmp.mapping.select_next_item()";
-          "<C-p>" = "cmp.mapping.select_prev_item()";
-          "<Tab>" = "cmp.mapping.confirm({ select = true })";
-        };
-      };
-    };
-
-    colorschemes.catppuccin = {
-      enable = true;
-      settings.flavour = "mocha";
-    };
-};
-
   xdg.enable = true;
   catppuccin = {
     flavour = "mocha";
@@ -113,6 +55,11 @@
     pkgs.sl
     pkgs.zoxide
 
+    pkgs.micro
+    pkgs.neovim
+    pkgs.wl-clipboard
+    pkgs.nodejs
+
     pkgs.pamixer
     pkgs.asciiquarium-transparent
     pkgs.brightnessctl
@@ -134,11 +81,10 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     ".zshrc".source = dotFiles/zshrc;
     ".themes".source = dotFiles/themes;
+    ".config/nvim/init.lua".source = ./init.lua;
     ".config/wofi".source = dotFiles/wofi;
     ".config/hypr".source = dotFiles/hypr;
     ".config/waybar".source = dotFiles/waybar;
