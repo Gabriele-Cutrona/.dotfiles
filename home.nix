@@ -43,7 +43,13 @@
     clipboard.register = "unnamedplus";
     clipboard.providers.wl-copy.enable = true;
 
-    keymaps = [ { key = "<Space>e"; action = "<cmd>NvimTreeToggle<CR>"; } { key = "<Space>w"; action = "<cmd>ToggleTerm<CR>"; } ];
+    keymaps = [
+      { key = "<Space>e"; action = "<cmd>NvimTreeToggle<CR>"; }
+      { key = "<Space>w"; action = "<cmd>ToggleTerm<CR>"; }
+      { key = "<Space>i"; action = "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>"; }
+      { key = "<Space>o"; action = "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>"; }
+      { key = "<Space>p"; action = "<cmd>set tabstop=4 | set shiftwidth=4 | set softtabstop=4<CR>"; }
+    ];
 
     plugins = {
       telescope.enable = true;
@@ -57,16 +63,21 @@
       toggleterm.enable = true;
       which-key.enable = true;
 
-      lsp.enable = true;
-      lsp.servers.tsserver.enable = true;
+      lsp = {
+        enable = true;
+        servers.tsserver.enable = true;
+        servers.pylsp.enable = true;
+      };
 
-      cmp.enable = true;
-      cmp.settings.sources = [{name = "nvim_lsp";} {name = "path";} {name = "buffer";}];
-      cmp.settings.mapping = {
-        "<CR>" = "cmp.mapping.confirm({ select = true })";
-        "<C-n>" = "cmp.mapping.select_next_item()";
-        "<C-p>" = "cmp.mapping.select_prev_item()";
-        "<Tab>" = "cmp.mapping.confirm({ select = true })";
+      cmp = {
+        enable = true;
+        settings.sources = [{name = "nvim_lsp";} {name = "path";} {name = "buffer";}];
+        settings.mapping = {
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<C-n>" = "cmp.mapping.select_next_item()";
+          "<C-p>" = "cmp.mapping.select_prev_item()";
+          "<Tab>" = "cmp.mapping.confirm({ select = true })";
+        };
       };
     };
 
