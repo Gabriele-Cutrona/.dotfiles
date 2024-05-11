@@ -143,6 +143,19 @@ require('lazy').setup({
   },
   {
      "neovim/nvim-lspconfig"
+  },
+  {
+     "kdheepak/lazygit.nvim",
+     cmd = {
+        "LazyGit",
+        "LazyGitConfig",
+        "LazyGitCurrentFile",
+        "LazyGitFilter",
+        "LazyGitFilterCurrentFile",
+     },
+     dependencies = {
+        "nvim-lua/plenary.nvim",
+     },
   }
 })
 -- End Installing Plugins (with lazy)
@@ -174,9 +187,10 @@ function _G.check_prev_char()
 end
 
 vim.api.nvim_set_keymap('i', 'k', 'v:lua.check_prev_char()', {expr = true, noremap = true})
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true}) 
+vim.api.nvim_set_keymap('t', '<Tab>', '<C-\\><C-n>', {noremap = true, silent = true}) 
 
 vim.api.nvim_set_keymap("n", "<Space>t", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Space>lg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
