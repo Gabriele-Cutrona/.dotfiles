@@ -100,3 +100,5 @@ AppImageLauncher osu.AppImage
 
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
 AppImageLauncher Obsidian-1.5.12.AppImage
+
+sudo pacman -S onlyoffice-bin otf-font-awesome
