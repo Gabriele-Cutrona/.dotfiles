@@ -167,16 +167,17 @@ function _G.check_prev_char()
   local col = vim.api.nvim_win_get_cursor(0)[2] + 1
   if col > 1 and line:sub(col - 1, col - 1) == 'j' then
     -- Use nvim_replace_termcodes to interpret "<BS><Esc>" correctly
-    return vim.api.nvim_replace_termcodes("<BS><Esc>", true, true, true)
+    return vim.api.nvim_replace_termcodes("<BS><C-\\><C-n>", true, true, true)
   else
     return "k"
   end
 end
 
 vim.api.nvim_set_keymap('i', 'k', 'v:lua.check_prev_char()', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', {noremap = true, silent = true}) 
 
+vim.api.nvim_set_keymap("n", "<Space>t", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Space>t", "<cmd>ToggleTerm<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Space>p", "<cmd>set tabstop=4 | set shiftwidth=4 | set softtabstop=4<CR>", {noremap = true, silent = true})

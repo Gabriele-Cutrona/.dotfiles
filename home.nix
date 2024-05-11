@@ -58,6 +58,7 @@
     pkgs.micro
     pkgs.neovim
     pkgs.wl-clipboard
+    pkgs.lazygit
     pkgs.nodejs
 
     pkgs.pamixer
