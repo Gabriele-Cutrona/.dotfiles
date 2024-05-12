@@ -102,3 +102,5 @@ wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/O
 AppImageLauncher Obsidian-1.5.12.AppImage
 
 sudo pacman -S onlyoffice-bin otf-font-awesome
+
+sudo pacman -S hyprlock
