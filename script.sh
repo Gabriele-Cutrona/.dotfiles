@@ -77,8 +77,8 @@ paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
 sudo pacman -S catppuccin-cursors-mocha nwg-look
 sudo cp /usr/share/icons ~/.icons -r
 
-sudo pacman -S kvantum
-sudo pacman -S qt5ct qt6ct
+sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
+# sudo pacman -S qt5ct qt6ct
 
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
@@ -104,3 +104,7 @@ AppImageLauncher Obsidian-1.5.12.AppImage
 sudo pacman -S onlyoffice-bin otf-font-awesome
 
 sudo pacman -S hyprlock
+
+# For My GAOMON S620
+paru -S aur/opentabletdriver-git
+systemctl --user enable --now opentabletdriver.service
