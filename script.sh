@@ -36,6 +36,10 @@ flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
 flatpak -u override --filesystem=$HOME/.themes
 flatpak -u override --env=GTK_THEME=Catppuccin-Mocha-Standard-Lavender-Dark
 flatpak -u override --env=XCURSOR_PATH=~/.icons
+flatpak install kvantum # All of them
+flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
+flatpak override -u --filesystem=xdg-config/Kvantum:ro
+flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
 ### End Flatpak User Theming ###
 
 flatpak install net.nokyan.Resources
