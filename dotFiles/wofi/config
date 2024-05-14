@@ -5,3 +5,4 @@ width=40%
 key_expand=Tab
 normal_window=true
 prompt=Chi Cerca Trova...
+insensitive=true
