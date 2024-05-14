@@ -1,4 +1,4 @@
-sudo pacman -S hyprland polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -S hyprland hyprpaper polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 sudo systemctl enable --now systemd-timesyncd
 
 ### Chaotic AUR ###
