@@ -6,24 +6,24 @@
 window {
    font-size: 24px;
    border-radius: 12px;
-   padding: 16px;
+   padding: 8px;
 }
 
 #input {
    padding: 16px;
    border-radius: 50px;
-   margin: 32px;
+   margin: 24px;
    box-shadow: 0px 0px 10px purple;
 }
 
 #entry {
-   padding: 16px;
+   padding: 8px;
    border-radius: 32px;
    outline: none;
-   margin: 8px;
+   margin: 4px;
    text-shadow: 0px 0px 10px violet;
 }
 
 image {
-   margin: 8px;
+   margin: 4px 8px;
 }
