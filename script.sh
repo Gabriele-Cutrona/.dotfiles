@@ -112,3 +112,5 @@ sudo pacman -S hyprlock
 # For My GAOMON S620
 paru -S aur/opentabletdriver-git
 systemctl --user enable --now opentabletdriver.service
+
+paru -S aur/localsend-bin
