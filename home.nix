@@ -55,6 +55,7 @@
     pkgs.bat
     pkgs.sl
     pkgs.zoxide
+    pkgs.cava
 
     pkgs.micro
     pkgs.neovim
@@ -66,6 +67,7 @@
     pkgs.asciiquarium-transparent
     pkgs.brightnessctl
     pkgs.grimblast
+    pkgs.freetube
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
