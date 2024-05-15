@@ -1,28 +1,47 @@
-sudo pacman -S hyprland hyprpaper polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+#!/usr/bin/bash
+
+echo "Installing hyprland"
+sudo pacman -S hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+echo "Enabling systemd-timesyncd"
 sudo systemctl enable --now systemd-timesyncd
 
 sudo pacman -S git
-git config --global user.name "Gabriele-Cutrona"
-git config --global user.email "106313541+Gabriele-Cutrona@users.noreply.github.com"
+echo "Insert here your git user.name"
+read -r GIT_USERNAME
+echo "Insert here your git user.email"
+read -r GIT_EMAIL
+git config --global user.name $GIT_USERNAME --replace-all
+git config --global user.email $GIT_EMAIL --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
+echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
+sudo pacman -S fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
 
-sudo pacman -S fastfetch eza bat sl zoxide cava micro neovim wl-clipboard lazygit pamixer brightnessctl grimblast
+echo "Do you want to enable chaotic aur? (https://aur.chaotic.cx) y/n"
+read -r $CHAOTIC_AUR
 
-### Chaotic AUR ###
-sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
-sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
-### End Chaotic AUR ###
-sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
+if [[ $CHAOTIC_AUR == "y" ]]; then
+   echo "Enabling Chaotic Aur"
+   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+   sudo pacman-key --lsign-key 3056513887B78AEB
+   sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+   sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+   sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
+   sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
+fi
+
+echo "Do you want to install timeshift for btrfs? y/n"
+read -r TIMESHIFT
+
+if [[ $TIMESHIFT == "y" ]]; then
+   echo "Installing timeshift for btrfs"
+   sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
+fi
 
 ### Terminal ###
-sudo pacman -S blackbox-terminal zsh github-desktop
+sudo pacman -S blackbox-terminal zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji # Set this font into blackbox
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -30,61 +49,55 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ### End Terminal ###
 
-sudo pacman -S flatpak
-### Flatpak User Theming ###
-flatpak -u override --filesystem=/usr/share/icons/:ro
-flatpak -u override --filesystem=/home/$USER/.icons/:ro 
-flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
-flatpak -u override --filesystem=$HOME/.themes
-flatpak -u override --env=GTK_THEME=Catppuccin-Mocha-Standard-Lavender-Dark
-flatpak -u override --env=XCURSOR_PATH=~/.icons
-flatpak install kvantum # All of them
-flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
-flatpak override -u --filesystem=xdg-config/Kvantum:ro
-flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
-### End Flatpak User Theming ###
+echo "Do you want flatpak? y/n"
+read -r FLATPAK
 
-flatpak install net.nokyan.Resources
-flatpak install WareHouse
-flatpak install flatseal
-flatpak install anki
-flatpak install telegram
+if [[ $FLATPAK == "y" ]]; then
+   sudo pacman -S flatpak
+   flatpak -u override --filesystem=/usr/share/icons/:ro
+   flatpak -u override --filesystem=/home/$USER/.icons/:ro 
+   flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
+   flatpak -u override --filesystem=$HOME/.themes
+   flatpak -u override --env=GTK_THEME=Catppuccin-Mocha-Standard-Lavender-Dark
+   flatpak -u override --env=XCURSOR_PATH=~/.icons
+   flatpak install kvantum # All of them
+   flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
+   flatpak override -u --filesystem=xdg-config/Kvantum:ro
+   flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
+fi
 
-sudo pacman -S libnotify
+echo "Installing libnotify nautilus wofi waybar xwaylandvideobridge gnome-keyring seahorse"
+sudo pacman -S libnotify nautilus wofi waybar
+sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
-sudo pacman -S topgrade floorp
+echo "Do you want to install paru? (and rustup) y/n"
+read -r PARU
 
-sudo pacman -S nautilus wofi waybar
-sudo pacman -S xwaylandvideobridge
-
-sudo pacman -S gnome-keyring seahorse
-
-sudo pacman -S rustup
-rustup default stable
-git clone https://aur.archlinux.org/paru-git.git
-cd paru-git
-makepkg -si
-
-sudo pacman -S distrobox podman
-distrobox create -i ubuntu:24.04 -n Ubuntu-24.04 --home ~/Ubuntu
-distrobox enter Ubuntu-24.04
-sudo apt install nala
-exit
+if [[ $PARU == "y" ]]; then
+   sudo pacman -S rustup
+   rustup default stable
+   git clone https://aur.archlinux.org/paru-git.git
+   cd paru-git
+   makepkg -si
+fi
 
 sudo pacman -S gedit pavucontrol
-sudo pacman -S bluez bluez-utils blueman
-sudo systemctl enable --now bluetooth
+
+echo "Do you want bluetooth? y/n"
+read -r BLUETOOTH
+
+if [[ $BLUETOOTH == "y" ]]; then
+   sudo pacman -S bluez bluez-utils blueman
+   sudo systemctl enable --now bluetooth
+fi
 
 systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
-
-paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
 
 sudo pacman -S catppuccin-cursors-mocha nwg-look
 sudo cp /usr/share/icons ~/.icons -r
 
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
-# sudo pacman -S qt5ct qt6ct
 
 ### sddm and GRUB catppuccin ###
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
@@ -100,24 +113,49 @@ sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ### End sddm and GRUB catppuccin ###
 
-sudo pacman -S waydroid python-pyclip
-sudo waydroid init
+echo "Do you want waydroid? y/n"
+read -r WAYDROID
 
+if [[ $WAYDROID == "y" ]]; then
+   sudo pacman -S waydroid python-pyclip
+   sudo waydroid init
+fi
+
+
+sudo pacman -S otf-font-awesome
+
+echo "Do you need opentabletdriver? y/n"
+read -r OPENTABLETDRIVER
+
+if [[ $OPENTABLETDRIVER == "y" ]]; then
+   paru -S aur/opentabletdriver-git
+   systemctl --user enable --now opentabletdriver.service
+fi
+
+echo "Do you want to install fcitx5-im and fcitx5-mozc? y/n"
+read -r FCITX5
+
+if [[ $FCITX5 == "y" ]]; then
+   sudo pacman -S fcitx5-im fcitx5-mozc
+fi
+
+sudo pacman -S stow
+
+flatpak install net.nokyan.Resources
+flatpak install WareHouse
+flatpak install flatseal
+flatpak install anki
+flatpak install telegram
+paru -S aur/localsend-bin
+sudo pacman -S onlyoffice-bin
 wget https://github.com/ppy/osu/releases/latest/download/osu.AppImage
 AppImageLauncher osu.AppImage
-
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
 AppImageLauncher Obsidian-1.5.12.AppImage
+paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+sudo pacman -S topgrade floorp
 
-sudo pacman -S onlyoffice-bin otf-font-awesome
-
-sudo pacman -S hyprlock
-
-# For My GAOMON S620
-paru -S aur/opentabletdriver-git
-systemctl --user enable --now opentabletdriver.service
-
-paru -S aur/localsend-bin
-
-### fcitx5-mozc ###
-sudo pacman -S fcitx5-im fcitx5-mozc
+echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
+echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
+echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
+echo "If you want to use blackbox as your terminal, configure the Jetbrain Nerd Font into the settings, and set catppuccin-mocha as coloscheme"

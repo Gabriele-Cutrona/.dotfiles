@@ -15,7 +15,7 @@
 Configurations are managed by [GNU Stow](https://www.gnu.org/software/stow):
 - Waybar configuration from [morrolinux](https://github.com/morrolinux/LinuxRices)
 
-> A little note, the `script.sh` is just for reference, so it's probably not a good idea to try to run it [since i don't even know bash (yet)], and even if you want to run it, make sure you're using Arch Linux or an Arch based distro
+> The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
 
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
