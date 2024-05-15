@@ -1,6 +1,16 @@
 sudo pacman -S hyprland hyprpaper polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 sudo systemctl enable --now systemd-timesyncd
 
+sudo pacman -S git
+git config --global user.name "Gabriele-Cutrona"
+git config --global user.email "106313541+Gabriele-Cutrona@users.noreply.github.com"
+git config --global color.ui auto
+git config --global init.defaultBranch main
+
+sudo pacman -S papirus-icon-theme mako
+
+sudo pacman -S fastfetch eza bat sl zoxide cava micro neovim wl-clipboard lazygit pamixer brightnessctl grimblast
+
 ### Chaotic AUR ###
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
@@ -10,14 +20,6 @@ sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
 sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
 ### End Chaotic AUR ###
 sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
-
-### Nix ###
-sh <(curl -L https://nixos.org/nix/install) --daemon
-sudo sh -c "echo \"experimental-features = nix-command flakes\" >> /etc/nix/nix.conf"
-
-bash
-nix run home-manager/master -- init --switch
-### End Nix ###
 
 ### Terminal ###
 sudo pacman -S blackbox-terminal zsh github-desktop
@@ -84,6 +86,7 @@ sudo cp /usr/share/icons ~/.icons -r
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 # sudo pacman -S qt5ct qt6ct
 
+### sddm and GRUB catppuccin ###
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
 cd /usr/share/sddm/themes/
@@ -95,6 +98,7 @@ git clone https://github.com/catppuccin/grub.git && cd grub
 sudo cp -r src/catppuccin-mocha-grub-theme /boot
 sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+### End sddm and GRUB catppuccin ###
 
 sudo pacman -S waydroid python-pyclip
 sudo waydroid init
@@ -114,3 +118,6 @@ paru -S aur/opentabletdriver-git
 systemctl --user enable --now opentabletdriver.service
 
 paru -S aur/localsend-bin
+
+### fcitx5-mozc ###
+sudo pacman -S fcitx5-im fcitx5-mozc
