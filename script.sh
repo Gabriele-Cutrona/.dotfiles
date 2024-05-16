@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 echo "Installing hyprland"
-sudo pacman -S hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -S hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 echo "Enabling systemd-timesyncd"
 sudo systemctl enable --now systemd-timesyncd
 
@@ -40,6 +40,7 @@ if [[ $TIMESHIFT == "y" ]]; then
    sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
 fi
 
+echo "Configuring the terminal (blackbox zsh)"
 ### Terminal ###
 sudo pacman -S blackbox-terminal zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -91,14 +92,19 @@ if [[ $BLUETOOTH == "y" ]]; then
    sudo systemctl enable --now bluetooth
 fi
 
+echo "Installing and enabling pipewire"
+sudo pacman -S pipewire pipewire-pulse pipewire-jack pipewire-alsa wireplumber
+
 systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
+systemctl enable --now wireplumber --user
 
 sudo pacman -S catppuccin-cursors-mocha nwg-look
 sudo cp /usr/share/icons ~/.icons -r
 
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 
+echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
@@ -141,19 +147,26 @@ fi
 
 sudo pacman -S stow
 
-flatpak install net.nokyan.Resources
-flatpak install WareHouse
-flatpak install flatseal
-flatpak install anki
-flatpak install telegram
-paru -S aur/localsend-bin
-sudo pacman -S onlyoffice-bin
-wget https://github.com/ppy/osu/releases/latest/download/osu.AppImage
-AppImageLauncher osu.AppImage
-wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
-AppImageLauncher Obsidian-1.5.12.AppImage
-paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
-sudo pacman -S topgrade floorp
+echo "Do you want to install some apps I use? y/n"
+echo "resources warehouse flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp"
+read -r APPS
+
+if [[ $APPS == "y" ]]; then
+   flatpak install net.nokyan.Resources
+   flatpak install WareHouse
+   flatpak install flatseal
+   flatpak install anki
+   flatpak install telegram
+   paru -S aur/localsend-bin
+   sudo pacman -S onlyoffice-bin
+   wget https://github.com/ppy/osu/releases/latest/download/osu.AppImage
+   AppImageLauncher osu.AppImage
+   wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
+   AppImageLauncher Obsidian-1.5.12.AppImage
+   paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+   sudo pacman -S topgrade floorp
+fi
+
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
