@@ -12,7 +12,7 @@
 |Screen Lock|Hyprlock|
 |Wallpaper|Hyprpaper|
 
-Configurations are managed by [GNU Stow](https://www.gnu.org/software/stow):
+Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 - Waybar configuration from [morrolinux](https://github.com/morrolinux/LinuxRices)
 
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
