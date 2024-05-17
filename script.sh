@@ -157,14 +157,13 @@ if [[ $APPS == "y" ]]; then
    flatpak install flatseal
    flatpak install anki
    flatpak install telegram
+   flatpak install sh.ppy.osu
    paru -S aur/localsend-bin
    sudo pacman -S onlyoffice-bin
-   wget https://github.com/ppy/osu/releases/latest/download/osu.AppImage
-   AppImageLauncher osu.AppImage
    wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
-   sudo pacman -S topgrade floorp
+   sudo pacman -S topgrade floorp upscayl
 fi
 
 
