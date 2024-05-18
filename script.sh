@@ -68,7 +68,7 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus wofi waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus wofi waybar
+sudo pacman -S libnotify nautilus wofi waybar nwg-drawer nwg-menu
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
@@ -164,6 +164,7 @@ if [[ $APPS == "y" ]]; then
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl
+   sudo pacman -S loupe gnome-sound-recorder
 fi
 
 
