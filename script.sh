@@ -102,6 +102,9 @@ systemctl enable --now wireplumber --user
 sudo pacman -S catppuccin-cursors-mocha nwg-look
 sudo cp /usr/share/icons ~/.icons -r
 
+sudo pacman -S catppuccin-gtk-theme-mocha
+sudo cp /usr/share/themes ~/.themes -r
+
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 
 echo "sddm and GRUB catppuccin theme"
@@ -164,6 +167,7 @@ if [[ $APPS == "y" ]]; then
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl
+   flatpak install xournalpp
    sudo pacman -S loupe gnome-sound-recorder
 fi
 
