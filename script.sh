@@ -65,10 +65,11 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
    flatpak override -u --filesystem=xdg-config/Kvantum:ro
    flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
+   flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
 fi
 
 echo "Installing libnotify nautilus wofi waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus wofi waybar nwg-drawer nwg-menu
+sudo pacman -S libnotify nautilus wofi waybar nwg-drawer
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
@@ -168,6 +169,7 @@ if [[ $APPS == "y" ]]; then
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl
    flatpak install xournalpp
+   flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
 fi
 
