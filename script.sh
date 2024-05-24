@@ -19,7 +19,7 @@ echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava ne
 sudo pacman -S papirus-icon-theme mako
 sudo pacman -S fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
 
-echo "Do you want to enable chaotic aur? (https://aur.chaotic.cx) y/n"
+echo "Do you want to enable chaotic aur? Since a lot of packages are from chaotic aur, the script will probably fail at some point if you don't write y (https://aur.chaotic.cx) y/n"
 read -r $CHAOTIC_AUR
 
 if [[ $CHAOTIC_AUR == "y" ]]; then
@@ -171,6 +171,9 @@ if [[ $APPS == "y" ]]; then
    flatpak install xournalpp
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
+   sudo pacman -S megasync peazip-qt5 ncdu grsync yt-dlp
+   sudo pacman -S btop tldr zellij
+   zellij options --theme catppuccin-mocha
 fi
 
 
