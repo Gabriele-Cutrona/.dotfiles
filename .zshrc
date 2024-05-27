@@ -111,3 +111,5 @@ alias z="zoxide"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
+
+source /usr/share/nvm/init-nvm.sh

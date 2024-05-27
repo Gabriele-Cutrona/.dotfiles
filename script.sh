@@ -172,8 +172,10 @@ if [[ $APPS == "y" ]]; then
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
    sudo pacman -S megasync peazip-qt5 ncdu grsync yt-dlp
-   sudo pacman -S btop tldr zellij
-   zellij options --theme catppuccin-mocha
+   #sudo pacman -S btop tldr zellij
+   #zellij options --theme catppuccin-mocha
+   sudo pacman -S android-tools
+   paru -S nvm
 fi
 
 
