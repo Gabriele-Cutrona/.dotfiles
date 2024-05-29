@@ -152,7 +152,7 @@ fi
 sudo pacman -S stow
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources warehouse flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp"
+echo "resources warehouse flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
@@ -165,6 +165,7 @@ if [[ $APPS == "y" ]]; then
    paru -S aur/localsend-bin
    sudo pacman -S onlyoffice-bin
    wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
+   # anytype / logseq + balena etcher (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl
@@ -176,6 +177,9 @@ if [[ $APPS == "y" ]]; then
    #zellij options --theme catppuccin-mocha
    sudo pacman -S android-tools
    paru -S nvm
+
+   sudo pacman -S ngrok quickemu
+   sudo systemctl enable --now sshd
 fi
 
 
