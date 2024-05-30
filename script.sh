@@ -15,22 +15,17 @@ git config --global user.email $GIT_EMAIL --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
+echo "Enabling Chaotic Aur"
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
+sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
+
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
 sudo pacman -S fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
-
-echo "Do you want to enable chaotic aur? Since a lot of packages are from chaotic aur, the script will probably fail at some point if you don't write y (https://aur.chaotic.cx) y/n"
-read -r $CHAOTIC_AUR
-
-if [[ $CHAOTIC_AUR == "y" ]]; then
-   echo "Enabling Chaotic Aur"
-   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-   sudo pacman-key --lsign-key 3056513887B78AEB
-   sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-   sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-   sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
-   sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
-fi
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
