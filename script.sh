@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-echo "Installing hyprland"
-sudo pacman -S hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 echo "Enabling systemd-timesyncd"
 sudo systemctl enable --now systemd-timesyncd
 
@@ -23,9 +21,12 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg
 sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
 sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
 
+echo "Installing hyprland"
+sudo pacman -Sy hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
-sudo pacman -S fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
+sudo pacman -Sy fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -96,10 +97,10 @@ systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
 sudo pacman -S catppuccin-cursors-mocha nwg-look
-sudo cp /usr/share/icons ~/.icons -r
+cp /usr/share/icons ~/.icons -r
 
 sudo pacman -S catppuccin-gtk-theme-mocha
-sudo cp /usr/share/themes ~/.themes -r
+cp /usr/share/themes ~/.themes -r
 
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 
