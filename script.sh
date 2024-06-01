@@ -13,6 +13,14 @@ git config --global user.email $GIT_EMAIL --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
+echo "Do you want to run the following?:"
+read -r GIT_SIGNING
+
+if [[ $GIT_SIGNING == "y" ]]; then
+   echo "git config --global gpg.format ssh"
+   echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
+fi
+
 echo "Enabling Chaotic Aur"
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
