@@ -14,11 +14,15 @@ git config --global color.ui auto
 git config --global init.defaultBranch main
 
 echo "Do you want to run the following?:"
+echo "git config --global gpg.format ssh"
+echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
+echo "git config --global commit.gpgsign true"
 read -r GIT_SIGNING
 
 if [[ $GIT_SIGNING == "y" ]]; then
-   echo "git config --global gpg.format ssh"
-   echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
+   git config --global gpg.format ssh
+   git config --global user.signingkey ~/.ssh/id_ed25519.pub
+   git config --global commit.gpgsign true
 fi
 
 echo "Enabling Chaotic Aur"
