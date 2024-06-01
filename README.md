@@ -17,6 +17,14 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
 
+## Custom
+- To use your own wallpaper:
+   - Make sure it's named bg.png
+   - Put it under .config/hypr
+- To use your own hyprlock image:
+   - Make sure it's named img.png
+   - Put it under .config/hypr
+
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
    - [ ] Split init.lua in more files
