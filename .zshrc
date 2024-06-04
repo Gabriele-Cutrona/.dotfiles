@@ -113,3 +113,10 @@ alias z="zoxide"
 eval "$(zoxide init --cmd cd zsh)"
 
 source /usr/share/nvm/init-nvm.sh
+
+# bun completions
+[ -s "/home/gabriele-cutrona/.bun/_bun" ] && source "/home/gabriele-cutrona/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
