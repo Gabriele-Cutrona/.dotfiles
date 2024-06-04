@@ -187,6 +187,10 @@ if [[ $APPS == "y" ]]; then
 
    curl -fsSL https://bun.sh/install | bash
 
+   curl -fsSL https://fnm.vercel.app/install | bash
+   source ~/.zshrc
+   fnm use --install-if-missing 20
+
    sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
 fi
@@ -196,3 +200,6 @@ echo "The end! Here's a list of thing you have to do manually: (because i'm lazy
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
 echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
 echo "If you want to use blackbox as your terminal, configure the Jetbrain Nerd Font into the settings, and set catppuccin-mocha as coloscheme"
+if [[ $APPS == "y" ]]; then
+   echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell"
+fi
