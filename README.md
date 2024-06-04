@@ -30,3 +30,5 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
    - [ ] Split init.lua in more files
 - [ ] My own waybar config
 - [x] My own wofi config
+- [ ] Catppuccin themes should be installed better (e.g. not copied from `/usr`)
+   - [ ] Is there a way to install kvantum themes automatically?
