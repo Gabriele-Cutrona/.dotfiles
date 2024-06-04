@@ -184,7 +184,8 @@ if [[ $APPS == "y" ]]; then
    #sudo pacman -S btop tldr zellij
    #zellij options --theme catppuccin-mocha
    sudo pacman -S android-tools
-   paru -S nvm
+
+   curl -fsSL https://bun.sh/install | bash
 
    sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
