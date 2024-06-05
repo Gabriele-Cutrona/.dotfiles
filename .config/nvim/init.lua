@@ -141,7 +141,10 @@ require('lazy').setup({
      end,
   },
   {
-     "williamboman/mason.nvim"
+     "williamboman/mason.nvim",
+     opts = {
+        ensure_installed = { "tsserver", "html", "cssls", "eslint" , "prettier" }
+     }
   },
   {
      "williamboman/mason-lspconfig.nvim"
@@ -172,6 +175,28 @@ require('lazy').setup({
      "karb94/neoscroll.nvim",
      config = function()
         require("neoscroll").setup({})
+     end,
+  },
+  {
+     "mfussenegger/nvim-lint",
+     config = function()
+        require("lint").linters_by_ft = {
+           javascript = {"eslint"},
+           typescript = {"eslint"},
+        }
+     end,
+  },
+  {
+     "mhartington/formatter.nvim",
+     event = "VeryLazy",
+     opts = function()
+        return {
+           filetype = {
+              javascript = { require("formatter.filetypes.javascript").prettier },
+              typescript = { require("formatter.filetypes.javascript").prettier },
+           }
+        }
+
      end,
   }
 })
@@ -213,7 +238,7 @@ remap("n", "<Space>lg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
 
 remap("n", "]", "<cmd>BufferLineCycleNext<CR>", {noremap = true, silent = true})
 remap("n", "[", "<cmd>BufferLineCyclePrev<CR>", {noremap = true, silent = true})
-vim.o.timeoutlen = 0
+vim.o.timeoutlen = 100
 
 remap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
 remap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
@@ -234,9 +259,11 @@ require"nvim-treesitter.configs".setup {
    }
 }
 
-require("mason").setup()
-require("mason-lspconfig").setup({
-   ensure_installed = { "tsserver", "html", "cssls" }
+vim.api.nvim_create_autocmd("BufWritePost", {
+   callback = function()
+      require("lint").try_lint()
+      vim.cmd("FormatWriteLock")
+   end,
 })
 
 -- End Plugins Setup
