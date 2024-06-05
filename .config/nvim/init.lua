@@ -156,6 +156,12 @@ require('lazy').setup({
      dependencies = {
         "nvim-lua/plenary.nvim",
      },
+  },
+  {
+     "supermaven-inc/supermaven-nvim",
+     config = function()
+        require("supermaven-nvim").setup({})
+     end,
   }
 })
 -- End Installing Plugins (with lazy)
@@ -172,8 +178,9 @@ vim.cmd("colorscheme catppuccin-mocha")
 -- End (Neo)Vim Options
 
 -- Keymaps  
-vim.api.nvim_set_keymap("n", "<Space>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>f", "<cmd>NvimTreeFocus<CR>", {noremap = true, silent = true})
+remap = vim.api.nvim_set_keymap
+remap("n", "<Space>e", "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = true})
+remap("n", "<Space>f", "<cmd>NvimTreeFocus<CR>", {noremap = true, silent = true})
 
 function _G.check_prev_char()
   local line = vim.api.nvim_get_current_line()
@@ -186,15 +193,16 @@ function _G.check_prev_char()
   end
 end
 
-vim.api.nvim_set_keymap('i', 'k', 'v:lua.check_prev_char()', {expr = true, noremap = true})
-vim.api.nvim_set_keymap('t', '<Tab>', '<C-\\><C-n>', {noremap = true, silent = true}) 
+remap('i', 'k', 'v:lua.check_prev_char()', {expr = true, noremap = true})
+remap('t', '<Tab>', '<C-\\><C-n>', {noremap = true, silent = true}) 
 
-vim.api.nvim_set_keymap("n", "<Space>t", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>lg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
+remap("n", "<Space>t", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
+remap("n", "<Space>lg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>p", "<cmd>set tabstop=4 | set shiftwidth=4 | set softtabstop=4<CR>", {noremap = true, silent = true})
+remap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
+remap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
+remap("n", "<Space>p", "<cmd>set tabstop=4 | set shiftwidth=4 | set softtabstop=4<CR>", {noremap = true, silent = true})
+
 -- End Keymaps
 
 -- Plugins Setup
