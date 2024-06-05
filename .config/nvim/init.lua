@@ -58,7 +58,6 @@ require('lazy').setup({
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<CR>'] = cmp.mapping.confirm { select = true },
           ['<Tab>'] = cmp.mapping.confirm { select = true },
           ['<C-y>'] = cmp.mapping.complete {},
         },
@@ -265,5 +264,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
       vim.cmd("FormatWriteLock")
    end,
 })
+
+vim.cmd("set pumheight=10")
 
 -- End Plugins Setup
