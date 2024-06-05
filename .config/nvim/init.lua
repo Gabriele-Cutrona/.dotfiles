@@ -207,8 +207,13 @@ end
 remap('i', 'k', 'v:lua.check_prev_char()', {expr = true, noremap = true})
 remap('t', '<Tab>', '<C-\\><C-n>', {noremap = true, silent = true}) 
 
-remap("n", "<Space>t", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
+remap("n", "<Space>th", "<cmd>ToggleTerm direction=horizontal<CR>", {noremap = true, silent = true})
+remap("n", "<Space>tf", "<cmd>ToggleTerm direction=float<CR>", {noremap = true, silent = true})
 remap("n", "<Space>lg", "<cmd>LazyGit<CR>", {noremap = true, silent = true})
+
+remap("n", "]", "<cmd>BufferLineCycleNext<CR>", {noremap = true, silent = true})
+remap("n", "[", "<cmd>BufferLineCyclePrev<CR>", {noremap = true, silent = true})
+vim.o.timeoutlen = 0
 
 remap("n", "<Space>i", "<cmd>set tabstop=2 | set shiftwidth=2 | set softtabstop=2<CR>", {noremap = true, silent = true})
 remap("n", "<Space>o", "<cmd>set tabstop=3 | set shiftwidth=3 | set softtabstop=3<CR>", {noremap = true, silent = true})
