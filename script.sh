@@ -193,6 +193,8 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
+
+   sudo pacman -S github-cli
 fi
 
 
