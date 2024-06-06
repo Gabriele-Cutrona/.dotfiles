@@ -1,18 +1,13 @@
-# dotFiles
-|General|Specific|
-|:------------:|:--------:|
-|Operating System|[Arch Linux](https://archlinux.org)|
-|Terminal|Blackbox|
-|Shell|zsh (oh-my-zsh)|
-|Shell theme|powerlevel10k|
-|Editor|Neovim|
-|Compositor|[Hyprland](https://hyprland.org)|
-|App Launcher|Wofi|
-|Theme|[Catppuccin](https://github.com/catppuccin)|
-|Screen Lock|Hyprlock|
-|Wallpaper|Hyprpaper|
+# dotFiles   
+| General          | Specific                            | General      | Specific                                    |
+|:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
+| Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
+| Terminal         | Blackbox                            | App Launcher | Wofi                                        |
+| Shell            | zsh (oh-my-zsh)                     | Theme        | [Catppuccin](https://github.com/catppuccin) |
+| Shell theme      | powerlevel10k                       | Screen Lock  | Hyprlock                                    |
+| Editor           | Neovim                              | Wallpaper    | Hyprpaper                                   |
 
-<div align="center">
+<div>
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
