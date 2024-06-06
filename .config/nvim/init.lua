@@ -177,27 +177,54 @@ require('lazy').setup({
      end,
   },
   {
-     "mfussenegger/nvim-lint",
-     config = function()
-        require("lint").linters_by_ft = {
-           javascript = {"eslint"},
-           typescript = {"eslint"},
-        }
-     end,
+    "mfussenegger/nvim-lint",
+    config = function()
+      local lint = require("lint")
+
+      lint.linters_by_ft = {
+        javascript = { "eslint" },
+        typescript = { "eslint" },
+        javascriptreact = { "eslint" },
+        typescriptreact = { "eslint" },
+        svelte = { "eslint" },
+      }
+
+      vim.keymap.set("n", "<Space>le", function()
+        lint.try_lint()
+      end, { desc = "Trigger eslint for current file" })
+    end,
   },
   {
-     "mhartington/formatter.nvim",
-     event = "VeryLazy",
-     opts = function()
-        return {
-           filetype = {
-              javascript = { require("formatter.filetypes.javascript").prettier },
-              typescript = { require("formatter.filetypes.javascript").prettier },
-           }
-        }
+    "stevearc/conform.nvim",
+    config = function()
+      local conform = require("conform")
 
-     end,
-  }
+      conform.setup({
+        formatters_by_ft = {
+          lua = { "stylua" },
+          svelte = { { "prettier" } },
+          javascript = { { "prettier" } },
+          typescript = { { "prettier" } },
+          javascriptreact = { { "prettier" } },
+          typescriptreact = { { "prettier" } },
+          json = { { "prettier" } },
+          graphql = { { "prettier" } },
+          markdown = { { "prettier" } },
+          html = { "prettier" },
+          css = { { "prettier" } },
+          scss = { { "prettier" } },
+        },
+      })
+
+      vim.keymap.set({ "n", "v" }, "<Space>lp", function()
+        conform.format({
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 1000,
+        })
+      end, { desc = "Format file or range (in visual mode)" })
+    end,
+  },
 })
 -- End Installing Plugins (with lazy)
 
@@ -257,13 +284,6 @@ require"nvim-treesitter.configs".setup {
       enable = true,
    }
 }
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-   callback = function()
-      require("lint").try_lint()
-      vim.cmd("FormatWriteLock")
-   end,
-})
 
 vim.cmd("set pumheight=10")
 
