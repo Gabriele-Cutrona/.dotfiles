@@ -5,12 +5,19 @@
 |Terminal|Blackbox|
 |Shell|zsh (oh-my-zsh)|
 |Shell theme|powerlevel10k|
-|Editor|Neovim + VSCode|
+|Editor|Neovim|
 |Compositor|[Hyprland](https://hyprland.org)|
 |App Launcher|Wofi|
 |Theme|[Catppuccin](https://github.com/catppuccin)|
 |Screen Lock|Hyprlock|
 |Wallpaper|Hyprpaper|
+
+<div align="center">
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
+</div>
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 - Waybar configuration from [morrolinux](https://github.com/morrolinux/LinuxRices)
@@ -33,3 +40,6 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 - [x] My own wofi config
 - [ ] Catppuccin themes should be installed better (e.g. not copied from `/usr`)
    - [ ] Is there a way to install kvantum themes automatically?
+     
+### Credits
+The icons up there are from [devicon.dev](https://devicon.dev)
