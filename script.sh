@@ -38,7 +38,7 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-
 
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
-sudo pacman -Sy fastfetch eza bat less sl zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
+sudo pacman -Sy fastfetch eza bat less sl lolcat zoxide fzf cava neovim wl-clipboard lazygit pamixer brightnessctl grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -180,9 +180,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install xournalpp
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
-   sudo pacman -S megasync peazip-qt5 ncdu grsync yt-dlp
-   #sudo pacman -S btop tldr zellij
-   #zellij options --theme catppuccin-mocha
+   sudo pacman -S megasync peazip ncdu grsync yt-dlp tldr
    sudo pacman -S android-tools
 
    curl -fsSL https://bun.sh/install | bash
@@ -195,6 +193,7 @@ if [[ $APPS == "y" ]]; then
    sudo systemctl enable --now sshd
 
    sudo pacman -S github-cli
+   sudo pacman -S hyperfine
 fi
 
 
