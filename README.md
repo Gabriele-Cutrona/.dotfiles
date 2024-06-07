@@ -1,4 +1,6 @@
-# dotFiles   
+# dotFiles
+
+## Tools
 | General          | Specific                            | General      | Specific                                    |
 |:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
@@ -13,6 +15,7 @@
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
 </div>
+<br />
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 - Waybar configuration from [morrolinux](https://github.com/morrolinux/LinuxRices)
@@ -38,3 +41,5 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
      
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev)
+
+<small>All logos are property of their respective owners</small>
