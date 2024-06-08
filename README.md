@@ -18,7 +18,6 @@
 <br />
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
-- Waybar configuration from [morrolinux](https://github.com/morrolinux/LinuxRices)
 
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
 
@@ -34,7 +33,7 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 - [x] Neovim (~~nixvim?~~ standalone)
    - [ ] Split init.lua in more files
    - [ ] Use `$NVIM_APPNAME` to switch between nvim configs
-- [ ] My own waybar config
+- [ ] My own waybar config - WIP
 - [x] My own wofi config
 - [ ] Catppuccin themes should be installed better (e.g. not copied from `/usr`)
    - [ ] Is there a way to install kvantum themes automatically?
@@ -42,4 +41,7 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev)
 
-<small>All logos are property of their respective owners</small>
+<details>
+    <summary>Logos</summary>
+    All logos are property of their respective owners
+</details>
