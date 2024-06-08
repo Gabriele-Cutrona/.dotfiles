@@ -32,7 +32,7 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow):
 
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
-   - [ ] Split init.lua in more files
+   - [x] Split init.lua in more files
    - [ ] Use `$NVIM_APPNAME` to switch between nvim configs
 - [x] My own waybar config
 - [x] My own wofi config
