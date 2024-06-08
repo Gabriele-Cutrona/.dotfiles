@@ -48,11 +48,11 @@ if [[ $TIMESHIFT == "y" ]]; then
    sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
 fi
 
-echo "Configuring the terminal (blackbox zsh)"
+echo "Configuring the terminal (alacritty zsh)"
 ### Terminal ###
-sudo pacman -S blackbox-terminal zsh
+sudo pacman -S alacritty zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji # Set this font into blackbox
+sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -200,7 +200,6 @@ fi
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
 echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
-echo "If you want to use blackbox as your terminal, configure the Jetbrain Nerd Font into the settings, and set catppuccin-mocha as coloscheme"
 if [[ $APPS == "y" ]]; then
    echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell"
 fi
