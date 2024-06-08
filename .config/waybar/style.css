@@ -1,12 +1,13 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    /* `otf-font-awesome` is required t be installed for icons */
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    margin: 2px 8px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -39,24 +40,25 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
+    border-radius: 4px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
-/* you can set a style on hover for any module like this */
+/* you can set a style on hover for any module like this
 #pulseaudio:hover {
     background-color: #a37800;
 }
+*/
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
+    margin: 0 2px;
 }
 
 #workspaces button:hover {
@@ -101,6 +103,7 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
