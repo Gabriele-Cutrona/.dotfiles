@@ -155,6 +155,9 @@ read -r FCITX5
 
 if [[ $FCITX5 == "y" ]]; then
    sudo pacman -S fcitx5-im fcitx5-mozc
+   git clone https://github.com/catppuccin/fcitx5.git
+   mkdir -p ~/.local/share/fcitx5/themes/
+   cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
 sudo pacman -S stow
