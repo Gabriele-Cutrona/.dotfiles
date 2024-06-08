@@ -8,7 +8,7 @@
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0);
-    color: #ffffff;
+    color: #cdd6f4;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -82,7 +82,7 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(30, 30, 46, 0.8);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -181,7 +181,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
+    background-color: #f38ba8;
     color: #2a5c45;
 }
 
@@ -191,7 +191,7 @@ label:focus {
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: #f38ba8;
 }
 
 #custom-media {
@@ -325,7 +325,7 @@ label:focus {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 20px;
+    padding: 3px 20px;
     color: #ffffff;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(30, 30, 46, 0.8);
 }
