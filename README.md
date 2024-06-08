@@ -4,7 +4,7 @@
 | General          | Specific                            | General      | Specific                                    |
 |:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
-| Terminal         | Blackbox                            | App Launcher | Wofi                                        |
+| Terminal         | Alacritty                           | App Launcher | Wofi                                        |
 | Shell            | zsh (oh-my-zsh)                     | Theme        | [Catppuccin](https://github.com/catppuccin) |
 | Shell theme      | powerlevel10k                       | Screen Lock  | Hyprlock                                    |
 | Editor           | Neovim                              | Wallpaper    | Hyprpaper                                   |
@@ -14,6 +14,7 @@
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
 </div>
 <br />
 
