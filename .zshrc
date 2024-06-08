@@ -1,3 +1,10 @@
+if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
+   # Adapted from https://unix.stackexchange.com/a/176885/347104
+   # Create session 'main' or attach to 'main' if already exists.
+   TERM=xterm-256color tmux
+fi
+
+
 fastfetch
 
 # If you come from bash you might have to change your $PATH.
