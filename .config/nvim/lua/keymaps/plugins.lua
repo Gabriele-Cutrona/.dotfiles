@@ -8,11 +8,11 @@ remap("n", "<Leader>lg", "<cmd>LazyGit<CR>", { noremap = true, silent = true })
 remap("n", "]", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
 remap("n", "[", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<Leader>le", function()
+remap("n", "<Leader>le", function()
    require("lint").try_lint()
 end, { desc = "Trigger eslint for current file" })
 
-vim.keymap.set({ "n", "v" }, "<Leader>lp", function()
+remap({ "n", "v" }, "<Leader>lp", function()
    require("conform").format({
       lsp_fallback = true,
       async = false,

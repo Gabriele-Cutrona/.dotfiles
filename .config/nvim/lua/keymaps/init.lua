@@ -1,4 +1,4 @@
-remap = vim.api.nvim_set_keymap
+remap = vim.keymap.set
 vim.g.mapleader = " "
 
 require("keymaps.tabstop")
@@ -15,6 +15,7 @@ function _G.check_prev_char()
    end
 end
 
-remap("i", "k", "v:lua.check_prev_char()", { expr = true, noremap = true })
+vim.api.nvim_set_keymap("i", "k", "v:lua.check_prev_char()", { expr = true, noremap = true })
+
 remap("t", "<Tab>", "<C-\\><C-n>", { noremap = true, silent = true })
 
