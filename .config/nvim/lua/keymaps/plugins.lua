@@ -19,3 +19,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>lp", function()
       timeout_ms = 1000,
    })
 end, { desc = "Format file or range (in visual mode)" })
+
+remap("n", "<C-p>", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true })
+remap("n", "<C-g>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
+remap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
