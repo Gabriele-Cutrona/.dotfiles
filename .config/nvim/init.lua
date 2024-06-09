@@ -12,9 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
 require("keymaps")
-require("setplugins")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
