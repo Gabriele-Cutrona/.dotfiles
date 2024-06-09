@@ -187,10 +187,6 @@ require("lazy").setup({
             typescriptreact = { "eslint" },
             svelte = { "eslint" },
          }
-
-         vim.keymap.set("n", "<Leader>le", function()
-            lint.try_lint()
-         end, { desc = "Trigger eslint for current file" })
       end,
    },
    {
@@ -214,14 +210,6 @@ require("lazy").setup({
                scss = { { "prettier" } },
             },
          })
-
-         vim.keymap.set({ "n", "v" }, "<Leader>lp", function()
-            conform.format({
-               lsp_fallback = true,
-               async = false,
-               timeout_ms = 1000,
-            })
-         end, { desc = "Format file or range (in visual mode)" })
       end,
    },
    {

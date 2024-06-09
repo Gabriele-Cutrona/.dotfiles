@@ -1,4 +1,5 @@
 remap = vim.api.nvim_set_keymap
+vim.g.mapleader = " "
 
 require("keymaps.tabstop")
 require("keymaps.plugins")
