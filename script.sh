@@ -76,8 +76,8 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
 fi
 
-echo "Installing libnotify nautilus wofi waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus wofi waybar nwg-drawer
+echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
+sudo pacman -S libnotify nautilus waybar nwg-drawer
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
@@ -170,7 +170,6 @@ read -r APPS
 
 if [[ $APPS == "y" ]]; then
    flatpak install net.nokyan.Resources
-   flatpak install WareHouse
    flatpak install flatseal
    flatpak install anki
    flatpak install telegram
