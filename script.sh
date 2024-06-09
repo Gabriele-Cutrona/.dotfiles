@@ -77,7 +77,7 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer
+sudo pacman -S libnotify nautilus waybar nwg-drawer rofi-wayland
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
