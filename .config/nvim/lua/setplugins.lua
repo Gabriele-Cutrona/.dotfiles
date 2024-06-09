@@ -1,4 +1,3 @@
-vim.opt.termguicolors = true
 require("bufferline").setup({})
 
 require("lualine").setup()
@@ -9,6 +8,8 @@ require("nvim-treesitter.configs").setup({
    autotag = {
       enable = true,
    },
+   hightlight = { enable = true },
+   indent = { enable = true }
 })
 
 require('gitsigns').setup {
@@ -55,3 +56,4 @@ require('gitsigns').setup {
 }
 
 vim.cmd("set pumheight=10")
+
