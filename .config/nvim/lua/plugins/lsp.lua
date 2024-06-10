@@ -12,9 +12,9 @@ return {
    {
       "williamboman/mason.nvim",
       config = function()
-         require("mason").setup({
-            ensure_installed = { "prettier", "stylua" },
-         })
+         require("mason").setup({})
+         -- vim.cmd("MasonInstall prettier")
+         -- vim.cmd("MasonInstall stylua")
       end,
    },
    {

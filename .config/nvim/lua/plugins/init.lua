@@ -16,15 +16,15 @@ return {
    {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
-      opts = {
-         autotag = {
-            enable = true,
-         },
-         hightlight = { enable = true },
-         indent = { enable = true },
-      },
       config = function()
-         vim.cmd("TSInstall all")
+         require("nvim-treesitter.configs").setup({
+            auto_install = true,
+            autotag = {
+               enable = true,
+            },
+            hightlight = { enable = true },
+            indent = { enable = true },
+         })
       end,
    },
    {
@@ -58,7 +58,7 @@ return {
       config = function()
          require("gitsigns").setup({
             signs = {
-               add = { text = "┃" },
+               add = { text = "+" },
                change = { text = "┃" },
                delete = { text = "_" },
                topdelete = { text = "‾" },
