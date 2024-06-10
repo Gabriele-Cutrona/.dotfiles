@@ -3,7 +3,7 @@ if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
 fi
 
 
-fastfetch
+fastfetch | lolcat
 
 export ZSH="$HOME/.oh-my-zsh"
 
