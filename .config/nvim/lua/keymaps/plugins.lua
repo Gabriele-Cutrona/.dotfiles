@@ -10,7 +10,7 @@ remap("n", "[", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true 
 
 remap("n", "<Leader>le", function()
    require("lint").try_lint()
-end, { desc = "Trigger eslint for current file" })
+end, { desc = "Trigger lint for current file" })
 
 remap({ "n", "v" }, "<Leader>lp", function()
    require("conform").format({
@@ -23,3 +23,6 @@ end, { desc = "Format file or range (in visual mode)" })
 remap("n", "<C-p>", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true })
 remap("n", "<C-g>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 remap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
+
+remap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
+remap({ "n", "v" }, "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
