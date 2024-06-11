@@ -162,10 +162,22 @@ if [[ $FCITX5 == "y" ]]; then
    cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
+echo "Do you want to install fnm? (nodejs) y/n"
+read -r FNM
+
+if [[ $FNM == "y" ]]; then
+   curl -fsSL https://fnm.vercel.app/install | bash
+   source ~/.zshrc
+   fnm use --install-if-missing 20
+fi
+
+sudo pacman -S tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 sudo pacman -S stow
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources warehouse flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp..."
+echo "resources flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
@@ -176,8 +188,8 @@ if [[ $APPS == "y" ]]; then
    flatpak install sh.ppy.osu
    paru -S aur/localsend-bin
    sudo pacman -S onlyoffice-bin
-   wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
-   # anytype / logseq + balena etcher (appimage)
+   wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/Obsidian-1.6.3.AppImage
+   # anytype + balena etcher (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl
@@ -189,18 +201,11 @@ if [[ $APPS == "y" ]]; then
 
    curl -fsSL https://bun.sh/install | bash
 
-   curl -fsSL https://fnm.vercel.app/install | bash
-   source ~/.zshrc
-   fnm use --install-if-missing 20
-
    sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
 
    sudo pacman -S github-cli
    sudo pacman -S hyperfine
-
-   sudo pacman -S tmux
-   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 
@@ -208,5 +213,5 @@ echo "The end! Here's a list of thing you have to do manually: (because i'm lazy
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
 echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
 if [[ $APPS == "y" ]]; then
-   echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell"
+   echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
 fi
