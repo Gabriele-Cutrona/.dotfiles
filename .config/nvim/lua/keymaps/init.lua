@@ -1,7 +1,7 @@
 remap = vim.keymap.set
 vim.g.mapleader = " "
 
-require("keymaps.tabstop")
+require("keymaps.indent")
 require("keymaps.plugins")
 
 function _G.check_prev_char()

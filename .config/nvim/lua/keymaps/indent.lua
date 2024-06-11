@@ -1,3 +1,6 @@
+-- Froms spaces to tabs: <Leader>i<number>, <Leader>it, <Leader>ir
+-- Froms tabs to spaces: <Leader>i<number>, <Leader>is, <Leader>ir
+
 remap(
    "n",
    "<Leader>i2",
@@ -17,4 +20,7 @@ remap(
    { noremap = true, silent = true }
 )
 
-remap("n", "<Leader>iw", "<cmd>lua vim.opt.expandtab = not vim.opt.expandtab<CR>", { noremap = true, silent = true })
+remap("n", "<Leader>is", "<cmd>lua vim.opt.expandtab=true<CR>", { noremap = true, silent = true })
+remap("n", "<Leader>it", "<cmd>lua vim.opt.expandtab=false<CR>", { noremap = true, silent = true })
+
+remap("n", "<Leader>ir", "<cmd>%retab!<CR>", { noremap = true, silent = true })
