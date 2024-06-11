@@ -18,4 +18,3 @@ end
 vim.api.nvim_set_keymap("i", "k", "v:lua.check_prev_char()", { expr = true, noremap = true })
 
 remap("t", "<Tab>", "<C-\\><C-n>", { noremap = true, silent = true })
-

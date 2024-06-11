@@ -8,4 +8,3 @@ vim.opt.termguicolors = true
 vim.o.timeoutlen = 100
 
 vim.cmd("set clipboard+=unnamedplus")
-
