@@ -8,8 +8,8 @@ echo "Insert here your git user.name"
 read -r GIT_USERNAME
 echo "Insert here your git user.email"
 read -r GIT_EMAIL
-git config --global user.name $GIT_USERNAME --replace-all
-git config --global user.email $GIT_EMAIL --replace-all
+git config --global user.name "$GIT_USERNAME" --replace-all
+git config --global user.email "$GIT_EMAIL" --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
