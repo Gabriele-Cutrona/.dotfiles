@@ -63,11 +63,11 @@ button:hover {
 }
 
 #workspaces button:hover {
-   background: rgba(0, 0, 0, 0.2);
+   background: rgba(24, 24, 37, 0.2);
 }
 
 #workspaces button.active {
-   background: rgba(0, 0, 0, 0.2);
+   background: rgba(17, 17, 27, 0.2);
 }
 
 #workspaces button.urgent {
