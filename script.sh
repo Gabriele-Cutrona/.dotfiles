@@ -108,7 +108,7 @@ systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
-sudo pacman -S catppuccin-cursors-mocha nwg-look
+sudo pacman -S catppuccin-cursors-mocha nwg-look unzip
 wget https://github.com/catppuccin/cursors/releases/download/v0.3.1/catppuccin-mocha-lavender-cursors.zip
 unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
 
