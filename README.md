@@ -11,10 +11,12 @@
 
 <div>
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
+   <img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+   <img width="100" src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" />
 </div>
 <br />
 
@@ -45,6 +47,6 @@ I don't know where to put this things:
    - [ ] Is there a way to install kvantum themes automatically?
      
 ### Credits
-The icons up there are from [devicon.dev](https://devicon.dev)
+The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland and Catppuccin logos)
 
 <sup>All logos are property of their respective owners</sup>
