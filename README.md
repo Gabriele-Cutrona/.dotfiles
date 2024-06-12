@@ -4,7 +4,7 @@
 | General          | Specific                            | General      | Specific                                    |
 |:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
-| Terminal         | Alacritty                           | App Launcher | Wofi                                        |
+| Terminal         | Alacritty                           | App Launcher | rofi-wayland                                |
 | Shell            | zsh (oh-my-zsh)                     | Theme        | [Catppuccin](https://github.com/catppuccin) |
 | Shell theme      | powerlevel10k                       | Screen Lock  | Hyprlock                                    |
 | Editor           | Neovim                              | Wallpaper    | Hyprpaper                                   |
@@ -40,16 +40,11 @@ I don't know where to put this things:
    - [x] Split init.lua in more files
    - [ ] Use `$NVIM_APPNAME` to switch between nvim configs
 - [x] My own waybar config
-- [ ] Rofi config
+- [x] Rofi config
 - [x] Themes should be installed better (e.g. not copied from `/usr`)
    - [ ] Is there a way to install kvantum themes automatically?
      
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev)
 
-<sup>
-<details>
-    <summary>Logos</summary>
-    All logos are property of their respective owners
-</details>
-</sup>
+<sup>All logos are property of their respective owners</sup>
