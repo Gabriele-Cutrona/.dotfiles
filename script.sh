@@ -208,6 +208,10 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S hyperfine
 fi
 
+echo "Installing hyprexpo with hyprpm"
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm update
+hyprpm enable hyprexpo
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
