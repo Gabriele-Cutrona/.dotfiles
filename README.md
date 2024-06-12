@@ -30,6 +30,11 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
    - Make sure it's named img.png
    - Put it under .config/hypr
 
+## Other
+I don't know where to put this things:
+- Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083)
+- All catppuccin [userstyles](https://github.com/catppuccin/userstyles)
+
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
    - [x] Split init.lua in more files
@@ -42,7 +47,9 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev)
 
+<sup>
 <details>
     <summary>Logos</summary>
     All logos are property of their respective owners
 </details>
+</sup>
