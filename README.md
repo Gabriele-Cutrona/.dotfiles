@@ -24,6 +24,8 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
 
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
 
+Currently colloid dracula is installed, because the catppuccin/gtk was archived recently, so until colloid supports catppuccin or someone makes a fork, colloid-dracula is the most similar thing to catppuccin/gtk there is
+
 ## Custom
 - To use your own wallpaper:
    - Make sure it's named bg.png
