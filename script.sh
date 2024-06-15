@@ -39,6 +39,7 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
 sudo pacman -Sy fastfetch eza bat less sl lolcat zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
+bat cache --build
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -206,6 +207,8 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S github-cli
    sudo pacman -S hyperfine
+
+   sudo pacman -S steam
 fi
 
 echo "Installing hyprexpo with hyprpm"
