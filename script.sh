@@ -68,7 +68,7 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak -u override --filesystem=/home/$USER/.icons/:ro 
    flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
    flatpak -u override --filesystem=$HOME/.themes
-   flatpak -u override --env=GTK_THEME=Colloid-Purple-Dark-Dracula
+   flatpak -u override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
    flatpak -u override --env=XCURSOR_PATH=~/.icons
    flatpak install kvantum # All of them
    flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
@@ -115,7 +115,7 @@ unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
 
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 cd Colloid-gtk-theme
-./install.sh --theme purple --color dark --tweaks dracula
+./install.sh --theme purple --color dark --tweaks catppuccin black
 
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 
