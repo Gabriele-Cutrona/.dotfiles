@@ -190,7 +190,7 @@ if [[ $APPS == "y" ]]; then
    paru -S aur/localsend-bin
    sudo pacman -S onlyoffice-bin
    wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/Obsidian-1.6.3.AppImage
-   # anytype + balena etcher (appimage)
+   # anytype + balena etcher + cryptomator (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
    sudo pacman -S topgrade floorp upscayl

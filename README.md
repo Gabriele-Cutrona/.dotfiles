@@ -34,8 +34,9 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
 
 ## Other
 I don't know where to put this things:
-- Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083)
-- All catppuccin [userstyles](https://github.com/catppuccin/userstyles)
+- Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083), [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
+- All catppuccin [userstyles](https://github.com/catppuccin/userstyles) and [Catppuccin Dark Reader](https://github.com/catppuccin/dark-reader)
+- [Catppuccin Firefox Colors](https://github.com/catppuccin/firefox)
 
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
