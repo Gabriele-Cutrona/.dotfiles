@@ -122,14 +122,15 @@ sudo pacman -S kvantum # Manually configure it with https://github.com/catppucci
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
-sudo mv catppuccin-mocha.zip /usr/share/sddm/themes/
-cd /usr/share/sddm/themes/
-sudo unzip /usr/share/sddm/themes/catppuccin-mocha.zip
-sudo sh -c "echo \"[Theme]\" >> /etc/sddm.conf"
+sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
+sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
 sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
 
-git clone https://github.com/catppuccin/grub.git && cd grub
-sudo cp -r src/catppuccin-mocha-grub-theme /boot
+sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
+sudo sh -c "echo \"Inherits=catppuccin-mocha-lavender-cursors\" >> /usr/share/icons/default/index.theme"
+
+git clone https://github.com/catppuccin/grub.git
+sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
 sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ### End sddm and GRUB catppuccin ###
