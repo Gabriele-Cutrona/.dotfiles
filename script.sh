@@ -13,7 +13,7 @@ git config --global user.email "$GIT_EMAIL" --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
-echo "Do you want to run the following?:"
+echo "Do you want to run the following? y/n"
 echo "git config --global gpg.format ssh"
 echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
 echo "git config --global commit.gpgsign true"
@@ -210,6 +210,13 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S hyperfine
 
    sudo pacman -S steam
+fi
+
+echo "Do you want to run stow .? y/n"
+read -r STOW
+
+if [[ $STOW == "y" ]]; then
+   stow .
 fi
 
 echo "Installing hyprexpo with hyprpm"
