@@ -171,8 +171,6 @@ read -r FNM
 
 if [[ $FNM == "y" ]]; then
    curl -fsSL https://fnm.vercel.app/install | bash
-   source ~/.zshrc
-   fnm use --install-if-missing 20
 fi
 
 sudo pacman -S tmux
@@ -218,13 +216,10 @@ echo "Do you want to run stow .? y/n"
 read -r STOW
 
 if [[ $STOW == "y" ]]; then
+   rm -rf ~/.config/hypr
+   rm ~/.zshrc
    stow .
 fi
-
-echo "Installing hyprexpo with hyprpm"
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm update
-hyprpm enable hyprexpo
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
