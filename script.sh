@@ -227,3 +227,4 @@ echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.Platf
 if [[ $APPS == "y" ]]; then
    echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
 fi
+echo "If you want to catppuccin your tty, https://github.com/catppuccin/tty"
