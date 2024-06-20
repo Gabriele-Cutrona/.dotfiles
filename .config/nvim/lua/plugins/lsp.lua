@@ -15,13 +15,14 @@ return {
          require("mason").setup({})
          -- vim.cmd("MasonInstall prettier")
          -- vim.cmd("MasonInstall stylua")
+         -- vim.cmd("MasonInstall biome")
       end,
    },
    {
       "williamboman/mason-lspconfig.nvim",
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "tsserver", "html", "cssls", "eslint", "lua_ls" },
+            ensure_installed = { "tsserver", "html", "cssls", "eslint", "lua_ls", "biome" },
          })
       end,
    },
