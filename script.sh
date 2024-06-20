@@ -210,6 +210,8 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S hyperfine
 
    sudo pacman -S steam
+   
+   flatpak install flathub com.modrinth.ModrinthApp
 fi
 
 echo "Do you want to run stow .? y/n"
@@ -228,3 +230,4 @@ if [[ $APPS == "y" ]]; then
    echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
 fi
 echo "If you want to catppuccin your tty, https://github.com/catppuccin/tty"
+
