@@ -198,7 +198,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install xournalpp
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
-   sudo pacman -S megasync peazip ncdu grsync yt-dlp tldr
+   sudo pacman -S megasync peazip ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
 
    curl -fsSL https://bun.sh/install | bash

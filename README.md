@@ -50,4 +50,4 @@ I don't know where to put this things:
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland and Catppuccin logos)
 
-<sup>All logos are property of their respective owners</sup>
+<sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
