@@ -212,6 +212,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S steam
    
    flatpak install flathub com.modrinth.ModrinthApp
+   sudo pacman -Syu extra/torbrowser-launcher
 fi
 
 echo "Do you want to run stow .? y/n"
