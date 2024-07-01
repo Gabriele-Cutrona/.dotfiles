@@ -16,13 +16,11 @@ git config --global init.defaultBranch main
 echo "Do you want to run the following? y/n"
 echo "git config --global gpg.format ssh"
 echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
-echo "git config --global commit.gpgsign true"
 read -r GIT_SIGNING
 
 if [[ $GIT_SIGNING == "y" ]]; then
    git config --global gpg.format ssh
    git config --global user.signingkey ~/.ssh/id_ed25519.pub
-   git config --global commit.gpgsign true
 fi
 
 echo "Enabling Chaotic Aur"
@@ -39,7 +37,6 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
 sudo pacman -Sy fastfetch eza bat less sl lolcat zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
-bat cache --build
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -212,7 +209,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S steam
    
    flatpak install flathub com.modrinth.ModrinthApp
-   sudo pacman -Syu extra/torbrowser-launcher
+   sudo pacman -Syu extra/torbrowser-launcher extra/calibre
 fi
 
 echo "Do you want to run stow .? y/n"
@@ -222,6 +219,7 @@ if [[ $STOW == "y" ]]; then
    rm -rf ~/.config/hypr
    rm ~/.zshrc
    stow .
+   bat cache --build
 fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
