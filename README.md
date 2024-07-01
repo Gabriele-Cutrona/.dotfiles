@@ -41,7 +41,6 @@ I don't know where to put this things:
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
    - [x] Split init.lua in more files
-   - [ ] Use `$NVIM_APPNAME` to switch between nvim configs
 - [x] My own waybar config
 - [x] Rofi config
 - [x] Themes should be installed better (e.g. not copied from `/usr`)
