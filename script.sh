@@ -90,6 +90,7 @@ if [[ $PARU == "y" ]]; then
    git clone https://aur.archlinux.org/paru-git.git
    cd paru-git
    makepkg -si
+   cd ..
 fi
 
 sudo pacman -S gedit pavucontrol
@@ -116,6 +117,7 @@ unzip catppuccin-light-green-cursors.zip -d ~/.icons
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 cd Colloid-gtk-theme
 ./install.sh --theme green --color light --tweaks catppuccin
+cd ..
 
 sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
 
