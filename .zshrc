@@ -99,9 +99,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # fnm
-FNM_PATH="/home/gabriele-cutrona/.local/share/fnm"
+FNM_PATH="/home/alessandrostraf/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-   export PATH="/home/gabriele-cutrona/.local/share/fnm:$PATH"
+   export PATH="/home/alessandrostraf/.local/share/fnm:$PATH"
    eval "`fnm env`"
 fi
 
