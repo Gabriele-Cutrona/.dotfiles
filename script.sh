@@ -225,6 +225,15 @@ if [[ $STOW == "y" ]]; then
    bat cache --build
 fi
 
+echo "Do you want cups (printing)? y/n"
+read -r CUPS
+
+if [[ $CUPS == "y" ]]; then
+   sudo pacman -S cups cups-pdf
+   sudo systemctl enable --now cups
+   sudo pacman -S system-config-printer
+fi
+
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
 echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
