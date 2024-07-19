@@ -212,6 +212,8 @@ if [[ $APPS == "y" ]]; then
    
    flatpak install flathub com.modrinth.ModrinthApp
    sudo pacman -Syu extra/torbrowser-launcher extra/calibre
+
+   sudo pacman -S syncthing
 fi
 
 echo "Do you want to run stow .? y/n"
