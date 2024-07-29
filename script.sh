@@ -214,6 +214,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -Syu extra/torbrowser-launcher extra/calibre
 
    sudo pacman -S syncthing
+   flatpak install kodi
 fi
 
 echo "Do you want to run stow .? y/n"
@@ -231,7 +232,7 @@ echo "Do you want cups (printing)? y/n"
 read -r CUPS
 
 if [[ $CUPS == "y" ]]; then
-   sudo pacman -S cups cups-pdf
+   sudo pacman -S cups cups-pdf hplip
    sudo systemctl enable --now cups
    sudo pacman -S system-config-printer
 fi
