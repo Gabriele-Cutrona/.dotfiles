@@ -213,7 +213,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.modrinth.ModrinthApp
    sudo pacman -Syu extra/torbrowser-launcher extra/calibre
 
-   sudo pacman -S syncthing
+   sudo pacman -S syncthing upterm
    flatpak install kodi
 fi
 
