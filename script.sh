@@ -32,7 +32,7 @@ sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
 sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
 
 echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock hyprpicker polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -Sy hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
@@ -193,11 +193,12 @@ if [[ $APPS == "y" ]]; then
    # anytype + balena etcher + cryptomator (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
    paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+   paru -S megasync-bin
    sudo pacman -S topgrade floorp upscayl
    flatpak install xournalpp
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
-   sudo pacman -S megasync peazip ncdu grsync yt-dlp tldr trash-cli
+   sudo pacman -S peazip ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
 
    curl -fsSL https://bun.sh/install | bash
@@ -215,6 +216,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S syncthing upterm
    flatpak install kodi
+   paru -S aur/hyprpicker
 fi
 
 echo "Do you want to run stow .? y/n"
