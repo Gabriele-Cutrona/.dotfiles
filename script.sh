@@ -192,7 +192,8 @@ if [[ $APPS == "y" ]]; then
    wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/Obsidian-1.6.3.AppImage
    # anytype + balena etcher + cryptomator (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
-   paru -S proton-vpn-gtk-app network-manager-applet appimagelauncher
+   flatpak install flathub com.protonvpn.www
+   paru -S network-manager-applet appimagelauncher
    paru -S megasync-bin
    sudo pacman -S topgrade floorp upscayl
    flatpak install xournalpp
@@ -216,6 +217,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S syncthing upterm
    flatpak install kodi
+
    paru -S aur/hyprpicker
 fi
 
