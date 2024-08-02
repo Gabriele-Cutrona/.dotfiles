@@ -47,6 +47,6 @@ I don't know where to put this things:
    - [ ] Is there a way to install kvantum themes automatically?
      
 ### Credits
-The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland and Catppuccin logos)
+The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland and Catppuccin logos, which are from the official websites/repos)
 
 <sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
