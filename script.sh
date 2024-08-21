@@ -219,6 +219,13 @@ if [[ $APPS == "y" ]]; then
    flatpak install kodi
 
    paru -S aur/hyprpicker
+   sudo pacman -S blender lmms krita audacity discord tracktion-waveform obs-studio gimp
+
+   sudo pacman -S distrobox
+   flatpak install flathub io.github.dvlv.boxbuddyrs
+
+   sudo pacman -S geekbench
+   flatpak install flathub com.usebottles.bottles
 fi
 
 echo "Do you want to run stow .? y/n"
