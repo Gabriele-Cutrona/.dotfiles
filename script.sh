@@ -33,6 +33,8 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+echo "Installing plasma-workspace and konsole (as fallback)"
+sudo pacman -S plasma-workspace konsole
 
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
@@ -86,13 +88,13 @@ read -r PARU
 if [[ $PARU == "y" ]]; then
    sudo pacman -S rustup
    rustup default stable
-   git clone https://aur.archlinux.org/paru-git.git
-   cd paru-git
+   git clone https://aur.archlinux.org/paru-bin.git
+   cd paru-bin
    makepkg -si
    cd ..
 fi
 
-sudo pacman -S gedit pavucontrol
+sudo pacman -S pavucontrol
 
 echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
@@ -170,6 +172,7 @@ read -r FNM
 
 if [[ $FNM == "y" ]]; then
    curl -fsSL https://fnm.vercel.app/install | bash
+   fnm use 20
 fi
 
 sudo pacman -S tmux
@@ -178,7 +181,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S stow
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade floorp..."
+echo "resources flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade zen browser..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
@@ -193,9 +196,12 @@ if [[ $APPS == "y" ]]; then
    # anytype + balena etcher + cryptomator (appimage)
    AppImageLauncher Obsidian-1.5.12.AppImage
    flatpak install flathub com.protonvpn.www
-   paru -S network-manager-applet appimagelauncher
-   paru -S megasync-bin
-   sudo pacman -S topgrade floorp upscayl
+   sudo pacman -S network-manager-applet
+   flatpak install flathub it.mijorus.gearlever
+   # paru -S megasync-bin
+   flatpak install flathub nz.mega.MEGAsync
+   sudo pacman -S topgrade upscayl
+   flatpak install flathub io.github.zen_browser.zen
    flatpak install xournalpp
    flatpak install com.google.ChromeDev
    sudo pacman -S loupe gnome-sound-recorder
