@@ -79,7 +79,7 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer rofi-wayland
+sudo pacman -S libnotify nautilus waybar nwg-drawer rofi-wayland network-manager-applet
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
@@ -185,53 +185,54 @@ echo "resources flatseal anki telegram localsend onlyoffice osu obsidian appimag
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
-   flatpak install net.nokyan.Resources
-   flatpak install flatseal
-   flatpak install anki
-   flatpak install telegram
-   flatpak install sh.ppy.osu
-   paru -S aur/localsend-bin
-   sudo pacman -S onlyoffice-bin
-   wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/Obsidian-1.6.3.AppImage
-   # anytype + balena etcher + cryptomator (appimage)
-   AppImageLauncher Obsidian-1.5.12.AppImage
+   flatpak install flathub net.nokyan.Resources
+   flatpak install flathub com.github.tchx84.Flatseal
+   flatpak install flathub net.ankiweb.Anki
+   flatpak install flathub org.telegram.desktop
+   flatpak install flathub sh.ppy.osu
+   flatpak install flathub org.localsend.localsend_app
+   flatpak install flathub org.onlyoffice.desktopeditors
+   flatpak install flathub md.obsidian.Obsidian
+   flatpak install flathub org.cryptomator.Cryptomator
    flatpak install flathub com.protonvpn.www
-   sudo pacman -S network-manager-applet
-   flatpak install flathub it.mijorus.gearlever
-   # paru -S megasync-bin
    flatpak install flathub nz.mega.MEGAsync
-   sudo pacman -S topgrade upscayl
+   flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
-   flatpak install xournalpp
-   flatpak install com.google.ChromeDev
+   flatpak install flathub com.github.xournalpp.xournalpp
+   flatpak install flathub com.google.ChromeDev
+   
    sudo pacman -S loupe gnome-sound-recorder
-   sudo pacman -S peazip ncdu grsync yt-dlp tldr trash-cli
+   flatpak install flathub io.github.peazip.PeaZip
+   sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
+   paru -S aur/topgrade-bin
 
-   curl -fsSL https://bun.sh/install | bash
-
-   sudo pacman -S ngrok quickemu
+   # curl -fsSL https://bun.sh/install | bash
+   # sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
 
-   sudo pacman -S github-cli
    sudo pacman -S hyperfine
 
-   sudo pacman -S steam
-   
+   flatpak install flathub com.valvesoftware.Steam
    flatpak install flathub com.modrinth.ModrinthApp
-   sudo pacman -Syu extra/torbrowser-launcher extra/calibre
-
-   sudo pacman -S syncthing upterm
-   flatpak install kodi
+   
+   sudo pacman -S torbrowser-launcher calibre
+   sudo pacman -S syncthing # upterm
+   flatpak install flathub tv.kodi.Kodi
 
    paru -S aur/hyprpicker
-   sudo pacman -S blender lmms krita audacity discord tracktion-waveform obs-studio gimp
+   flatpak install flathub org.kde.krita
+   flatpak install flathub com.obsproject.Studio
+   flatpak install https://nightly.gnome.org/repo/appstream/org.gimp.GIMP.flatpakref
+   sudo pacman -S audacity blender lmms tracktion-waveform
 
-   sudo pacman -S distrobox
+   sudo pacman -S distrobox podman
    flatpak install flathub io.github.dvlv.boxbuddyrs
 
    sudo pacman -S geekbench
    flatpak install flathub com.usebottles.bottles
+
+   flatpak install flathub de.haeckerfelix.Fragments
 fi
 
 echo "Do you want to run stow .? y/n"
