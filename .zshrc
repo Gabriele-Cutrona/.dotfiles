@@ -80,7 +80,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls="exa"
 alias cat="bat"
-alias yay="paru"
 alias z="zoxide"
 
 alias vi="nvim"

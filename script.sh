@@ -229,10 +229,11 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S distrobox podman
    flatpak install flathub io.github.dvlv.boxbuddyrs
 
-   sudo pacman -S geekbench
+   sudo pacman -S geekbench gparted
    flatpak install flathub com.usebottles.bottles
 
    flatpak install flathub de.haeckerfelix.Fragments
+   flatpak install flathub io.github.gamingdoom.Datcord
 fi
 
 echo "Do you want to run stow .? y/n"
