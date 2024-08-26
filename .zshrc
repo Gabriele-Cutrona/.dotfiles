@@ -3,7 +3,27 @@ if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
 fi
 
 
-fastfetch
+# So basically this sources the file and the variable NAME  
+# becomes globally avaliable
+if [[ $(tput cols) -gt 150 ]]; then
+   . /etc/os-release
+   toilet -f future "OS: $NAME $(uname -m)" -F border --rainbow >> temp.txt
+   toilet -f future "Kernel: $(uname -r)" -F border --metal >> temp.txt
+   toilet -f future "Shell: $SHELL" -F border --rainbow >> temp.txt
+   toilet -f future "Pkgs: $(pacman -Q | wc -l) (pacman) $(flatpak list | wc -l) (flatpak)" -F border --metal -w $(tput cols) >> temp.txt
+   paste .dotfiles/logo.txt temp.txt
+   rm temp.txt
+else
+   /usr/bin/cat .dotfiles/logo.txt
+   . /etc/os-release
+   toilet -f future "OS: $NAME $(uname -m)" -F border --rainbow -w $(( $(tput cols) - 2 ))
+   toilet -f future "Kernel: $(uname -r)" -F border --metal -w $(( $(tput cols) - 2 ))
+   toilet -f future "Shell: $SHELL" -F border --rainbow -w $(( $(tput cols) - 2 ))
+   toilet -f future "Pkgs: $(pacman -Q | wc -l) (pacman) $(flatpak list | wc -l) (flatpak)" -F border --metal -w $(( $(tput cols) - 2 ))
+fi   
+   
+python .dotfiles/splash.py
+
 
 export ZSH="$HOME/.oh-my-zsh"
 
