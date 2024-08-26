@@ -4,7 +4,7 @@
 | General          | Specific                            | General      | Specific                                    |
 |:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
-| Terminal         | Alacritty                           | App Launcher | rofi-wayland                                |
+| Terminal         | [Kitty](https://sw.kovidgoyal.net/kitty)| App Launcher | rofi-wayland                                |
 | Shell            | zsh (oh-my-zsh)                     | Theme        | [Catppuccin](https://github.com/catppuccin) |
 | Shell theme      | powerlevel10k                       | Screen Lock  | Hyprlock                                    |
 | Editor           | Neovim                              | Wallpaper    | Hyprpaper                                   |
@@ -12,7 +12,7 @@
 <div>
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
    <img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+   <img width="100" src="https://sw.kovidgoyal.net/kitty/_static/kitty.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
@@ -47,6 +47,6 @@ I don't know where to put this things:
    - [ ] Is there a way to install kvantum themes automatically?
      
 ### Credits
-The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland and Catppuccin logos, which are from the official websites/repos)
+The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Catppuccin and Kitty logos, which are from the official websites/repos)
 
 <sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
