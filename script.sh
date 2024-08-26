@@ -234,6 +234,9 @@ if [[ $APPS == "y" ]]; then
 
    flatpak install flathub de.haeckerfelix.Fragments
    flatpak install flathub io.github.gamingdoom.Datcord
+
+   sudo pacman -S exfatprogs btop
+   flatpak install flathub org.kde.kdenlive
 fi
 
 echo "Do you want to run stow .? y/n"
