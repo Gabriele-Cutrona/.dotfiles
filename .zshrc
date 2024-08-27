@@ -5,24 +5,25 @@ fi
 
 # So basically this sources the file and the variable NAME  
 # becomes globally avaliable
+. /etc/os-release
+python ~/.dotfiles/.shtart/logo.py
 if [[ $(tput cols) -gt 150 ]]; then
-   . /etc/os-release
-   toilet -f future "OS: $NAME $(uname -m)" -F border --rainbow >> temp.txt
-   toilet -f future "Kernel: $(uname -r)" -F border --metal >> temp.txt
-   toilet -f future "Shell: $SHELL" -F border --rainbow >> temp.txt
-   toilet -f future "Pkgs: $(pacman -Q | wc -l) (pacman) $(flatpak list | wc -l) (flatpak)" -F border --metal -w $(tput cols) >> temp.txt
-   paste .dotfiles/logo.txt temp.txt
-   rm temp.txt
+   toilet -f future "OS: $NAME $(uname -m)" -F border --gay >> ~/temp.txt
+   toilet -f future "Kernel: $(uname -r)" -F border --metal >> ~/temp.txt
+   toilet -f future "Shell: $SHELL" -F border --gay >> ~/temp.txt
+   python ~/.dotfiles/.shtart/fetch.py >> ~/temp.txt
+   paste ~/logo.txt ~/temp.txt
+   rm ~/temp.txt
 else
-   /usr/bin/cat .dotfiles/logo.txt
-   . /etc/os-release
-   toilet -f future "OS: $NAME $(uname -m)" -F border --rainbow -w $(( $(tput cols) - 2 ))
+   /usr/bin/cat ~/logo.txt
+   toilet -f future "OS: $NAME $(uname -m)" -F border --gay -w $(( $(tput cols) - 2 ))
    toilet -f future "Kernel: $(uname -r)" -F border --metal -w $(( $(tput cols) - 2 ))
-   toilet -f future "Shell: $SHELL" -F border --rainbow -w $(( $(tput cols) - 2 ))
-   toilet -f future "Pkgs: $(pacman -Q | wc -l) (pacman) $(flatpak list | wc -l) (flatpak)" -F border --metal -w $(( $(tput cols) - 2 ))
-fi   
+   toilet -f future "Shell: $SHELL" -F border --gay -w $(( $(tput cols) - 2 ))
+   python ~/.dotfiles/.shtart/fetch.py
+fi
+rm ~/logo.txt
    
-python .dotfiles/splash.py
+python ~/.dotfiles/.shtart/splash.py
 
 
 export ZSH="$HOME/.oh-my-zsh"

@@ -1,7 +1,7 @@
 from random import randint
 from os import system as sys
 
-num = randint(1, 7)
+num = randint(1, 8)
 if num == 1:
    sentence = "こんにちは！" # Because yes
 elif num == 2:
@@ -16,10 +16,12 @@ elif num == 6:
    sentence = "This Face Was Made For RADIO" # Alastor (*has a mental breakdown*)
 elif num == 7:
    sentence = "Making custom terminal splashes because Hyprland doesn't let me!"
+elif num == 8:
+   sentence = "It's not a bug, it's a feature"
 
 rm_num = randint(1, 2)
 if rm_num == 1:
-    color = "rainbow"
+    color = "gay"
 elif rm_num == 2:
     color = "metal"
 

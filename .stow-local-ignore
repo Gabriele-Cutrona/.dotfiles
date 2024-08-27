@@ -1,4 +1,6 @@
 .git
+.gitignore
 README.md
 script.sh
 .config/mako/config/LICENSE
+.shtart
