@@ -196,7 +196,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub md.obsidian.Obsidian
    flatpak install flathub org.cryptomator.Cryptomator
    flatpak install flathub com.protonvpn.www
-   flatpak install flathub nz.mega.MEGAsync
+   paru -S megasync-bin
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    flatpak install flathub com.github.xournalpp.xournalpp
