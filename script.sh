@@ -80,7 +80,8 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer rofi-wayland network-manager-applet
+sudo pacman -S libnotify nautilus waybar nwg-drawer ulauncher network-manager-applet python
+python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
 echo "Do you want to install paru? (and rustup) y/n"
@@ -267,4 +268,6 @@ if [[ $APPS == "y" ]]; then
    echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
 fi
 echo "If you want to catppuccin your tty, https://github.com/catppuccin/tty"
+echo "Apply the correct cursor and icon theme in nwg-look"
+echo "Set the ulauncher theme from the settings (already installed, just select it)"
 
