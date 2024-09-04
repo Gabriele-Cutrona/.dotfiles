@@ -4,7 +4,7 @@
 | General          | Specific                            | General      | Specific                                    |
 |:----------------:|:-----------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org) | Compositor   | [Hyprland](https://hyprland.org)            |
-| Terminal         | [Kitty](https://sw.kovidgoyal.net/kitty)| App Launcher | rofi-wayland                                |
+| Terminal         | [Kitty](https://sw.kovidgoyal.net/kitty)| App Launcher | ULauncher                                |
 | Shell            | zsh (oh-my-zsh)                     | Theme        | [Catppuccin](https://github.com/catppuccin) |
 | Shell theme      | powerlevel10k                       | Screen Lock  | Hyprlock                                    |
 | Editor           | [Neovim](https://neovim.io)         | Wallpaper    | Hyprpaper                                   |
@@ -22,7 +22,7 @@
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
 
-> The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro with systemd)
+> The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
 
 ## Custom
 - To use your own wallpaper:
