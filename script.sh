@@ -107,7 +107,7 @@ if [[ $BLUETOOTH == "y" ]]; then
 fi
 
 echo "Installing and enabling pipewire"
-sudo pacman -S pipewire pipewire-pulse pipewire-jack pipewire-alsa wireplumber
+sudo pacman -S pipewire pipewire-pulse pipewire-jack pipewire-alsa wireplumber alsa-utils
 
 systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
@@ -201,6 +201,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    flatpak install flathub com.github.xournalpp.xournalpp
+   flatpak install flathub com.github.flxzt.rnote
    flatpak install flathub com.google.ChromeDev
    
    sudo pacman -S loupe gnome-sound-recorder
