@@ -178,7 +178,7 @@ if [[ $FNM == "y" ]]; then
 fi
 
 sudo pacman -S tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/catppuccin/tmux ~/.config/tmux/plugins/catppuccin
 
 sudo pacman -S stow
 

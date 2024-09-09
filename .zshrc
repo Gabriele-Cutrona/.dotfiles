@@ -99,7 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias ls="exa"
+alias ls="exa --icons"
+alias exa="exa --icons"
+alias eza="eza --icons"
 alias cat="bat"
 alias z="zoxide"
 
@@ -125,5 +127,5 @@ if [ -d "$FNM_PATH" ]; then
    eval "`fnm env`"
 fi
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
