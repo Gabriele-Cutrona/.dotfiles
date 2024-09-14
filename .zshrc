@@ -6,12 +6,10 @@ echo
 fastfetch   
 python ~/.dotfiles/.shtart/splash.py
 
-
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+# ZSH_THEME="agnoster"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -80,8 +78,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias ls="exa --icons"
-alias exa="exa --icons"
+alias ls="eza --icons"
+alias exa="eza --icons"
 alias eza="eza --icons"
 alias cat="bat"
 alias z="zoxide"
@@ -93,9 +91,6 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias rm="rm -v"
 alias trash="trash -v"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -115,3 +110,5 @@ fi
 
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
+
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"

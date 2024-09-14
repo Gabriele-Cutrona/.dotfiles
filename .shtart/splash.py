@@ -19,10 +19,6 @@ elif num == 7:
 elif num == 8:
    sentence = "It's not a bug, it's a feature"
 
-rm_num = randint(1, 2)
-if rm_num == 1:
-    color = "gay"
-elif rm_num == 2:
-    color = "metal"
+color = "gay"
 
 sys(f"toilet -f mono9 \"{sentence}\" --{color} -w $(tput cols)")
