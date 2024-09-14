@@ -2,27 +2,8 @@ if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
    TERM=xterm-256color tmux
 fi
 
-
-# So basically this sources the file and the variable NAME  
-# becomes globally avaliable
-. /etc/os-release
-python ~/.dotfiles/.shtart/logo.py
-if [[ $(tput cols) -gt 150 ]]; then
-   toilet -f future "OS: $NAME $(uname -m)" -F border --gay >> ~/temp.txt
-   toilet -f future "Kernel: $(uname -r)" -F border --metal >> ~/temp.txt
-   toilet -f future "Shell: $SHELL" -F border --gay >> ~/temp.txt
-   python ~/.dotfiles/.shtart/fetch.py >> ~/temp.txt
-   paste ~/logo.txt ~/temp.txt
-   rm ~/temp.txt
-else
-   /usr/bin/cat ~/logo.txt
-   toilet -f future "OS: $NAME $(uname -m)" -F border --gay -w $(( $(tput cols) - 2 ))
-   toilet -f future "Kernel: $(uname -r)" -F border --metal -w $(( $(tput cols) - 2 ))
-   toilet -f future "Shell: $SHELL" -F border --gay -w $(( $(tput cols) - 2 ))
-   python ~/.dotfiles/.shtart/fetch.py
-fi
-rm ~/logo.txt
-   
+echo
+fastfetch   
 python ~/.dotfiles/.shtart/splash.py
 
 
@@ -107,6 +88,11 @@ alias z="zoxide"
 
 alias vi="nvim"
 alias vim="nvim"
+
+alias cp="cp -v"
+alias mv="mv -v"
+alias rm="rm -v"
+alias trash="trash -v"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

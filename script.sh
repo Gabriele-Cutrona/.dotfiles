@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 echo "Enabling systemd-timesyncd"
 sudo systemctl enable --now systemd-timesyncd
@@ -49,9 +49,9 @@ if [[ $TIMESHIFT == "y" ]]; then
    sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
 fi
 
-echo "Configuring the terminal (kitty/alacritty zsh)"
+echo "Configuring the terminal (kitty zsh)"
 ### Terminal ###
-sudo pacman -S kitty alacritty zsh
+sudo pacman -S kitty zsh
 echo "\n\n!!! When oh-my-zsh finished installing, it will drop you in a new shell, run exit to get back to the script !!!\n\n"
 sleep 10
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
