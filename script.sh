@@ -48,7 +48,7 @@ fi
 
 echo "Configuring the terminal (kitty zsh)"
 ### Terminal ###
-sudo pacman -S kitty zsh
+sudo pacman -S kitty zsh unzip
 echo "\n\n!!! When oh-my-zsh finished installing, it will drop you in a new shell, run exit to get back to the script !!!\n\n"
 sleep 10
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -87,8 +87,8 @@ read -r PARU
 if [[ $PARU == "y" ]]; then
    sudo pacman -S rustup
    rustup default stable
-   git clone https://aur.archlinux.org/paru-bin.git
-   cd paru-bin
+   git clone https://aur.archlinux.org/paru-git.git
+   cd paru-git
    makepkg -si
    cd ..
 fi
@@ -111,7 +111,7 @@ systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
-sudo pacman -S catppuccin-cursors-mocha nwg-look unzip
+sudo pacman -S catppuccin-cursors-mocha nwg-look wget
 wget https://github.com/catppuccin/cursors/releases/download/v0.3.1/catppuccin-mocha-lavender-cursors.zip
 unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
 
