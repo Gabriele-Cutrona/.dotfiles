@@ -34,9 +34,9 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
-echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
+echo "Installing papirus-icon-theme mako fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
-sudo pacman -Sy fastfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
+sudo pacman -Sy fastfetch hyfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -225,7 +225,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.kde.krita
    flatpak install flathub com.obsproject.Studio
    flatpak install https://nightly.gnome.org/repo/appstream/org.gimp.GIMP.flatpakref
-   sudo pacman -S audacity blender lmms tracktion-waveform
+   sudo pacman -S audacity blender lmms
 
    sudo pacman -S distrobox podman
    flatpak install flathub io.github.dvlv.boxbuddyrs

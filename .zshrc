@@ -3,7 +3,7 @@ if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
 fi
 
 echo
-fastfetch   
+hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
 python ~/.dotfiles/.shtart/splash.py
 
 export ZSH="$HOME/.oh-my-zsh"

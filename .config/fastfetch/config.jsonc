@@ -4,12 +4,6 @@
 		"separator": "   ",
 		"color": "cyan"
 	},
-   "logo": {
-      "color": {
-         "1": "\u001b[38;5;129m",
-         "2": "\u001b[38;5;129m"
-      }
-   },
 	"modules": [
 		{
 			"type": "custom",
