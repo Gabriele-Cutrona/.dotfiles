@@ -76,8 +76,8 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
 fi
 
-echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer ulauncher network-manager-applet python
+echo "Installing libnotify index-fm waybar xwaylandvideobridge gnome-keyring seahorse"
+sudo pacman -S libnotify index-fm waybar nwg-drawer ulauncher network-manager-applet python
 python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
@@ -120,7 +120,7 @@ cd Colloid-gtk-theme
 ./install.sh --theme purple --color dark --tweaks catppuccin black
 cd ..
 
-sudo pacman -S kvantum # Manually configure it with https://github.com/catppuccin/kvantum
+sudo pacman -S kvantum qt5ct qt6ct # Manually configure it with https://github.com/catppuccin/kvantum
 
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
@@ -270,6 +270,6 @@ if [[ $APPS == "y" ]]; then
    echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
 fi
 echo "If you want to catppuccin your tty, https://github.com/catppuccin/tty"
-echo "Apply the correct cursor and icon theme in nwg-look"
+echo "Apply the correct cursor and icon theme in nwg-look and qt5ct/qt6ct"
 echo "Set the ulauncher theme from the settings (already installed, just select it)"
 
