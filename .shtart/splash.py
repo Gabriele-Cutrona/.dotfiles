@@ -15,7 +15,7 @@ elif num == 5:
 elif num == 6:
    sentence = "This Face Was Made For RADIO" # Alastor (*has a mental breakdown*)
 elif num == 7:
-   sentence = "Making custom terminal splashes because Hyprland doesn't let me!"
+   sentence = "Custom splashes 'cause Hyprland doesn't let me!"
 elif num == 8:
    sentence = "It's not a bug, it's a feature"
 

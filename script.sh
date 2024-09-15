@@ -33,13 +33,10 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-echo "Installing plasma-workspace and konsole (as fallback)"
-sudo pacman -S plasma-workspace konsole
 
 echo "Installing papirus-icon-theme mako fastfetch eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
 sudo pacman -Sy fastfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
-paru -S nerdfetch
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -97,6 +94,7 @@ if [[ $PARU == "y" ]]; then
 fi
 
 sudo pacman -S pavucontrol
+paru -S nerdfetch
 
 echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
@@ -240,6 +238,9 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S exfatprogs btop
    flatpak install flathub org.kde.kdenlive
+   
+   sudo pacman -S qemu-full virt-manager
+   sudo systemctl enable --now libvirtd
 fi
 
 echo "Do you want to run stow .? y/n"

@@ -41,9 +41,6 @@
 			"keyColor": "blue"
 		},
 		{
-			"type": "break"
-		},
-		{
 			"type": "custom",
 			"format": "├──────────────────────── \u001b[1mSoftware\u001b[0m ────────────────────────┤"
 		},
@@ -67,9 +64,6 @@
 		{
 			"type": "shell",
 			"key": "  "
-		},
-		{
-			"type": "break"
 		},
 		{
 			"type": "custom",
@@ -98,9 +92,6 @@
 			"key": "  󰅶",
 			"keyColor": "magenta"
 		},
-      {
-         "type": "break"
-      },
 		{
 			"type": "custom",
 			"format": "└──────────────────────────────────────────────────────────┘"
