@@ -23,6 +23,14 @@ if [[ $GIT_SIGNING == "y" ]]; then
    git config --global user.signingkey ~/.ssh/id_ed25519.pub
 fi
 
+echo "Do you want to enable automatic gpg signing? y/n"
+echo "(git config --global commit.gpgsign true)"
+read -r GIT_AUTOSIGN
+
+if [[ $GIT_AUTOSIGN == "y" ]]; then
+   git config --global commit.gpgsign true
+fi
+
 echo "Enabling Chaotic Aur"
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
