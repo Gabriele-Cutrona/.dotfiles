@@ -84,8 +84,8 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
 fi
 
-echo "Installing libnotify dolphin waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify dolphin waybar nwg-drawer ulauncher network-manager-applet python
+echo "Installing libnotify dolphin ark waybar xwaylandvideobridge gnome-keyring seahorse"
+sudo pacman -S libnotify dolphin ark waybar nwg-drawer ulauncher network-manager-applet python
 python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
 
