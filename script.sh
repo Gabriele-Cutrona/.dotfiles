@@ -56,7 +56,7 @@ fi
 
 echo "Configuring the terminal (kitty zsh)"
 ### Terminal ###
-sudo pacman -S kitty zsh unzip
+sudo pacman -S kitty zsh unzip zip
 echo "\n\n!!! When oh-my-zsh finished installing, it will drop you in a new shell, run exit to get back to the script !!!\n\n"
 sleep 10
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -249,6 +249,11 @@ if [[ $APPS == "y" ]]; then
    
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
+
+   sudo pacman -S docker
+   sudo systemctl enable --now docker.socket
+
+   sudo pacman -S mpvpaper
 fi
 
 echo "Do you want to run stow .? y/n"

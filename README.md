@@ -19,17 +19,14 @@
 </div>
 <br />
 
-Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow)
+Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), so to apply everything (the script should do it automatically if you say so) you can just `cd ~/.dotfiles` (clone the repo there) and then run `stow .`
 
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
 
 ## Custom
-- To use your own wallpaper:
-   - Make sure it's named bg.png
-   - Put it under .config/hypr
-- To use your own hyprlock image:
-   - Make sure it's named img.png
-   - Put it under .config/hypr
+- To use your own wallpaper (with hyprpaper) put it in .config/hypr/bg.png
+- To use your own hyprlock image put it in .config/hypr/img.png
+- If you want to play a video as background, you can use [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 
 ## Other
 I don't know where to put this things:
