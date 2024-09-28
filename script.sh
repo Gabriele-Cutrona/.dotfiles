@@ -254,6 +254,10 @@ if [[ $APPS == "y" ]]; then
    sudo systemctl enable --now docker.socket
 
    sudo pacman -S mpvpaper
+
+   curl -fsSL https://tailscale.com/install.sh | sh
+   flatpak install flathub com.nextcloud.desktopclient.nextcloud
+   sudo pacman -S cifs-utils
 fi
 
 echo "Do you want to run stow .? y/n"
