@@ -189,7 +189,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S stow
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources flatseal anki telegram localsend onlyoffice osu obsidian appimagelauncher protonvpn topgrade zen browser..."
+echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen browser..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
@@ -203,7 +203,6 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub md.obsidian.Obsidian
    flatpak install flathub org.cryptomator.Cryptomator
    flatpak install flathub com.protonvpn.www
-   paru -S megasync-bin
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    flatpak install flathub com.github.xournalpp.xournalpp
@@ -216,8 +215,6 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S android-tools
    paru -S aur/topgrade-bin
 
-   # curl -fsSL https://bun.sh/install | bash
-   # sudo pacman -S ngrok quickemu
    sudo systemctl enable --now sshd
 
    sudo pacman -S hyperfine
@@ -258,6 +255,8 @@ if [[ $APPS == "y" ]]; then
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
    sudo pacman -S cifs-utils
+   
+   paru -S visual-studio-code-bin
 fi
 
 echo "Do you want to run stow .? y/n"
