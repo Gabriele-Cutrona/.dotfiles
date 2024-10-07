@@ -209,7 +209,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.github.flxzt.rnote
    flatpak install flathub com.google.ChromeDev
    
-   sudo pacman -S loupe gnome-sound-recorder
+   sudo pacman -S loupe mpv gnome-sound-recorder
    flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
