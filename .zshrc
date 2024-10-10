@@ -94,21 +94,9 @@ alias trash="trash -v"
 
 eval "$(zoxide init --cmd cd zsh)"
 
-# bun completions
-[ -s "/home/gabriele-cutrona/.bun/_bun" ] && source "/home/gabriele-cutrona/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# fnm
-FNM_PATH="/home/gabriele-cutrona/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-   export PATH="/home/gabriele-cutrona/.local/share/fnm:$PATH"
-   eval "`fnm env`"
-fi
-
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
+
+source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode

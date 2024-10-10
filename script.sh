@@ -175,12 +175,11 @@ if [[ $FCITX5 == "y" ]]; then
    cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
-echo "Do you want to install fnm? (nodejs) y/n"
-read -r FNM
+echo "Do you want to install PKGX? y/n"
+read -r PKGX
 
-if [[ $FNM == "y" ]]; then
-   curl -fsSL https://fnm.vercel.app/install | bash
-   fnm use 20
+if [[ $PKGX == "y" ]]; then
+   curl -fsS https://pkgx.sh | sh
 fi
 
 sudo pacman -S tmux
