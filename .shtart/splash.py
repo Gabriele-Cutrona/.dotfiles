@@ -1,3 +1,6 @@
+# Hey You! Yes, you. I know you're probably thinking that I'm an idiot and there are a hundred better ways to do this
+# But 1. I'm lazy 2. I don't know python 3. :3
+
 from random import randint
 from os import system as sys
 
@@ -17,7 +20,7 @@ elif num == 6:
 elif num == 7:
    sentence = "Custom splashes 'cause Hyprland doesn't let me!"
 elif num == 8:
-   sentence = "It's not a bug, it's a feature"
+   sentence = "It's not a bug, it's a feature" # Better Call Saul 1x04 9:05
 
 color = "gay"
 

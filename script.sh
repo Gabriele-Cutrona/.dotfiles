@@ -40,7 +40,7 @@ sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
 sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
 
 echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 echo "Installing papirus-icon-theme mako fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme mako
@@ -246,7 +246,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
 
-   sudo pacman -S docker
+   sudo pacman -S docker rclone
    sudo systemctl enable --now docker.socket
 
    sudo pacman -S mpvpaper
