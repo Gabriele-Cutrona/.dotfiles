@@ -42,9 +42,9 @@ sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.c
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
-echo "Installing papirus-icon-theme mako fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
-sudo pacman -S papirus-icon-theme mako
-sudo pacman -Sy fastfetch hyfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
+echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
+sudo pacman -S papirus-icon-theme swaync
+sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
