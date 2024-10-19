@@ -60,7 +60,7 @@ sudo pacman -S kitty zsh unzip zip
 echo "\n\n!!! When oh-my-zsh finished installing, it will drop you in a new shell, run exit to get back to the script !!!\n\n"
 sleep 10
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji
+sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 curl -s https://ohmyposh.dev/install.sh | bash -s
@@ -279,12 +279,9 @@ if [[ $CUPS == "y" ]]; then
 fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
-echo "If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
-echo "If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
-if [[ $APPS == "y" ]]; then
-   echo "Run \`corepack enable pnpm\` and/or \`corepack enable yarn\` in a new shell if you need them"
-fi
-echo "If you want to catppuccin your tty, https://github.com/catppuccin/tty"
-echo "Apply the correct cursor and icon theme in nwg-look and qt5ct/qt6ct"
-echo "Set the ulauncher theme from the settings (already installed, just select it)"
+echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
+echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
+echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
+echo "4. Apply the correct cursor, icon theme and font in nwg-look and qt5ct/qt6ct"
+echo "5. Set the ulauncher theme from the settings (already installed, just select it)"
 
