@@ -31,27 +31,33 @@ if [[ $GIT_AUTOSIGN == "y" ]]; then
    git config --global commit.gpgsign true
 fi
 
-echo "Enabling Chaotic Aur"
-sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-sudo sh -c "echo \"[chaotic-aur]\" >> /etc/pacman.conf"
-sudo sh -c "echo \"Include = /etc/pacman.d/chaotic-mirrorlist\" >> /etc/pacman.conf"
+echo "Do you want to install paru? (and rustup) y/n"
+read -r PARU
+
+if [[ $PARU == "y" ]]; then
+   sudo pacman -S rustup
+   rustup default stable
+   git clone https://aur.archlinux.org/paru-git.git
+   cd paru-git
+   makepkg -si
+   cd ..
+fi
 
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
-sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf cava neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl grimblast
+sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
+paru -S cava grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
 
 if [[ $TIMESHIFT == "y" ]]; then
    echo "Installing timeshift for btrfs"
-   sudo pacman -Sy timeshift btrfs-progs grub-btrfs timeshift-autosnap xorg-xhost
+   sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost
+   paru -S timeshift-autosnap
 fi
 
 echo "Configuring the terminal (kitty zsh)"
@@ -60,7 +66,7 @@ sudo pacman -S kitty zsh unzip zip
 echo "\n\n!!! When oh-my-zsh finished installing, it will drop you in a new shell, run exit to get back to the script !!!\n\n"
 sleep 10
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji
+sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 curl -s https://ohmyposh.dev/install.sh | bash -s
@@ -85,21 +91,10 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer ulauncher network-manager-applet python
+sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python
+paru -S ulauncher
 python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
 sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
-
-echo "Do you want to install paru? (and rustup) y/n"
-read -r PARU
-
-if [[ $PARU == "y" ]]; then
-   sudo pacman -S rustup
-   rustup default stable
-   git clone https://aur.archlinux.org/paru-git.git
-   cd paru-git
-   makepkg -si
-   cd ..
-fi
 
 sudo pacman -S pavucontrol
 paru -S nerdfetch
@@ -119,8 +114,8 @@ systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
-sudo pacman -S catppuccin-cursors-mocha nwg-look wget
-wget https://github.com/catppuccin/cursors/releases/download/v0.3.1/catppuccin-mocha-lavender-cursors.zip
+sudo pacman -S nwg-look wget
+wget https://github.com/catppuccin/cursors/releases/download/v0.4.0/catppuccin-mocha-lavender-cursors.zip
 unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
 
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
@@ -150,12 +145,9 @@ echo "Do you want waydroid? y/n"
 read -r WAYDROID
 
 if [[ $WAYDROID == "y" ]]; then
-   sudo pacman -S waydroid python-pyclip
+   paru -S waydroid python-pyclip
    sudo waydroid init
 fi
-
-
-sudo pacman -S otf-font-awesome
 
 echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
@@ -192,7 +184,7 @@ echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonv
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
-   flatpak install flathub net.nokyan.Resources
+   sudo pacman -S resources
    flatpak install flathub com.github.tchx84.Flatseal
    flatpak install flathub net.ankiweb.Anki
    flatpak install flathub org.telegram.desktop
@@ -204,8 +196,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.protonvpn.www
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
-   flatpak install flathub com.github.xournalpp.xournalpp
-   flatpak install flathub com.github.flxzt.rnote
+   sudo pacman -S rnote xournalpp
    flatpak install flathub com.google.ChromeDev
    
    sudo pacman -S loupe mpv gnome-sound-recorder
@@ -232,16 +223,14 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S audacity blender lmms
 
    sudo pacman -S distrobox podman
-   flatpak install flathub io.github.dvlv.boxbuddyrs
 
-   sudo pacman -S geekbench gparted
-   flatpak install flathub com.usebottles.bottles
+   sudo pacman -S gparted
+   paru -S bottles geekbench
 
    flatpak install flathub de.haeckerfelix.Fragments
-   flatpak install flathub io.github.gamingdoom.Datcord
 
    sudo pacman -S exfatprogs btop
-   flatpak install flathub org.kde.kdenlive
+   sudo pacman -S kdenlive
    
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
@@ -269,7 +258,7 @@ if [[ $STOW == "y" ]]; then
    bat cache --build
 fi
 
-echo "Do you want cups (printing)? y/n"
+echo "Do you want cups (printing + hplip)? y/n"
 read -r CUPS
 
 if [[ $CUPS == "y" ]]; then
@@ -282,6 +271,6 @@ echo "The end! Here's a list of thing you have to do manually: (because i'm lazy
 echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
 echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
 echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
-echo "4. Apply the correct cursor, icon theme and font in nwg-look and qt5ct/qt6ct"
+echo "4. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
 echo "5. Set the ulauncher theme from the settings (already installed, just select it)"
 
