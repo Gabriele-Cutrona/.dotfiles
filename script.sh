@@ -205,8 +205,6 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S android-tools
    paru -S aur/topgrade-bin
 
-   sudo systemctl enable --now sshd
-
    sudo pacman -S hyperfine
 
    flatpak install flathub com.valvesoftware.Steam
