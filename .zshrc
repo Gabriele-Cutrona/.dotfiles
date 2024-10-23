@@ -86,6 +86,9 @@ alias z="zoxide"
 
 alias vi="nvim"
 alias vim="nvim"
+bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
+KEYTIMEOUT=10
 
 alias cp="cp -v"
 alias mv="mv -v"
