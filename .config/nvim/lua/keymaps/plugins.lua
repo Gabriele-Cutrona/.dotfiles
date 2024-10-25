@@ -48,6 +48,7 @@ remap("n", "<Leader>p", "<cmd>Telescope find_files<CR>", { noremap = true, silen
 remap("n", "<C-g>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 remap("n", "<Leader>g", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 remap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
+remap("n", "<Leader>bb", "<cmd>Telescope buffers<CR>", { noremap = true, silent= true })
 
 remap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 remap({ "n", "v" }, "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
