@@ -4,10 +4,12 @@ return {
       dependencies = { "nvim-lua/plenary.nvim" },
    },
    {
-      "ggandor/leap.nvim",
-      config = function()
-         require("leap").create_default_mappings()
-      end,
+      "folke/flash.nvim",
+      event = "VeryLazy",
+      opts = {},
+      keys = {
+         { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      },
    },
    {
       "nvim-neo-tree/neo-tree.nvim",
