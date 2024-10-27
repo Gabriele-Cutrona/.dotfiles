@@ -46,9 +46,9 @@ fi
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
-echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim nodejs yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
+echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim nodejs npm yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
-sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim nodejs yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
+sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim nodejs npm yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
 paru -S cava grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"

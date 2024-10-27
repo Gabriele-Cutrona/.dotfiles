@@ -88,6 +88,8 @@ alias vi="nvim"
 alias vim="nvim"
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 KEYTIMEOUT=10
 
 alias cp="cp -v"
