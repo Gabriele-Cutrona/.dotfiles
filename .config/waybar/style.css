@@ -83,6 +83,7 @@ button:hover {
 #workspaces {
    margin: 0 4px;
    background: rgba(30, 30, 46, 0.8);
+   border: solid 1px rgb(180, 190, 254);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -329,4 +330,5 @@ label:focus {
    padding: 3px 20px;
    color: #ffffff;
    background: rgba(30, 30, 46, 0.8);
+   border: solid 1px rgb(180, 190, 254);
 }
