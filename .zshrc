@@ -98,6 +98,7 @@ alias rm="rm -v"
 alias trash="trash -v"
 
 eval "$(zoxide init --cmd cd zsh)"
+source <(fzf --zsh)
 
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
