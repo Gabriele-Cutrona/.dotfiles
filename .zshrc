@@ -97,6 +97,10 @@ alias mv="mv -v"
 alias rm="rm -v"
 alias trash="trash -v"
 
+alias xit="exit"
+alias it="exit"
+alias t="exit"
+
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 
