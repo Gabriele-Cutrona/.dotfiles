@@ -109,4 +109,4 @@ export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
 
-source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
+# source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
