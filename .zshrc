@@ -1,7 +1,3 @@
-if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
-   TERM=xterm-256color tmux
-fi
-
 echo
 fastfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
 
