@@ -6,21 +6,21 @@ from os import system as sys
 
 num = randint(1, 8)
 if num == 1:
-   sentence = "こんにちは！" # Because yes
+   sentence = "AleStraf" # Because yes
 elif num == 2:
-   sentence = "The Cake Is A Lie!" # I didn't even finish portal 2 lol
+   sentence = "GG" # I didn't even finish portal 2 lol
 elif num == 3:
-   sentence = "UwU :3" # Because yes
+   sentence = "SIUM" # Because yes
 elif num == 4:
-   sentence = "Better Call Saul!" # Because yes
+   sentence = "DAJE" # Because yes
 elif num == 5:
-   sentence = "A Smile Is a Valuable Tool My Dear" # Alastor
+   sentence = "SIUM" # Alastor
 elif num == 6:
-   sentence = "This Face Was Made For RADIO" # Alastor (*has a mental breakdown*)
+   sentence = "DAJE LECCE" # Alastor (*has a mental breakdown*)
 elif num == 7:
-   sentence = "Custom splashes 'cause Hyprland doesn't let me!"
+   sentence = "ALESTRAF"
 elif num == 8:
-   sentence = "It's not a bug, it's a feature" # Better Call Saul 1x04 9:05
+   sentence = "SIUM" # Better Call Saul 1x04 9:05
 
 color = "gay"
 
