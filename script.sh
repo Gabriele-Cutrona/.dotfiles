@@ -193,7 +193,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.onlyoffice.desktopeditors
    flatpak install flathub md.obsidian.Obsidian
    flatpak install flathub org.cryptomator.Cryptomator
-   flatpak install flathub com.protonvpn.www
+   paru -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    sudo pacman -S rnote xournalpp
