@@ -90,11 +90,11 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
 fi
 
-echo "Installing libnotify nautilus waybar xwaylandvideobridge gnome-keyring seahorse"
+echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python
 paru -S ulauncher
 python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
-sudo pacman -S xwaylandvideobridge gnome-keyring seahorse
+sudo pacman -S gnome-keyring seahorse
 
 sudo pacman -S pavucontrol
 paru -S nerdfetch
@@ -198,6 +198,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.zen_browser.zen
    sudo pacman -S rnote xournalpp
    flatpak install flathub com.google.ChromeDev
+   paru -S discord-canary
    
    sudo pacman -S loupe mpv gnome-sound-recorder
    flatpak install flathub io.github.peazip.PeaZip
