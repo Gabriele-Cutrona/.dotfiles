@@ -55,6 +55,7 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 asdf install nodejs 22.12.0
 asdf global nodejs latest
+npm install -g gitmoji-cli
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
