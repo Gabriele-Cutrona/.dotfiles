@@ -167,13 +167,6 @@ if [[ $FCITX5 == "y" ]]; then
    cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
-echo "Do you want to install PKGX? y/n"
-read -r PKGX
-
-if [[ $PKGX == "y" ]]; then
-   curl -fsS https://pkgx.sh | sh
-fi
-
 sudo pacman -S tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
