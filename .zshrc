@@ -108,4 +108,4 @@ export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
-
+. "$HOME/.asdf/asdf.sh"
