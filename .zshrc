@@ -108,4 +108,9 @@ export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
-. "$HOME/.asdf/asdf.sh"
+
+FNM_PATH="/home/$USER/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/$USER/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi

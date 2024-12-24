@@ -46,15 +46,12 @@ fi
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
-echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast asdf"
+echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast fnm"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
 paru -S cava grimblast
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs latest
-asdf install nodejs 22.12.0
-asdf global nodejs latest
+curl -fsSL https://fnm.vercel.app/install | bash
+fnm use --install-if-missing 23
 npm install -g gitmoji-cli
 
 echo "Do you want to install timeshift for btrfs? y/n"
