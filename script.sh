@@ -100,7 +100,6 @@ python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/insta
 sudo pacman -S gnome-keyring seahorse
 
 sudo pacman -S pavucontrol
-paru -S nerdfetch
 
 echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
@@ -143,14 +142,6 @@ sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
 sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ### End sddm and GRUB catppuccin ###
-
-echo "Do you want waydroid? y/n"
-read -r WAYDROID
-
-if [[ $WAYDROID == "y" ]]; then
-   paru -S waydroid python-pyclip
-   sudo waydroid init
-fi
 
 echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
@@ -220,7 +211,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S distrobox podman
 
    sudo pacman -S gparted
-   paru -S bottles geekbench
+   paru -S geekbench
 
    flatpak install flathub de.haeckerfelix.Fragments
 
