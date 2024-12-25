@@ -79,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 alias ls="eza --icons"
+alias l="eza --icons -lah"
+alias la="eza --icons -a"
 alias exa="eza --icons"
 alias eza="eza --icons"
 alias cat="bat"
