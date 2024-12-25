@@ -195,7 +195,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
-   paru -S aur/topgrade-bin
+   nix profile install nixpkgs#topgrade --extra-experimental-features nix-command --extra-experimental-features flakes
 
    sudo pacman -S hyperfine
 
