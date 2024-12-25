@@ -49,8 +49,8 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast fnm"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-paru -S cava grimblast
-curl -fsSL https://fnm.vercel.app/install | bash
+paru -S cava grimblast fnm-bin
+eval "`fnm env`"
 fnm use --install-if-missing 23
 npm install -g gitmoji-cli
 
