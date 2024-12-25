@@ -198,8 +198,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.valvesoftware.Steam
    flatpak install flathub com.modrinth.ModrinthApp
    
-   sudo pacman -S torbrowser-launcher calibre
-   sudo pacman -S syncthing # upterm
+   sudo pacman -S torbrowser-launcher calibre # upterm
    flatpak install flathub tv.kodi.Kodi
 
    paru -S aur/hyprpicker
