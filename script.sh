@@ -49,15 +49,16 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-nix profile install nixpkgs#cava
-paru -S grimblast
-
+export NIXPKGS_ALLOW_UNFREE=1
 sh <(curl -L https://nixos.org/nix/install) --daemon --yes
 export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH
 nix profile install nixpkgs#fnm --extra-experimental-features nix-command --extra-experimental-features flakes
 eval "`fnm env`"
 fnm use --install-if-missing 23
 npm install -g gitmoji-cli
+
+nix profile install nixpkgs#cava
+nix profile install nixpkgs#grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -190,7 +191,6 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.zen_browser.zen
    sudo pacman -S rnote xournalpp
    flatpak install flathub com.google.ChromeDev
-   paru -S discord-canary
    
    sudo pacman -S loupe mpv gnome-sound-recorder
    flatpak install flathub io.github.peazip.PeaZip
@@ -227,7 +227,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S docker rclone
    sudo systemctl enable --now docker.socket
 
-   sudo pacman -S mpvpaper
+   nix profile install nixpkgs#mpvpaper
 
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
