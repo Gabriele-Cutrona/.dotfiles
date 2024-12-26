@@ -57,8 +57,8 @@ eval "`fnm env`"
 fnm use --install-if-missing 23
 npm install -g gitmoji-cli
 
-nix profile install nixpkgs#cava
-nix profile install nixpkgs#grimblast
+nix profile install nixpkgs#cava --extra-experimental-features nix-command --extra-experimental-features flakes
+nix profile install nixpkgs#grimblast --extra-experimental-features nix-command --extra-experimental-features flakes
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -197,6 +197,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
    nix profile install nixpkgs#topgrade --extra-experimental-features nix-command --extra-experimental-features flakes
+   nix profile install nixpkgs#discord-canary --impure --extra-experimental-features nix-command --extra-experimental-features flakes
 
    sudo pacman -S hyperfine
 
@@ -227,7 +228,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S docker rclone
    sudo systemctl enable --now docker.socket
 
-   nix profile install nixpkgs#mpvpaper
+   nix profile install nixpkgs#mpvpaper --extra-experimental-features nix-command --extra-experimental-features flakes
 
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
