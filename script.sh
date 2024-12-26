@@ -49,7 +49,8 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-paru -S cava grimblast
+nix profile install nixpkgs#cava
+paru -S grimblast
 
 sh <(curl -L https://nixos.org/nix/install) --daemon --yes
 export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH
@@ -214,7 +215,6 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S distrobox podman
 
    sudo pacman -S gparted
-   paru -S geekbench
 
    flatpak install flathub de.haeckerfelix.Fragments
 
