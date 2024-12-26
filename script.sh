@@ -225,7 +225,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
 
-   sudo pacman -S docker rclone
+   sudo pacman -S docker docker-buildx rclone
    sudo systemctl enable --now docker.socket
 
    nix profile install nixpkgs#mpvpaper --extra-experimental-features nix-command --extra-experimental-features flakes
