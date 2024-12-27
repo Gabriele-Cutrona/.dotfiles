@@ -200,7 +200,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
    nixinstall nixpkgs#topgrade
-   nixinstall nixpkgs#discord-canary
+   nixinstall nixpkgs#discord-canary --impure
 
    sudo pacman -S hyperfine
 
