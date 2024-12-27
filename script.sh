@@ -53,6 +53,7 @@ export NIXPKGS_ALLOW_UNFREE=1
 sh <(curl -L https://nixos.org/nix/install) --daemon --yes
 export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH
 alias nixinstall="nix profile --extra-experimental-features nix-command --extra-experimental-features flakes install"
+sudo sh -c "echo 'trusted-users = root $USER' >> /etc/nix/nix.conf"
 nixinstall nixpkgs#fnm
 eval "`fnm env`"
 fnm use --install-if-missing 23
