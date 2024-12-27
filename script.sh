@@ -59,6 +59,8 @@ npm install -g gitmoji-cli
 
 nix profile install nixpkgs#cava --extra-experimental-features nix-command --extra-experimental-features flakes
 nix profile install nixpkgs#grimblast --extra-experimental-features nix-command --extra-experimental-features flakes
+nix profile install github:nixos/nixpkgs#nixd --extra-experimental-features nix-command --extra-experimental-features flakes
+nix profile install github:kamadorueda/alejandra --extra-experimental-features nix-command --extra-experimental-features flakes
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -192,7 +194,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S rnote xournalpp
    flatpak install flathub com.google.ChromeDev
    
-   sudo pacman -S loupe mpv gnome-sound-recorder
+   sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent
    flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools

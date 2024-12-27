@@ -7,6 +7,16 @@ return {
          lsp.html.setup({})
          lsp.cssls.setup({})
          lsp.lua_ls.setup({})
+         require("lspconfig").nixd.setup({
+            cmd = { "nixd" },
+            settings = {
+               nixd = {
+                  formatting = {
+                     command = { "alejandra" }, -- or nixpkgs-fmt or nixfmt
+                  },
+               },
+            },
+         })
       end,
    },
    {
