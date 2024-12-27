@@ -61,7 +61,7 @@ npm install -g gitmoji-cli
 nixinstall nixpkgs#cava 
 nixinstall nixpkgs#grimblast
 nixinstall github:nixos/nixpkgs#nixd
-nixinstall github:kamadorueda/alejandra
+nixinstall nixpkgs#direnv
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
