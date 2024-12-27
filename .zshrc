@@ -112,5 +112,5 @@ export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
 
-eval "`fnm env`"
+eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
