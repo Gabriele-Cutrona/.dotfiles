@@ -47,20 +47,11 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-export NIXPKGS_ALLOW_UNFREE=1
-sh <(curl -L https://nixos.org/nix/install) --daemon --yes
-export PATH=$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH
-alias nixinstall="nix profile --extra-experimental-features nix-command --extra-experimental-features flakes install"
-sudo sh -c "echo 'trusted-users = root $USER' >> /etc/nix/nix.conf"
-nixinstall nixpkgs#fnm
-nix profile install nixpkgs#mise
+paru -S mise-bin
 mise use --global nodejs@latest
 npm install -g gitmoji-cli
 
-nixinstall nixpkgs#cava 
-nixinstall nixpkgs#grimblast
-nixinstall github:nixos/nixpkgs#nixd
-nixinstall nixpkgs#direnv
+paru -S cava grimblast
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -198,8 +189,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
-   nixinstall nixpkgs#topgrade
-   nixinstall nixpkgs#discord-canary --impure
+   paru -S topgrade-bin discord-canary mpvpaper
 
    sudo pacman -S hyperfine
 
@@ -229,8 +219,6 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S docker docker-buildx rclone
    sudo systemctl enable --now docker.socket
-
-   nixinstall nixpkgs#mpvpaper
 
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
