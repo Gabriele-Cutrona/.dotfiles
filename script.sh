@@ -56,7 +56,7 @@ alias nixinstall="nix profile --extra-experimental-features nix-command --extra-
 sudo sh -c "echo 'trusted-users = root $USER' >> /etc/nix/nix.conf"
 nixinstall nixpkgs#fnm
 nix profile install nixpkgs#mise
-mise use --global nodejs@global
+mise use --global nodejs@latest
 npm install -g gitmoji-cli
 
 nixinstall nixpkgs#cava 
