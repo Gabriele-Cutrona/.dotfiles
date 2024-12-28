@@ -31,14 +31,12 @@ if [[ $GIT_AUTOSIGN == "y" ]]; then
    git config --global commit.gpgsign true
 fi
 
-echo "Do you want to install paru? (and rustup) y/n"
+echo "Do you want to install paru-bin? y/n"
 read -r PARU
 
 if [[ $PARU == "y" ]]; then
-   sudo pacman -S rustup
-   rustup default stable
-   git clone https://aur.archlinux.org/paru-git.git
-   cd paru-git
+   git clone https://aur.archlinux.org/paru-bin.git
+   cd paru-bin
    makepkg -si
    cd ..
 fi
