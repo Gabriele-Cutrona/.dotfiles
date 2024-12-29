@@ -49,7 +49,7 @@ sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
 paru -S mise-bin
 mise use --global nodejs@latest
-npm install -g gitmoji-cli
+mise use --global npm:gitmoji-cli@latest
 
 paru -S cava grimblast
 
