@@ -179,7 +179,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.onlyoffice.desktopeditors
    flatpak install flathub md.obsidian.Obsidian
    flatpak install flathub org.cryptomator.Cryptomator
-   paru -S proton-vpn-gtk-app
+   sudo pacman -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    sudo pacman -S rnote xournalpp
@@ -199,26 +199,19 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S torbrowser-launcher calibre # upterm
    flatpak install flathub tv.kodi.Kodi
 
-   paru -S aur/hyprpicker
-   flatpak install flathub org.kde.krita
+   sudo pacman -S hyprpicker
    flatpak install flathub com.obsproject.Studio
-   flatpak install https://nightly.gnome.org/repo/appstream/org.gimp.GIMP.flatpakref
-   sudo pacman -S audacity blender lmms
+   sudo pacman -S audacity blender lmms gimp krita kdenlive
 
    sudo pacman -S distrobox podman
 
-   sudo pacman -S gparted
-
-   flatpak install flathub de.haeckerfelix.Fragments
-
-   sudo pacman -S exfatprogs btop
-   sudo pacman -S kdenlive
+   sudo pacman -S gparted exfatprogs btop
    
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
 
    sudo pacman -S docker docker-buildx rclone
-   sudo systemctl enable --now docker.socket
+   sudo systemctl enable --now docker
 
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
@@ -251,7 +244,7 @@ fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
-echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (ok, maybe not the unsupported ones)"
+echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (maybe not the unsupported ones)"
 echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
 echo "4. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
 echo "5. Set the ulauncher theme from the settings (already installed, just select it)"

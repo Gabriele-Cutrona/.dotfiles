@@ -7,25 +7,12 @@ return {
          lsp.html.setup({})
          lsp.cssls.setup({})
          lsp.lua_ls.setup({})
-         require("lspconfig").nixd.setup({
-            cmd = { "nixd" },
-            settings = {
-               nixd = {
-                  formatting = {
-                     command = { "alejandra" }, -- or nixpkgs-fmt or nixfmt
-                  },
-               },
-            },
-         })
       end,
    },
    {
       "williamboman/mason.nvim",
       config = function()
          require("mason").setup({})
-         -- vim.cmd("MasonInstall prettier")
-         -- vim.cmd("MasonInstall stylua")
-         -- vim.cmd("MasonInstall biome")
       end,
    },
    {
