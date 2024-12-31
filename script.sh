@@ -232,8 +232,10 @@ read -r STOW
 
 if [[ $STOW == "y" ]]; then
    rm -rf ~/.config/hypr
-   rm ~/.zshrc
    rm -rf ~/.config/cava
+   rm -rf ~/.config/fcitx5
+   rm ~/.zshrc
+   rm ~/.bashrc
    stow .
    bat cache --build
 fi
