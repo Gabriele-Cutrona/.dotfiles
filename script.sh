@@ -173,11 +173,10 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S resources
    flatpak install flathub com.github.tchx84.Flatseal
    flatpak install flathub net.ankiweb.Anki
-   flatpak install flathub org.telegram.desktop
    flatpak install flathub sh.ppy.osu
    flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
-   flatpak install flathub md.obsidian.Obsidian
+   sudo pacman -S obsidian telegram-desktop
    flatpak install flathub org.cryptomator.Cryptomator
    sudo pacman -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
@@ -197,7 +196,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.modrinth.ModrinthApp
    
    sudo pacman -S torbrowser-launcher calibre # upterm
-   flatpak install flathub tv.kodi.Kodi
+   sudo pacman -S kodi
 
    sudo pacman -S hyprpicker
    flatpak install flathub com.obsproject.Studio
