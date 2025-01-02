@@ -128,6 +128,7 @@ sudo pacman -S kvantum qt5ct qt6ct # Manually configure it with https://github.c
 
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
+sudo pacman -S sddm
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
 sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
@@ -135,6 +136,7 @@ sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
 
 sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
 sudo sh -c "echo \"Inherits=catppuccin-mocha-lavender-cursors\" >> /usr/share/icons/default/index.theme"
+sudo systemctl enable sddm
 
 git clone https://github.com/catppuccin/grub.git
 sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
