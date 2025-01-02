@@ -176,7 +176,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub sh.ppy.osu
    flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
-   sudo pacman -S obsidian telegram-desktop
+   sudo pacman -S obsidian telegram-desktop signal-desktop
    flatpak install flathub org.cryptomator.Cryptomator
    sudo pacman -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
