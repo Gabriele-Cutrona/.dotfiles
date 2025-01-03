@@ -216,7 +216,7 @@ if [[ $APPS == "y" ]]; then
 
    curl -fsSL https://tailscale.com/install.sh | sh
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
-   sudo pacman -S cifs-utils texlive
+   sudo pacman -S cifs-utils
    
    paru -S visual-studio-code-bin
 fi
