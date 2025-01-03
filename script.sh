@@ -221,6 +221,7 @@ if [[ $APPS == "y" ]]; then
    paru -S visual-studio-code-bin
 fi
 
+rm -rfv catppuccin-mocha-lavender-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
@@ -249,4 +250,3 @@ echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.Pl
 echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
 echo "4. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
 echo "5. Set the ulauncher theme from the settings (already installed, just select it)"
-
