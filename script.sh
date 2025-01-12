@@ -211,7 +211,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S qemu-full virt-manager
    sudo systemctl enable --now libvirtd
 
-   sudo pacman -S docker docker-buildx rclone
+   sudo pacman -S docker docker-compose docker-buildx rclone
    sudo systemctl enable --now docker
 
    curl -fsSL https://tailscale.com/install.sh | sh
