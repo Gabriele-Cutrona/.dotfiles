@@ -178,7 +178,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub sh.ppy.osu
    flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
-   sudo pacman -S obsidian telegram-desktop signal-desktop
+   sudo pacman -S obsidian telegram-desktop signal-desktop discord
    flatpak install flathub org.cryptomator.Cryptomator
    sudo pacman -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
@@ -190,7 +190,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
-   paru -S topgrade-bin discord-canary mpvpaper
+   paru -S topgrade-bin mpvpaper
 
    sudo pacman -S hyperfine
 
