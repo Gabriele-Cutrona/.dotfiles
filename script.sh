@@ -47,7 +47,7 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-paru -S mise-bin
+sudo pacman -S mise
 mise use --global nodejs@latest
 mise use --global npm:gitmoji-cli@latest
 
@@ -192,7 +192,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S android-tools
    paru -S topgrade-bin mpvpaper
 
-   sudo pacman -S hyperfine
+   sudo pacman -S hyperfine kdeconnect
 
    flatpak install flathub com.valvesoftware.Steam
    flatpak install flathub com.modrinth.ModrinthApp
