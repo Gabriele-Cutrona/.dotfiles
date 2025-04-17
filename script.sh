@@ -15,12 +15,12 @@ git config --global init.defaultBranch main
 
 echo "Do you want to run the following? y/n"
 echo "git config --global gpg.format ssh"
-echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
+echo "git config --global user.signingkey ~/.ssh/id_rsa.pub"
 read -r GIT_SIGNING
 
 if [[ $GIT_SIGNING == "y" ]]; then
    git config --global gpg.format ssh
-   git config --global user.signingkey ~/.ssh/id_ed25519.pub
+   git config --global user.signingkey ~/.ssh/id_rsa.pub
 fi
 
 echo "Do you want to enable automatic gpg signing? y/n"
@@ -83,19 +83,19 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak -u override --filesystem=/home/$USER/.icons/:ro 
    flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
    flatpak -u override --filesystem=$HOME/.themes
-   flatpak -u override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
+   flatpak -u override --env=GTK_THEME=Colloid-Green-Light-Catppuccin
    flatpak -u override --env=XCURSOR_PATH=~/.icons
    flatpak install kvantum # All of them
    flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
    flatpak override -u --filesystem=xdg-config/Kvantum:ro
    flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
-   flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
+   flatpak override -u --env=XCURSOR_THEME=Catppuccin-Latte-Green-Cursors
 fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python
 paru -S ulauncher
-python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
+python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -f latte -a green
 sudo pacman -S gnome-keyring seahorse
 
 sudo pacman -S pavucontrol
@@ -116,12 +116,12 @@ systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
 sudo pacman -S nwg-look wget
-wget https://github.com/catppuccin/cursors/releases/download/v0.4.0/catppuccin-mocha-lavender-cursors.zip
-unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
+wget https://github.com/catppuccin/cursors/releases/download/v0.4.0/catppuccin-latte-green-cursors.zip
+unzip catppuccin-latte-green-cursors.zip -d ~/.icons
 
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 cd Colloid-gtk-theme
-./install.sh --theme purple --color dark --tweaks catppuccin black
+./install.sh --theme green --color light --tweaks catppuccin
 cd ..
 
 sudo pacman -S kvantum qt5ct qt6ct # Manually configure it with https://github.com/catppuccin/kvantum
@@ -129,18 +129,18 @@ sudo pacman -S kvantum qt5ct qt6ct # Manually configure it with https://github.c
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
 sudo pacman -S sddm
-wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
-sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
+wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-latte.zip
+sudo unzip catppuccin-latte.zip -d /usr/share/sddm/themes
 sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
-sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
+sudo sh -c "echo \"Current=catppuccin-latte\" >> /etc/sddm.conf"
 
 sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
-sudo sh -c "echo \"Inherits=catppuccin-mocha-lavender-cursors\" >> /usr/share/icons/default/index.theme"
+sudo sh -c "echo \"Inherits=catppuccin-latte-green-cursors\" >> /usr/share/icons/default/index.theme"
 sudo systemctl enable sddm
 
 git clone https://github.com/catppuccin/grub.git
-sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
-sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
+sudo cp -r grub/src/catppuccin-latte-grub-theme /boot
+sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-latte-grub-theme/theme.txt\"\" >> /etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ### End sddm and GRUB catppuccin ###
 
@@ -172,56 +172,35 @@ echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonv
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
-   sudo pacman -S resources
    flatpak install flathub com.github.tchx84.Flatseal
-   flatpak install flathub net.ankiweb.Anki
-   flatpak install flathub sh.ppy.osu
-   flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
    sudo pacman -S obsidian telegram-desktop signal-desktop discord
    flatpak install flathub org.cryptomator.Cryptomator
-   sudo pacman -S proton-vpn-gtk-app
-   flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
-   sudo pacman -S rnote xournalpp
-   flatpak install flathub com.google.ChromeDev
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent
-   flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
    sudo pacman -S android-tools
    paru -S topgrade-bin mpvpaper
 
-   sudo pacman -S hyperfine kdeconnect
-
    flatpak install flathub com.valvesoftware.Steam
-   flatpak install flathub com.modrinth.ModrinthApp
    
    sudo pacman -S torbrowser-launcher calibre # upterm
-   sudo pacman -S kodi
 
    sudo pacman -S hyprpicker
-   flatpak install flathub com.obsproject.Studio
-   sudo pacman -S audacity blender lmms gimp krita kdenlive
-
-   sudo pacman -S distrobox podman
 
    sudo pacman -S gparted exfatprogs btop
    
-   sudo pacman -S qemu-full virt-manager
-   sudo systemctl enable --now libvirtd
-
    sudo pacman -S docker docker-compose docker-buildx rclone
    sudo systemctl enable --now docker
 
    curl -fsSL https://tailscale.com/install.sh | sh
-   flatpak install flathub com.nextcloud.desktopclient.nextcloud
    sudo pacman -S cifs-utils
    
    paru -S visual-studio-code-bin
 fi
 
-rm -rfv catppuccin-mocha-lavender-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
+rm -rfv catppuccin-latte-green-cursors.zip catppuccin-latte.zip Colloid-gtk-theme fcitx5 grub paru-bin
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
