@@ -32,7 +32,6 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), s
 I don't know where to put this things:
 - Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083), [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 - All catppuccin [userstyles](https://github.com/catppuccin/userstyles)
-- [Catppuccin Zen Browser Mod](https://zen-browser.app/mods/e3eec307-7c64-4cbd-a0c5-3447cd45a840)
 
 ## todo
 - [x] Neovim (~~nixvim?~~ standalone)
