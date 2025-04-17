@@ -9,7 +9,7 @@
 
 window#waybar {
    background-color: rgba(43, 48, 59, 0);
-   color: #cdd6f4;
+   color: rgb(76, 79, 105);
    transition-property: background-color;
    transition-duration: 0.5s;
 }
@@ -28,7 +28,7 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-   background-color: #3f3f3f;
+   background-color: rgb(64, 160, 43);
 }
 
 window#waybar.chromium {
@@ -58,7 +58,7 @@ button:hover {
 #workspaces button {
    padding: 0 5px;
    background-color: transparent;
-   color: #ffffff;
+   color: rgb(76, 79, 105);
    margin: 0 2px;
 }
 
@@ -82,8 +82,8 @@ button:hover {
 #window,
 #workspaces {
    margin: 0 4px;
-   background: rgba(30, 30, 46, 0.8);
-   border: solid 1px rgb(180, 190, 254);
+   background: rgb(239, 241, 245);
+   border: solid 1px rgb(64, 160, 43);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -101,14 +101,14 @@ button:hover {
 }
 
 #battery {
-   background-color: #ffffff;
+   background-color: rgb(76, 79, 105);
    color: #000000;
 }
 
 #battery.charging,
 #battery.plugged {
-   color: #ffffff;
-   background-color: #26a65b;
+   color: rgb(239, 241, 245);
+   background-color: rgb(64, 160, 43);
 }
 
 @keyframes blink {
@@ -121,7 +121,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
    background-color: #f53c3c;
-   color: #ffffff;
+   color: rgb(64, 160, 43);
    animation-name: blink;
    animation-duration: 0.5s;
    animation-timing-function: steps(12);
@@ -135,7 +135,7 @@ button:hover {
 
 #power-profiles-daemon.performance {
    background-color: #f53c3c;
-   color: #ffffff;
+   color: rgb(64, 160, 43);
 }
 
 #power-profiles-daemon.balanced {
@@ -328,7 +328,7 @@ label:focus {
 #power-profiles-daemon,
 #mpd {
    padding: 3px 20px;
-   color: #ffffff;
-   background: rgba(30, 30, 46, 0.8);
-   border: solid 1px rgb(180, 190, 254);
+   color: rgb(76, 79, 105);
+   background: rgb(239, 241, 245);
+   border: solid 1px rgb(64, 160, 43);
 }
