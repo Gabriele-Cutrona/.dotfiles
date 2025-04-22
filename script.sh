@@ -47,7 +47,10 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-sudo pacman -S nodejs npm pnpm rust
+sudo pacman -S mise
+mise use -g node@latest
+mise use -g pnpm@latest
+mise use -g rust@latest
 pnpm i -g gitmoji-cli@latest
 
 paru -S cava grimblast
