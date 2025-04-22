@@ -52,5 +52,22 @@ Remap("n", "<Leader>bb", "<cmd>Telescope buffers<CR>", { noremap = true, silent=
 
 Remap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 Remap({ "n", "v" }, "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 
 Remap("n", "<Leader>td", "<cmd>Trouble diagnostics toggle<CR>", {})
+
+
+local lualine_visible = true
+
+function ToggleLualine()
+  if lualine_visible then
+    require("lualine").hide({ unhide = false })
+    vim.o.laststatus = 0 -- hides built-in statusline
+  else
+    vim.o.laststatus = 2 -- restores statusline
+    require("lualine").hide({ unhide = true })
+  end
+  lualine_visible = not lualine_visible
+end
+
+vim.keymap.set("n", "<leader>sl", ToggleLualine, { desc = "Toggle Lualine" })
