@@ -7,6 +7,8 @@ return {
          lsp.html.setup({})
          lsp.cssls.setup({})
          lsp.lua_ls.setup({})
+         lsp.ruff.setup({})
+         lsp.pyright.setup({})
       end,
    },
    {
@@ -19,7 +21,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome" },
+            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff" },
          })
       end,
    },
