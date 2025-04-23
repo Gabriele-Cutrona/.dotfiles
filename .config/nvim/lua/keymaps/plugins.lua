@@ -1,8 +1,6 @@
 Remap("n", "<Leader>e", "<cmd>Neotree toggle<CR>", { noremap = true, silent = true })
 Remap("n", "<Leader>f", "<cmd>Neotree<CR>", { noremap = true, silent = true })
 
-Remap("n", "<Leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { noremap = true, silent = true })
-Remap("n", "<Leader>tf", "<cmd>ToggleTerm direction=float<CR>", { noremap = true, silent = true })
 Remap("n", "<Leader>lg", "<cmd>LazyGit<CR>", { noremap = true, silent = true })
 
 Remap("n", "]", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
