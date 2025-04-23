@@ -9,11 +9,6 @@ return {
       opts = {},
    },
    {
-      "akinsho/toggleterm.nvim",
-      version = "*",
-      config = true,
-   },
-   {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       config = function()
