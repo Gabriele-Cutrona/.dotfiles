@@ -46,7 +46,7 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
-sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
+sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl
 sudo pacman -S mise
 mise use -g node@latest
 mise use -g pnpm@latest
@@ -181,7 +181,6 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
    sudo pacman -S obsidian telegram-desktop signal-desktop discord
-   flatpak install flathub org.cryptomator.Cryptomator
    sudo pacman -S proton-vpn-gtk-app
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
@@ -199,8 +198,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub com.valvesoftware.Steam
    flatpak install flathub com.modrinth.ModrinthApp
    
-   sudo pacman -S torbrowser-launcher calibre # upterm
-   sudo pacman -S kodi
+   sudo pacman -S torbrowser-launcher calibre
 
    sudo pacman -S hyprpicker
    flatpak install flathub com.obsproject.Studio
@@ -216,7 +214,8 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S docker docker-compose docker-buildx rclone
    sudo systemctl enable --now docker
 
-   curl -fsSL https://tailscale.com/install.sh | sh
+   sudo pacman -S tailscale
+   sudo systemctl enable --now tailscaled
    flatpak install flathub com.nextcloud.desktopclient.nextcloud
    sudo pacman -S cifs-utils
    
