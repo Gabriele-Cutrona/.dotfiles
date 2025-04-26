@@ -8,3 +8,6 @@ vim.opt.termguicolors = true
 vim.o.timeoutlen = 100
 
 vim.cmd("set clipboard+=unnamedplus")
+
+vim.opt.cursorline = true  -- Highlights the whole line
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#b4befe", bold = true })

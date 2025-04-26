@@ -1,4 +1,4 @@
-remap = vim.keymap.set
+Remap = vim.keymap.set
 vim.g.mapleader = " "
 
 require("keymaps.indent")
@@ -17,7 +17,8 @@ end
 
 vim.api.nvim_set_keymap("i", "k", "v:lua.check_prev_char()", { expr = true, noremap = true })
 
-remap("t", "<Tab>", "<C-\\><C-n>", { noremap = true, silent = true })
+Remap("t", "<Tab>", "<C-\\><C-n>", { noremap = true, silent = true })
 
-remap("n", "<leader>bn", "<cmd>bn<CR>", { noremap = true, silent = true })
-remap("n", "<leader>bp", "<cmd>bp<CR>", { noremap = true, silent = true })
+Remap("n", "<leader>bn", "<cmd>bn<CR>", { noremap = true, silent = true })
+Remap("n", "<leader>bp", "<cmd>bp<CR>", { noremap = true, silent = true })
+Remap("n", "<leader>bd", "<cmd>bd<CR>", { noremap = true, silent = true })

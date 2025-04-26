@@ -46,10 +46,12 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
-sudo pacman -Sy fastfetch extra/onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd wl-clipboard lazygit pamixer brightnessctl
-sudo pacman -S mise
-mise use --global nodejs@latest
-mise use --global npm:gitmoji-cli@latest
+sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl
+sudo pacman -S mise sshfs
+mise use -g node@latest
+mise use -g pnpm@latest
+mise use -g rust@latest
+pnpm i -g gitmoji-cli@latest
 
 paru -S cava grimblast
 
@@ -185,7 +187,7 @@ if [[ $APPS == "y" ]]; then
 
    flatpak install flathub com.valvesoftware.Steam
    
-   sudo pacman -S torbrowser-launcher calibre # upterm
+   sudo pacman -S torbrowser-launcher calibre
 
    sudo pacman -S hyprpicker
 
@@ -194,7 +196,8 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S docker docker-compose docker-buildx rclone
    sudo systemctl enable --now docker
 
-   curl -fsSL https://tailscale.com/install.sh | sh
+   sudo pacman -S tailscale
+   sudo systemctl enable --now tailscaled
    sudo pacman -S cifs-utils
    
    paru -S visual-studio-code-bin
