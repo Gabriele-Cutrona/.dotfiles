@@ -47,7 +47,7 @@ sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-po
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
 sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl
-sudo pacman -S mise
+sudo pacman -S mise sshfs
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g rust@latest
@@ -216,8 +216,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S tailscale
    sudo systemctl enable --now tailscaled
-   flatpak install flathub com.nextcloud.desktopclient.nextcloud
-   sudo pacman -S cifs-utils
+   sudo pacman -S nextcloud-client cifs-utils
    
    paru -S visual-studio-code-bin
 fi
