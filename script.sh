@@ -200,6 +200,7 @@ if [[ $APPS == "y" ]]; then
    sudo systemctl enable --now tailscaled
    sudo pacman -S cifs-utils
    
+   paru -S notion-app-electron
    paru -S visual-studio-code-bin
 fi
 
