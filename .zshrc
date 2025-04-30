@@ -1,6 +1,8 @@
 if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
-   TERM=xterm-256color tmux
+   tmux
 fi
+
+export TERM=xterm-256color
 
 echo
 hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
@@ -121,3 +123,6 @@ esac
 # pnpm end
 
 eval "$(mise activate zsh)"
+
+# bun completions
+[ -s "/home/gabriele-cutrona/.bun/_bun" ] && source "/home/gabriele-cutrona/.bun/_bun"

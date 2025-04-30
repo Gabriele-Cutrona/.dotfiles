@@ -190,7 +190,7 @@ if [[ $APPS == "y" ]]; then
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent
    flatpak install flathub io.github.peazip.PeaZip
-   sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
+   sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli
    sudo pacman -S android-tools
    paru -S topgrade-bin mpvpaper
 
