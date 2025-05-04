@@ -11,6 +11,8 @@ SAVEHIST=100000
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+eval "$(ssh-agent -s)" > /tmp/sshagentpid
+alias s="ssh-add"
 
 hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
 python ~/.dotfiles/.shtart/splash.py
