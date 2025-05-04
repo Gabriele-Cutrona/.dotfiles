@@ -4,6 +4,10 @@ fi
 
 export TERM=xterm-256color
 
+HISTFILE=/home/$USER/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
 echo
 hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
 python ~/.dotfiles/.shtart/splash.py
