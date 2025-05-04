@@ -69,12 +69,8 @@ fi
 echo "Configuring the terminal (kitty zsh)"
 ### Terminal ###
 sudo pacman -S kitty zsh unzip zip
-echo -e "\n\n\!\!\! When oh-my-zsh finishes installing, it will drop you in a new shell, run exit to get back to the script \!\!\!\n\n"
-sleep 10
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 curl -s https://ohmyposh.dev/install.sh | bash -s
 ### End Terminal ###
 
