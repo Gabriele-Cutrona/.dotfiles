@@ -162,6 +162,15 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sudo pacman -S stow
 
+echo "Keyd with my config? y/n"
+read -r KEYD
+if [[ $KEYD == "y" ]]; then
+   sudo pacman -S keyd
+   sudo systemctl enable keyd
+   sudo cp ./.keyd.conf /etc/keyd/default.conf
+   sudo systemctl start keyd
+fi
+
 echo "Do you want to install some apps I use? y/n"
 echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen browser..."
 read -r APPS
