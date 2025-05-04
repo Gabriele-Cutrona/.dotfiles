@@ -31,18 +31,14 @@ if [[ $GIT_AUTOSIGN == "y" ]]; then
    git config --global commit.gpgsign true
 fi
 
-echo "Do you want to install paru-bin? y/n"
-read -r PARU
-
-if [[ $PARU == "y" ]]; then
-   git clone https://aur.archlinux.org/paru-bin.git
-   cd paru-bin
-   makepkg -si
-   cd ..
-fi
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin
+makepkg -si
+cd ..
 
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+paru -S wlogout
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync
@@ -51,7 +47,8 @@ sudo pacman -S mise sshfs
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g rust@latest
-pnpm i -g gitmoji-cli@latest
+cargo install cargo-update
+cargo install rsmoji
 
 paru -S cava grimblast
 
@@ -67,12 +64,8 @@ fi
 echo "Configuring the terminal (kitty zsh)"
 ### Terminal ###
 sudo pacman -S kitty zsh unzip zip
-echo -e "\n\n\!\!\! When oh-my-zsh finishes installing, it will drop you in a new shell, run exit to get back to the script \!\!\!\n\n"
-sleep 10
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 curl -s https://ohmyposh.dev/install.sh | bash -s
 ### End Terminal ###
 
@@ -169,6 +162,15 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sudo pacman -S stow
 
+echo "Keyd with my config? y/n"
+read -r KEYD
+if [[ $KEYD == "y" ]]; then
+   sudo pacman -S keyd
+   sudo systemctl enable keyd
+   sudo cp ./.keyd.conf /etc/keyd/default.conf
+   sudo systemctl start keyd
+fi
+
 echo "Do you want to install some apps I use? y/n"
 echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen browser..."
 read -r APPS
@@ -181,7 +183,7 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub io.github.zen_browser.zen
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent
-   sudo pacman -S ncdu grsync yt-dlp tldr trash-cli
+   sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli
    sudo pacman -S android-tools
    paru -S topgrade-bin mpvpaper
 
