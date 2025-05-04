@@ -7,6 +7,8 @@ export TERM=xterm-256color
 HISTFILE=/home/$USER/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+autoload -Uz +X compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
