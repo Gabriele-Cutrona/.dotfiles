@@ -7,6 +7,7 @@ export TERM=xterm-256color
 HISTFILE=/home/$USER/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+zstyle ':completion:*' menu select
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -50,15 +51,12 @@ export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
 
-# pnpm
 export PNPM_HOME="/home/$USER/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+   *":$PNPM_HOME:"*) ;;
+   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
 eval "$(mise activate zsh)"
 
-# bun completions
 [ -s "/home/gabriele-cutrona/.bun/_bun" ] && source "/home/gabriele-cutrona/.bun/_bun"
