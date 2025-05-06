@@ -7,6 +7,8 @@ export TERM=xterm-256color
 HISTFILE=/home/$USER/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+autoload -Uz +X compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -45,7 +47,8 @@ alias t="exit"
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+
 export EDITOR="nvim"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"

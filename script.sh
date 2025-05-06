@@ -162,7 +162,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sudo pacman -S stow
 
-echo "Keyd with my config? y/n"
+echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete, alt/altgr = enter on tap) y/n"
 read -r KEYD
 if [[ $KEYD == "y" ]]; then
    sudo pacman -S keyd
