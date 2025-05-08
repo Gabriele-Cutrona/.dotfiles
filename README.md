@@ -31,17 +31,10 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), s
 - If you want to play a video as background, you can use [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 
 ## Other
-I don't know where to put this things:
+I don't know where to put these things:
 - Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083), [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 - All catppuccin [userstyles](https://github.com/catppuccin/userstyles)
 
-## todo
-- [x] Neovim (~~nixvim?~~ standalone)
-   - [x] Split init.lua in more files
-- [x] My own waybar config
-- [x] Themes should be installed better (e.g. not copied from `/usr`)
-   - [ ] Is there a way to install kvantum themes automatically?
-     
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Catppuccin and Kitty logos, which are from the official websites/repos)
 
