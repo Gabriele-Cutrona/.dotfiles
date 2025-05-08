@@ -10,6 +10,7 @@ return {
          lsp.ruff.setup({})
          lsp.pyright.setup({})
          lsp.rust_analyzer.setup({})
+         lsp.tailwindcss.setup({})
       end,
    },
    {
@@ -22,7 +23,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff", "rust_analyzer" },
+            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff", "rust_analyzer", "tailwindcss" },
          })
       end,
    },
