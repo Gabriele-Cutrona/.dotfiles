@@ -5,13 +5,15 @@
 |:----------------:|:------------------------------------------------------------------------------------:|:------------:|:-------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org)                                                  | Compositor   | [Hyprland](https://hyprland.org)            |
 | Terminal         | [Kitty](https://sw.kovidgoyal.net/kitty)                                             | App Launcher | ULauncher                                   |
-| Shell            | zsh (oh-my-zsh)                                                                      | Theme        | [Catppuccin](https://github.com/catppuccin) |
+| Shell            | zsh                                                                      | Theme        | [Catppuccin](https://github.com/catppuccin) |
 | Shell theme      | [ohmyposh](https://ohmyposh.dev) ([velvet](https://ohmyposh.dev/docs/themes#velvet)) | Screen Lock  | Hyprlock                                    |
 | Editor           | [Neovim](https://neovim.io)                                                          | Wallpaper    | Hyprpaper                                   |
 <div>
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
    <img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
    <img width="100" src="https://sw.kovidgoyal.net/kitty/_static/kitty.svg" />
+   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
