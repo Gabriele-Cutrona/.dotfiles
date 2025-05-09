@@ -4,8 +4,6 @@
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.json)"
-
 alias ls="eza --icons"
 alias l="eza --icons -lah"
 alias la="eza --icons -a"
