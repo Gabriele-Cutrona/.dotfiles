@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "systemctl restart sddm",
+    "action" : "hyprctl dispatch exit",
     "text" : "Logout",
     "keybind" : "e"
 }
