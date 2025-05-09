@@ -61,12 +61,12 @@ if [[ $TIMESHIFT == "y" ]]; then
    paru -S timeshift-autosnap
 fi
 
-echo "Configuring the terminal (kitty zsh)"
+echo "Configuring the terminal (kitty nushell)"
 ### Terminal ###
-sudo pacman -S kitty zsh unzip zip
-sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
-sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
-curl -s https://ohmyposh.dev/install.sh | bash -s
+sudo pacman -S kitty nushell unzip zip
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
+sudo pacman -S vivid starship
+chsh -s /usr/bin/nu
 ### End Terminal ###
 
 echo "Do you want flatpak? y/n"
@@ -231,7 +231,6 @@ if [[ $STOW == "y" ]]; then
    rm -rf ~/.config/hypr
    rm -rf ~/.config/cava
    rm -rf ~/.config/fcitx5
-   rm ~/.zshrc
    rm ~/.bashrc
    stow .
    bat cache --build
