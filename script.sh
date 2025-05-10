@@ -49,6 +49,7 @@ mise use -g pnpm@latest
 mise use -g rust@latest
 mise use -g bun@latest
 mise use -g zig@latest
+sudo pacman -S rust
 cargo install cargo-update
 cargo install rsmoji
 
