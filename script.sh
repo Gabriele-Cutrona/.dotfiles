@@ -47,6 +47,8 @@ sudo pacman -S mise sshfs
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g rust@latest
+mise use -g bun@latest
+mise use -g zig@latest
 cargo install cargo-update
 cargo install rsmoji
 
@@ -61,13 +63,19 @@ if [[ $TIMESHIFT == "y" ]]; then
    paru -S timeshift-autosnap
 fi
 
-echo "Configuring the terminal (kitty zsh)"
-### Terminal ###
-sudo pacman -S kitty zsh unzip zip
-sudo pacman -S ttf-jetbrains-mono-nerd extra/ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
+echo "Configuring the terminal (ghostty nushell)"
+sudo pacman -S ghostty nushell unzip zip zsh
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
-curl -s https://ohmyposh.dev/install.sh | bash -s
-### End Terminal ###
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
+sudo pacman -S vivid starship
+chsh -s /usr/bin/nu
+
+echo "Do you want to install wezterm-git? (needs compiling from AUR)"
+read -r WEZTERM
+
+if [[ $WEZTERM == "y" ]]; then
+   paru -Syu wezterm-git
+fi
 
 echo "Do you want flatpak? y/n"
 read -r FLATPAK
@@ -214,6 +222,9 @@ if [[ $STOW == "y" ]]; then
    rm -rf ~/.config/hypr
    rm -rf ~/.config/cava
    rm -rf ~/.config/fcitx5
+   rm -rf ~/.config/nushell
+   rm -rf ~/.config/ghostty
+   rm -rf ~/.config/wezterm
    rm ~/.zshrc
    rm ~/.bashrc
    stow .

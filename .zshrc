@@ -51,7 +51,7 @@ export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 export EDITOR="nvim"
 
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
+eval "$(starship init zsh)"
 
 export PNPM_HOME="/home/$USER/.local/share/pnpm"
 case ":$PATH:" in

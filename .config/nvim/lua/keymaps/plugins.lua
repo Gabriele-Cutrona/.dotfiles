@@ -58,14 +58,14 @@ Remap("n", "<Leader>td", "<cmd>Trouble diagnostics toggle<CR>", {})
 local lualine_visible = true
 
 function ToggleLualine()
-  if lualine_visible then
-    require("lualine").hide({ unhide = false })
-    vim.o.laststatus = 0 -- hides built-in statusline
-  else
-    vim.o.laststatus = 2 -- restores statusline
-    require("lualine").hide({ unhide = true })
-  end
-  lualine_visible = not lualine_visible
+   if lualine_visible then
+      require("lualine").hide({ unhide = false })
+      vim.o.laststatus = 0 -- hides built-in statusline
+   else
+      vim.o.laststatus = 2 -- restores statusline
+      require("lualine").hide({ unhide = true })
+   end
+   lualine_visible = not lualine_visible
 end
 
 vim.keymap.set("n", "<leader>sl", ToggleLualine, { desc = "Toggle Lualine" })

@@ -23,6 +23,9 @@ return {
       end,
    },
    {
+      "elkasztano/nushell-syntax-vim",
+   },
+   {
       "windwp/nvim-autopairs",
       event = "InsertEnter",
       config = true,

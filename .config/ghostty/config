@@ -1,0 +1,38 @@
+theme = catppuccin-mocha.conf
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+background-opacity = 0.7
+window-theme = ghostty
+
+keybind = ctrl+shift+o=toggle_tab_overview
+keybind = super+r=reload_config
+
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>x=close_tab
+
+keybind = ctrl+b>0=goto_tab:1
+keybind = ctrl+b>1=goto_tab:2
+keybind = ctrl+b>2=goto_tab:3
+keybind = ctrl+b>3=goto_tab:4
+keybind = ctrl+b>4=goto_tab:5
+keybind = ctrl+b>5=goto_tab:6
+keybind = ctrl+b>6=goto_tab:7
+keybind = ctrl+b>7=goto_tab:8
+keybind = ctrl+b>8=goto_tab:9
+keybind = ctrl+b>9=goto_tab:10
+
+keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>p=previous_tab
+
+keybind = ctrl+b>h=new_split:left
+keybind = ctrl+b>j=new_split:down
+keybind = ctrl+b>k=new_split:up
+keybind = ctrl+b>l=new_split:right
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+b>f=toggle_split_zoom
