@@ -1,10 +1,10 @@
 $env.TERM = "xterm-256color"
 
-source ./catppuccin_mocha.nu
+source ./catppuccin_latte.nu
 source ~/.cache/.zoxide.nu
 source ~/.cache/.mise.nu
 
-$env.LS_COLORS = (vivid generate catppuccin-mocha)
+$env.LS_COLORS = (vivid generate catppuccin-latte)
 $env.config.show_banner = false
 $env.editor = "nvim"
 $env.config.edit_mode = 'vi'
@@ -12,7 +12,6 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
-python ~/.dotfiles/.shtart/splash.py
 
 alias s = ssh-add
 

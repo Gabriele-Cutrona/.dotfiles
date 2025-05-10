@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
 	font = wezterm.font("JetBrainsMono Nerd Font"),
-	color_scheme = "catppuccin-mocha",
+	color_scheme = "catppuccin-latte",
 	font_size = 14,
 	wezterm.on("toggle-tabbar", function(window, _)
 		local overrides = window:get_config_overrides() or {}
