@@ -3,7 +3,7 @@
 echo "Enabling systemd-timesyncd"
 sudo systemctl enable --now systemd-timesyncd
 
-sudo pacman -S git
+sudo pacman -S git --noconfirm
 echo "Insert here your git user.name"
 read -r GIT_USERNAME
 echo "Insert here your git user.email"
@@ -37,19 +37,19 @@ makepkg -si
 cd ..
 
 echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
 paru -S wlogout
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
-sudo pacman -S papirus-icon-theme swaync
-sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl
-sudo pacman -S mise sshfs
+sudo pacman -S papirus-icon-theme swaync --noconfirm
+sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl --noconfirm
+sudo pacman -S mise sshfs --noconfirm
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g rust@latest
 mise use -g bun@latest
 mise use -g zig@latest
-sudo pacman -S rust
+sudo pacman -S rust --noconfirm
 cargo install cargo-update
 cargo install rsmoji
 
@@ -60,15 +60,15 @@ read -r TIMESHIFT
 
 if [[ $TIMESHIFT == "y" ]]; then
    echo "Installing timeshift for btrfs"
-   sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost
+   sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
    paru -S timeshift-autosnap
 fi
 
 echo "Configuring the terminal (ghostty nushell)"
-sudo pacman -S ghostty nushell unzip zip zsh
-sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
-sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome
-sudo pacman -S vivid starship
+sudo pacman -S ghostty nushell unzip zip zsh --noconfirm
+sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
+sudo pacman -S vivid starship --noconfirm
 chsh -s /usr/bin/nu
 
 echo "Do you want to install wezterm-git? (needs compiling from AUR)"
@@ -82,7 +82,7 @@ echo "Do you want flatpak? y/n"
 read -r FLATPAK
 
 if [[ $FLATPAK == "y" ]]; then
-   sudo pacman -S flatpak
+   sudo pacman -S flatpak --noconfirm
    flatpak -u override --filesystem=/usr/share/icons/:ro
    flatpak -u override --filesystem=/home/$USER/.icons/:ro 
    flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
@@ -97,29 +97,29 @@ if [[ $FLATPAK == "y" ]]; then
 fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
-sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python
+sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
 paru -S ulauncher
 python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
-sudo pacman -S gnome-keyring seahorse
+sudo pacman -S gnome-keyring seahorse --noconfirm
 
-sudo pacman -S pavucontrol
+sudo pacman -S pavucontrol --noconfirm
 
 echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
 
 if [[ $BLUETOOTH == "y" ]]; then
-   sudo pacman -S bluez bluez-utils blueman
+   sudo pacman -S bluez bluez-utils blueman --noconfirm
    sudo systemctl enable --now bluetooth
 fi
 
 echo "Installing and enabling pipewire"
-sudo pacman -S pipewire pipewire-pulse pipewire-jack pipewire-alsa wireplumber alsa-utils
+sudo pacman -S pipewire pipewire-pulse pipewire-jack pipewire-alsa wireplumber alsa-utils --noconfirm
 
 systemctl enable --now pipewire --user
 systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
-sudo pacman -S nwg-look wget
+sudo pacman -S nwg-look wget --noconfirm
 wget https://github.com/catppuccin/cursors/releases/download/v0.4.0/catppuccin-mocha-lavender-cursors.zip
 unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
 
@@ -128,11 +128,11 @@ cd Colloid-gtk-theme
 ./install.sh --theme purple --color dark --tweaks catppuccin black
 cd ..
 
-sudo pacman -S kvantum qt5ct qt6ct # Manually configure it with https://github.com/catppuccin/kvantum
+sudo pacman -S kvantum qt5ct qt6ct --noconfirm
 
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
-sudo pacman -S sddm
+sudo pacman -S sddm --noconfirm
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
 sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
@@ -160,21 +160,21 @@ echo "Do you want to install fcitx5-im and fcitx5-mozc? y/n"
 read -r FCITX5
 
 if [[ $FCITX5 == "y" ]]; then
-   sudo pacman -S fcitx5-im fcitx5-mozc
+   sudo pacman -S fcitx5-im fcitx5-mozc --noconfirm
    git clone https://github.com/catppuccin/fcitx5.git
    mkdir -p ~/.local/share/fcitx5/themes/
    cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
-sudo pacman -S tmux
+sudo pacman -S tmux --noconfirm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-sudo pacman -S stow
+sudo pacman -S stow --noconfirm
 
 echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete, alt/altgr = enter on tap) y/n"
 read -r KEYD
 if [[ $KEYD == "y" ]]; then
-   sudo pacman -S keyd
+   sudo pacman -S keyd --noconfirm
    sudo systemctl enable keyd
    sudo cp ./.keyd.conf /etc/keyd/default.conf
    sudo systemctl start keyd
@@ -185,49 +185,49 @@ echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonv
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
-   sudo pacman -S resources
+   sudo pacman -S resources --noconfirm
    flatpak install flathub com.github.tchx84.Flatseal
    flatpak install flathub net.ankiweb.Anki
    flatpak install flathub sh.ppy.osu
    flatpak install flathub org.localsend.localsend_app
    flatpak install flathub org.onlyoffice.desktopeditors
-   sudo pacman -S obsidian telegram-desktop signal-desktop discord
-   sudo pacman -S proton-vpn-gtk-app
+   sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
+   sudo pacman -S proton-vpn-gtk-app --noconfirm
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
-   sudo pacman -S rnote xournalpp
+   sudo pacman -S rnote xournalpp --noconfirm
    flatpak install flathub com.google.ChromeDev
    
-   sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent
+   sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
    flatpak install flathub io.github.peazip.PeaZip
-   sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli
-   sudo pacman -S android-tools
+   sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli --noconfirm
+   sudo pacman -S android-tools --noconfirm
    paru -S topgrade-bin mpvpaper
 
-   sudo pacman -S hyperfine kdeconnect
+   sudo pacman -S hyperfine kdeconnect --noconfirm
 
    flatpak install flathub com.valvesoftware.Steam
    flatpak install flathub com.modrinth.ModrinthApp
    
-   sudo pacman -S torbrowser-launcher calibre
+   sudo pacman -S torbrowser-launcher calibre --noconfirm
 
-   sudo pacman -S hyprpicker
+   sudo pacman -S hyprpicker --noconfirm
    flatpak install flathub com.obsproject.Studio
-   sudo pacman -S audacity blender lmms gimp krita kdenlive
+   sudo pacman -S audacity blender lmms gimp krita kdenlive --noconfirm
 
-   sudo pacman -S distrobox podman
+   sudo pacman -S distrobox podman --noconfirm
 
-   sudo pacman -S gparted exfatprogs btop
+   sudo pacman -S gparted exfatprogs btop --noconfirm
    
-   sudo pacman -S qemu-full virt-manager
+   sudo pacman -S qemu-full virt-manager --noconfirm
    sudo systemctl enable --now libvirtd
 
-   sudo pacman -S docker docker-compose docker-buildx rclone
+   sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
    sudo systemctl enable --now docker
 
-   sudo pacman -S tailscale
+   sudo pacman -S tailscale --noconfirm
    sudo systemctl enable --now tailscaled
-   sudo pacman -S nextcloud-client cifs-utils
+   sudo pacman -S nextcloud-client cifs-utils --noconfirm
    
    paru -S visual-studio-code-bin
 fi
@@ -253,9 +253,9 @@ echo "Do you want cups (printing + hplip)? y/n"
 read -r CUPS
 
 if [[ $CUPS == "y" ]]; then
-   sudo pacman -S cups cups-pdf hplip
+   sudo pacman -S cups cups-pdf hplip --noconfirm
    sudo systemctl enable --now cups
-   sudo pacman -S system-config-printer
+   sudo pacman -S system-config-printer --noconfirm
 fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
