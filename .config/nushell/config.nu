@@ -1,9 +1,5 @@
 $env.TERM = "xterm-256color"
 
-if ($env.TMUX? | default "") == "" and ($nu | get is-interactive) {
-    tmux
-}
-
 source ./catppuccin_mocha.nu
 source ~/.cache/.zoxide.nu
 source ~/.cache/.mise.nu

@@ -47,6 +47,8 @@ sudo pacman -S mise sshfs
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g rust@latest
+mise use -g bun@latest
+mise use -g zig@latest
 cargo install cargo-update
 cargo install rsmoji
 
