@@ -16,7 +16,7 @@ python ~/.dotfiles/.shtart/splash.py
 
 alias s = ssh-add
 
-def l [] { ls -la | select mode name target user group size }
+def l [folder?] { ls -la ($folder | default ".") | select mode name target user group size }
 alias la = ls -a
 alias cat = bat
 alias z = zoxide
