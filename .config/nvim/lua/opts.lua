@@ -5,6 +5,8 @@ vim.opt.shiftwidth = 3
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 
+vim.opt.fillchars = { eob = " " }
+
 vim.o.timeoutlen = 100
 
 vim.cmd("set clipboard+=unnamedplus")
