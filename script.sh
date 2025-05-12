@@ -206,6 +206,10 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S docker docker-compose docker-buildx rclone
    sudo systemctl enable --now docker
 
+   cd ./searxng/
+   sudo docker compose up -d
+   cd ..
+
    sudo pacman -S tailscale
    sudo systemctl enable --now tailscaled
    sudo pacman -S cifs-utils
