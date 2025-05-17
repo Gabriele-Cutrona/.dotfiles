@@ -98,8 +98,7 @@ fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
-paru -S ulauncher
-python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -a lavender
+paru -S anyrun-git
 sudo pacman -S gnome-keyring seahorse --noconfirm
 
 sudo pacman -S pavucontrol --noconfirm
@@ -196,7 +195,6 @@ if [[ $APPS == "y" ]]; then
    flatpak install flathub org.upscayl.Upscayl
    flatpak install flathub io.github.zen_browser.zen
    sudo pacman -S rnote xournalpp --noconfirm
-   flatpak install flathub com.google.ChromeDev
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
    flatpak install flathub io.github.peazip.PeaZip
@@ -263,4 +261,3 @@ echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/
 echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (maybe not the unsupported ones)"
 echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
 echo "4. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
-echo "5. Set the ulauncher theme from the settings (already installed, just select it)"
