@@ -6,7 +6,6 @@ source ~/.cache/.mise.nu
 
 $env.LS_COLORS = (vivid generate catppuccin-mocha)
 $env.config.show_banner = false
-$env.editor = "nvim"
 $env.config.edit_mode = 'vi'
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")

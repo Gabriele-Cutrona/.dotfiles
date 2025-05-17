@@ -8,3 +8,6 @@
 
 zoxide init nushell --cmd cd | save -f ~/.cache/.zoxide.nu
 mise activate nu | save -f ~/.cache/.mise.nu
+
+$env.EDITOR = "nvim"
+$env.VISUAL = "nvim"
