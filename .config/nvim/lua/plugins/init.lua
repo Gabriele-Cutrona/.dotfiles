@@ -9,6 +9,24 @@ return {
       opts = {},
    },
    {
+      "epwalsh/obsidian.nvim",
+      version = "*",
+      lazy = true,
+      ft = "markdown",
+      dependencies = {
+         "nvim-lua/plenary.nvim",
+      },
+      opts = {
+         workspaces = {
+            {
+               name = "everything",
+               path = vim.fn.getcwd(),
+            },
+         },
+         disable_frontmatter = true,
+      },
+   },
+   {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       config = function()
