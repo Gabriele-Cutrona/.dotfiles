@@ -89,8 +89,8 @@ if [[ $FLATPAK == "y" ]]; then
    flatpak -u override --filesystem=$HOME/.themes
    flatpak -u override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
    flatpak -u override --env=XCURSOR_PATH=~/.icons
-   flatpak install kvantum # All of them
-   flatpak install org.kde.PlatformTheme.QGnomePlatform # All of them
+   flatpak install org.kde.KStyle.Kvantum/x86_64/6.6 --assumeyes
+   flatpak install org.kde.PlatformTheme.QGnomePlatform/x86_64/6.6 --assumeyes
    flatpak override -u --filesystem=xdg-config/Kvantum:ro
    flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
    flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
@@ -185,32 +185,31 @@ read -r APPS
 
 if [[ $APPS == "y" ]]; then
    sudo pacman -S resources --noconfirm
-   flatpak install flathub com.github.tchx84.Flatseal
-   flatpak install flathub net.ankiweb.Anki
-   flatpak install flathub sh.ppy.osu
-   flatpak install flathub org.localsend.localsend_app
-   flatpak install flathub org.onlyoffice.desktopeditors
+   flatpak install flathub com.github.tchx84.Flatseal --assumeyes
+   flatpak install flathub net.ankiweb.Anki --assumeyes
+   flatpak install flathub sh.ppy.osu --assumeyes
+   flatpak install flathub org.localsend.localsend_app --assumeyes
+   flatpak install flathub org.onlyoffice.desktopeditors --assumeyes
    sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
    sudo pacman -S proton-vpn-gtk-app --noconfirm
-   flatpak install flathub org.upscayl.Upscayl
-   flatpak install flathub io.github.zen_browser.zen
+   flatpak install flathub org.upscayl.Upscayl --assumeyes
+   flatpak install flathub io.github.zen_browser.zen --assumeyes
    sudo pacman -S rnote xournalpp --noconfirm
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
-   flatpak install flathub io.github.peazip.PeaZip
    sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli --noconfirm
    sudo pacman -S android-tools --noconfirm
    paru -S topgrade-bin mpvpaper
 
    sudo pacman -S hyperfine kdeconnect --noconfirm
 
-   flatpak install flathub com.valvesoftware.Steam
-   flatpak install flathub com.modrinth.ModrinthApp
+   flatpak install flathub com.valvesoftware.Steam --assumeyes
+   flatpak install flathub com.modrinth.ModrinthApp --assumeyes
    
    sudo pacman -S torbrowser-launcher calibre --noconfirm
 
    sudo pacman -S hyprpicker --noconfirm
-   flatpak install flathub com.obsproject.Studio
+   flatpak install flathub com.obsproject.Studio --assumeyes
    sudo pacman -S audacity blender lmms gimp krita kdenlive --noconfirm
 
    sudo pacman -S distrobox podman --noconfirm
