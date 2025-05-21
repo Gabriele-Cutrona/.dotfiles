@@ -1,7 +1,3 @@
-if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
-   tmux
-fi
-
 export TERM=xterm-256color
 
 HISTFILE=/home/$USER/.zsh_history
