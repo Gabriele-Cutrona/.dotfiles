@@ -13,6 +13,12 @@ git config --global user.email "$GIT_EMAIL" --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
+sudo pacman -S git-delta --noconfirm
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+
 echo "Do you want to run the following? y/n"
 echo "git config --global gpg.format ssh"
 echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
@@ -49,6 +55,9 @@ mise use -g pnpm@latest
 mise use -g rust@latest
 mise use -g bun@latest
 mise use -g zig@latest
+mise use -g python@latest
+mise use -g just@latest
+mise use -g uv@latest
 sudo pacman -S rust --noconfirm
 cargo install cargo-update
 cargo install rsmoji
