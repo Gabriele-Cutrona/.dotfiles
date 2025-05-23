@@ -220,6 +220,8 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S hyprpicker --noconfirm
    flatpak install flathub com.obsproject.Studio --assumeyes
    sudo pacman -S audacity blender lmms gimp krita kdenlive --noconfirm
+   sudo pacman -S godot --noconfirm
+   paru -S pixelorama-bin
 
    sudo pacman -S distrobox podman --noconfirm
 
