@@ -116,7 +116,8 @@ cd Colloid-gtk-theme
 ./install.sh --theme purple --color dark --tweaks catppuccin black
 cd ..
 
-sudo pacman -S kvantum qt5ct qt6ct --noconfirm
+sudo pacman -S qt6ct --noconfirm
+paru -S darkly --noconfirm
 
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
@@ -225,6 +226,7 @@ if [[ $STOW == "y" ]]; then
    rm -rf ~/.config/nushell
    rm -rf ~/.config/ghostty
    rm -rf ~/.config/wezterm
+   rm -rf ~/.config/qt6ct
    rm ~/.zshrc
    rm ~/.bashrc
    stow .
@@ -241,6 +243,5 @@ if [[ $CUPS == "y" ]]; then
 fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
-echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
-echo "2. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
-echo "3. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
+echo "1. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
+echo "2. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt6ct"
