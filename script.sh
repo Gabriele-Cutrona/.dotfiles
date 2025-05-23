@@ -37,6 +37,8 @@ if [[ $GIT_AUTOSIGN == "y" ]]; then
    git config --global commit.gpgsign true
 fi
 
+sudo pacman -S rustup --noconfirm
+rustup default stable
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin
 makepkg -si
@@ -44,7 +46,7 @@ cd ..
 
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
-paru -S wlogout
+paru -S wlogout --noconfirm
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme swaync --noconfirm
@@ -52,17 +54,13 @@ sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide 
 sudo pacman -S mise sshfs --noconfirm
 mise use -g node@latest
 mise use -g pnpm@latest
-mise use -g rust@latest
 mise use -g bun@latest
 mise use -g zig@latest
-mise use -g python@latest
-mise use -g just@latest
-mise use -g uv@latest
-sudo pacman -S rust --noconfirm
+sudo pacman -S just uv python --noconfirm
 cargo install cargo-update
 cargo install rsmoji
 
-paru -S cava grimblast
+paru -S cava grimblast --noconfirm
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -70,7 +68,7 @@ read -r TIMESHIFT
 if [[ $TIMESHIFT == "y" ]]; then
    echo "Installing timeshift for btrfs"
    sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
-   paru -S timeshift-autosnap
+   paru -S timeshift-autosnap --noconfirm
 fi
 
 echo "Configuring the terminal (ghostty nushell)"
@@ -84,30 +82,12 @@ echo "Do you want to install wezterm-git? (needs compiling from AUR)"
 read -r WEZTERM
 
 if [[ $WEZTERM == "y" ]]; then
-   paru -Syu wezterm-git
-fi
-
-echo "Do you want flatpak? y/n"
-read -r FLATPAK
-
-if [[ $FLATPAK == "y" ]]; then
-   sudo pacman -S flatpak --noconfirm
-   flatpak -u override --filesystem=/usr/share/icons/:ro
-   flatpak -u override --filesystem=/home/$USER/.icons/:ro 
-   flatpak -u override --filesystem=xdg-config/gtk-3.0:ro
-   flatpak -u override --filesystem=$HOME/.themes
-   flatpak -u override --env=GTK_THEME=Colloid-Purple-Dark-Catppuccin
-   flatpak -u override --env=XCURSOR_PATH=~/.icons
-   flatpak install org.kde.KStyle.Kvantum/x86_64/6.6 --assumeyes
-   flatpak install org.kde.PlatformTheme.QGnomePlatform/x86_64/6.6 --assumeyes
-   flatpak override -u --filesystem=xdg-config/Kvantum:ro
-   flatpak override -u --env=QT_STYLE_OVERRIDE=kvantum
-   flatpak override -u --env=XCURSOR_THEME=Catppuccin-Mocha-Lavender-Cursors
+   paru -Syu wezterm-git --noconfirm
 fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
-paru -S anyrun-git
+paru -S anyrun-git --noconfirm
 sudo pacman -S gnome-keyring seahorse --noconfirm
 
 sudo pacman -S pavucontrol --noconfirm
@@ -160,7 +140,7 @@ echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
 
 if [[ $OPENTABLETDRIVER == "y" ]]; then
-   paru -S aur/opentabletdriver-git
+   paru -S aur/opentabletdriver-git --noconfirm
    systemctl --user enable --now opentabletdriver.service
 fi
 
@@ -189,39 +169,33 @@ if [[ $KEYD == "y" ]]; then
 fi
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources flatseal anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen browser..."
+echo "resources anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen-browser..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
    sudo pacman -S resources --noconfirm
-   flatpak install flathub com.github.tchx84.Flatseal --assumeyes
-   flatpak install flathub net.ankiweb.Anki --assumeyes
-   flatpak install flathub sh.ppy.osu --assumeyes
-   flatpak install flathub org.localsend.localsend_app --assumeyes
-   flatpak install flathub org.onlyoffice.desktopeditors --assumeyes
+   paru -S anki-bin --noconfirm
+   paru -S localsend-bin onlyoffice-bin --noconfirm
    sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
-   sudo pacman -S proton-vpn-gtk-app --noconfirm
-   flatpak install flathub org.upscayl.Upscayl --assumeyes
-   flatpak install flathub io.github.zen_browser.zen --assumeyes
+   sudo pacman -S proton-vpn-gtk-app zen-browser-bin --noconfirm
    sudo pacman -S rnote xournalpp --noconfirm
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
    sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli --noconfirm
    sudo pacman -S android-tools --noconfirm
-   paru -S topgrade-bin mpvpaper
+   paru -S topgrade-bin mpvpaper --noconfirm
 
    sudo pacman -S hyperfine kdeconnect --noconfirm
 
-   flatpak install flathub com.valvesoftware.Steam --assumeyes
-   flatpak install flathub com.modrinth.ModrinthApp --assumeyes
+   sudo pacman -S steam --noconfirm
+   paru -S osu-lazer-bin --noconfirm
    
    sudo pacman -S torbrowser-launcher calibre --noconfirm
 
    sudo pacman -S hyprpicker --noconfirm
-   flatpak install flathub com.obsproject.Studio --assumeyes
-   sudo pacman -S audacity blender lmms gimp krita kdenlive --noconfirm
+   sudo pacman -S audacity blender lmms gimp krita kdenlive obs-studio --noconfirm
    sudo pacman -S godot --noconfirm
-   paru -S pixelorama-bin
+   paru -S pixelorama-bin --noconfirm
 
    sudo pacman -S distrobox podman --noconfirm
 
@@ -268,6 +242,5 @@ fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"
 echo "1. If you want to theme qt apps with catppuccin, go to https://github.com/catppuccin/kvantum and install it into kvantummanager"
-echo "2. If you want to theme qt apps in flatpak, install kvantum and org.kde.PlatformTheme.QGnomePlatform, every version (maybe not the unsupported ones)"
-echo "3. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
-echo "4. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
+echo "2. If you want to catppuccin your tty, https://github.com/catppuccin/tty"
+echo "3. Apply the correct cursor, icon theme, font and dark mode preference in nwg-look and qt5ct/qt6ct"
