@@ -178,7 +178,7 @@ if [[ $APPS == "y" ]]; then
    paru -S anki-bin --noconfirm
    paru -S localsend-bin onlyoffice-bin --noconfirm
    sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
-   sudo pacman -S proton-vpn-gtk-app zen-browser-bin --noconfirm
+   sudo pacman -S proton-vpn-gtk-app zen-browser-bin brave-nightly-bin --noconfirm
    sudo pacman -S rnote xournalpp --noconfirm
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
@@ -189,7 +189,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S hyperfine kdeconnect --noconfirm
 
    sudo pacman -S steam --noconfirm
-   paru -S osu-lazer-bin --noconfirm
+   paru -S osu-lazer-bin protonup-qt --noconfirm
    
    sudo pacman -S torbrowser-launcher calibre --noconfirm
 
