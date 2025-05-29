@@ -182,7 +182,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S rnote xournalpp --noconfirm
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
-   sudo pacman -S dua-cli grsync yt-dlp tealdeer trash-cli --noconfirm
+   sudo pacman -S dua-cli rsync yt-dlp tealdeer trash-cli --noconfirm
    sudo pacman -S android-tools --noconfirm
    paru -S topgrade-bin mpvpaper --noconfirm
 
@@ -202,7 +202,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S gparted exfatprogs btop --noconfirm
    
-   sudo pacman -S qemu-full virt-manager --noconfirm
+   sudo pacman -S qemu-full virt-manager swtpm --noconfirm
    sudo systemctl enable --now libvirtd
 
    sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
@@ -210,7 +210,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S tailscale --noconfirm
    sudo systemctl enable --now tailscaled
-   sudo pacman -S nextcloud-client cifs-utils --noconfirm
+   sudo pacman -S nextcloud-client cifs-utils veracrypt --noconfirm
    
    paru -S visual-studio-code-bin
 fi
