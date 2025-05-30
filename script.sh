@@ -182,7 +182,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S rnote xournalpp --noconfirm
    
    sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
-   sudo pacman -S dua-cli rsync yt-dlp tealdeer trash-cli --noconfirm
+   sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
    sudo pacman -S android-tools --noconfirm
    paru -S topgrade-bin mpvpaper --noconfirm
 
