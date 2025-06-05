@@ -170,7 +170,6 @@ if [[ $KEYD == "y" ]]; then
 fi
 
 echo "Do you want to install some apps I use? y/n"
-echo "resources anki telegram localsend onlyoffice osu obsidian protonvpn topgrade zen-browser..."
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
@@ -186,7 +185,7 @@ if [[ $APPS == "y" ]]; then
    sudo pacman -S android-tools --noconfirm
    paru -S topgrade-bin mpvpaper --noconfirm
 
-   sudo pacman -S hyperfine kdeconnect --noconfirm
+   sudo pacman -S hyperfine --noconfirm
 
    sudo pacman -S steam --noconfirm
    paru -S osu-lazer-bin protonup-qt --noconfirm
