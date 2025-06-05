@@ -108,8 +108,8 @@ systemctl enable --now pipewire-pulse --user
 systemctl enable --now wireplumber --user
 
 sudo pacman -S nwg-look wget --noconfirm
-wget https://github.com/catppuccin/cursors/releases/download/v0.4.0/catppuccin-mocha-lavender-cursors.zip
-unzip catppuccin-mocha-lavender-cursors.zip -d ~/.icons
+wget https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-mauve-cursors.zip
+unzip catppuccin-mocha-mauve-cursors.zip -d ~/.icons
 
 git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
 cd Colloid-gtk-theme
@@ -128,7 +128,7 @@ sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
 sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
 
 sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
-sudo sh -c "echo \"Inherits=catppuccin-mocha-lavender-cursors\" >> /usr/share/icons/default/index.theme"
+sudo sh -c "echo \"Inherits=catppuccin-mocha-mauve-cursors\" >> /usr/share/icons/default/index.theme"
 sudo systemctl enable sddm
 
 git clone https://github.com/catppuccin/grub.git
@@ -215,7 +215,7 @@ if [[ $APPS == "y" ]]; then
    paru -S visual-studio-code-bin
 fi
 
-rm -rfv catppuccin-mocha-lavender-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
+rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
