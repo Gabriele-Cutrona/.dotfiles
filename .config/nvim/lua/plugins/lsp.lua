@@ -11,6 +11,7 @@ return {
          lsp.pyright.setup({})
          lsp.rust_analyzer.setup({})
          lsp.tailwindcss.setup({})
+         lsp.svelte.setup({})
       end,
    },
    {
@@ -23,7 +24,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff", "rust_analyzer", "tailwindcss" },
+            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff", "rust_analyzer", "tailwindcss", "svelte" },
          })
       end,
    },
@@ -32,4 +33,11 @@ return {
       opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",
    },
+   {
+      "evanleck/vim-svelte",
+      dependencies = {
+         "pangloss/vim-javascript",
+         "othree/html5.vim"
+      }
+   }
 }
