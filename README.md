@@ -1,18 +1,18 @@
 # dotFiles
 
 ## Tools
-| General          | Specific                                                                             | General      | Specific                                    |
-|:----------------:|:------------------------------------------------------------------------------------:|:------------:|:-------------------------------------------:|
-| Operating System | [Arch Linux](https://archlinux.org)                                                  | Compositor   | [Hyprland](https://hyprland.org)            |
-| Terminal         | [Kitty](https://sw.kovidgoyal.net/kitty)                                             | App Launcher | ULauncher                                   |
-| Shell            | zsh                                                                      | Theme        | [Catppuccin](https://github.com/catppuccin) |
-| Shell theme      | [ohmyposh](https://ohmyposh.dev) ([velvet](https://ohmyposh.dev/docs/themes#velvet)) | Screen Lock  | Hyprlock                                    |
-| Editor           | [Neovim](https://neovim.io)                                                          | Wallpaper    | Hyprpaper                                   |
+| General          | Specific                                                                                         | General      | Specific                                       |
+|:----------------:|:------------------------------------------------------------------------------------------------:|:------------:|:----------------------------------------------:|
+| Operating System | [Arch Linux](https://archlinux.org)                                                              | Compositor   | [Hyprland](https://hyprland.org)               |
+| Terminal         | [Ghostty](https://ghostty.org)                                                                   | App Launcher | [anyrun](https://github.com/anyrun-org/anyrun) |
+| Shell            | [nu](https://www.nushell.sh)                                                                     | Theme        | [Catppuccin](https://github.com/catppuccin)    |
+| Shell theme      | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  | Hyprlock                                       |
+| Editor           | [Neovim](https://neovim.io)                                                                      | Wallpaper    | Hyprpaper                                      |
 <div>
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
    <img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
-   <img width="100" src="https://sw.kovidgoyal.net/kitty/_static/kitty.svg" />
+   <img width="100" src="https://github.com/user-attachments/assets/fe853809-ba8b-400b-83ab-a9a0da25be8a" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
    <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
