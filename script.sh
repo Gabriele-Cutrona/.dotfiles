@@ -188,7 +188,7 @@ if [[ $APPS == "y" ]]; then
 
    sudo pacman -S hyperfine --noconfirm
 
-   sudo pacman -S steam --noconfirm
+   sudo pacman -S steam prismlauncher --noconfirm
    paru -S osu-lazer-bin protonup-qt --noconfirm
    
    sudo pacman -S torbrowser-launcher calibre --noconfirm
