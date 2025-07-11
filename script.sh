@@ -1,7 +1,8 @@
 #!/bin/sh
 
-echo "Enabling systemd-timesyncd"
-sudo systemctl enable --now systemd-timesyncd
+echo "Enabling systemd-timesyncd and systemd-resolved"
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sudo systemctl enable --now systemd-timesyncd systemd-resolved
 
 sudo pacman -S git --noconfirm
 echo "Insert here your git user.name"
