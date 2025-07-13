@@ -16,7 +16,8 @@ stuff = [
     "Custom splashes 'cause Hyprland doesn't let me!",
     "It's not a bug, it's a feature", # Better Call Saul 1x04 9:05
     "Afterall, the world is a stage",
-    "and the stage is a world of entertainment!"
+    "and the stage is a world of entertainment!",
+    "Workers of the world, unite!"
 ]
 
 sentence = stuff[randint(0, len(stuff) - 1)]
