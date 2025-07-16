@@ -9,6 +9,8 @@ vim.opt.fillchars = { eob = " " }
 
 vim.o.timeoutlen = 100
 
+vim.cmd("let g:vim_svelte_plugin_use_typescript = 1")
+
 vim.cmd("set clipboard+=unnamedplus")
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })

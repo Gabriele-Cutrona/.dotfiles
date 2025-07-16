@@ -34,10 +34,9 @@ return {
       cmd = "Trouble",
    },
    {
-      "evanleck/vim-svelte",
-      dependencies = {
-         "pangloss/vim-javascript",
-         "othree/html5.vim"
-      }
-   }
+      "leafOfTree/vim-svelte-plugin",
+   },
+   {
+      "leafgarland/typescript-vim",
+   },
 }
