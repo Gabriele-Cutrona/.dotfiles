@@ -26,8 +26,8 @@ echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
 read -r GIT_SIGNING
 
 if [[ $GIT_SIGNING == "y" ]]; then
-   git config --global gpg.format ssh
-   git config --global user.signingkey ~/.ssh/id_ed25519.pub
+	git config --global gpg.format ssh
+	git config --global user.signingkey ~/.ssh/id_ed25519.pub
 fi
 
 echo "Do you want to enable automatic gpg signing? y/n"
@@ -35,7 +35,7 @@ echo "(git config --global commit.gpgsign true)"
 read -r GIT_AUTOSIGN
 
 if [[ $GIT_AUTOSIGN == "y" ]]; then
-   git config --global commit.gpgsign true
+	git config --global commit.gpgsign true
 fi
 
 sudo pacman -S rustup --noconfirm
@@ -68,9 +68,9 @@ echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
 
 if [[ $TIMESHIFT == "y" ]]; then
-   echo "Installing timeshift for btrfs"
-   sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
-   paru -S timeshift-autosnap --noconfirm
+	echo "Installing timeshift for btrfs"
+	sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
+	paru -S timeshift-autosnap --noconfirm
 fi
 
 echo "Configuring the terminal (ghostty nushell)"
@@ -84,7 +84,7 @@ echo "Do you want to install wezterm-git? (needs compiling from AUR)"
 read -r WEZTERM
 
 if [[ $WEZTERM == "y" ]]; then
-   paru -Syu wezterm-git --noconfirm
+	paru -Syu wezterm-git --noconfirm
 fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
@@ -98,8 +98,8 @@ echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
 
 if [[ $BLUETOOTH == "y" ]]; then
-   sudo pacman -S bluez bluez-utils blueman --noconfirm
-   sudo systemctl enable --now bluetooth
+	sudo pacman -S bluez bluez-utils blueman --noconfirm
+	sudo systemctl enable --now bluetooth
 fi
 
 echo "Installing and enabling pipewire"
@@ -143,18 +143,18 @@ echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
 
 if [[ $OPENTABLETDRIVER == "y" ]]; then
-   paru -S aur/opentabletdriver-git --noconfirm
-   systemctl --user enable --now opentabletdriver.service
+	paru -S aur/opentabletdriver-git --noconfirm
+	systemctl --user enable --now opentabletdriver.service
 fi
 
 echo "Do you want to install fcitx5-im and fcitx5-mozc? y/n"
 read -r FCITX5
 
 if [[ $FCITX5 == "y" ]]; then
-   sudo pacman -S fcitx5-im fcitx5-mozc --noconfirm
-   git clone https://github.com/catppuccin/fcitx5.git
-   mkdir -p ~/.local/share/fcitx5/themes/
-   cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
+	sudo pacman -S fcitx5-im fcitx5-mozc --noconfirm
+	git clone https://github.com/catppuccin/fcitx5.git
+	mkdir -p ~/.local/share/fcitx5/themes/
+	cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
 sudo pacman -S tmux --noconfirm
@@ -165,56 +165,56 @@ sudo pacman -S stow --noconfirm
 echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete, alt/altgr = enter on tap) y/n"
 read -r KEYD
 if [[ $KEYD == "y" ]]; then
-   sudo pacman -S keyd --noconfirm
-   sudo systemctl enable keyd
-   sudo cp ./.keyd.conf /etc/keyd/default.conf
-   sudo systemctl start keyd
+	sudo pacman -S keyd --noconfirm
+	sudo systemctl enable keyd
+	sudo cp ./.keyd.conf /etc/keyd/default.conf
+	sudo systemctl start keyd
 fi
 
 echo "Do you want to install some apps I use? y/n"
 read -r APPS
 
 if [[ $APPS == "y" ]]; then
-   sudo pacman -S resources --noconfirm
-   paru -S anki-bin --noconfirm
-   paru -S localsend-bin onlyoffice-bin --noconfirm
-   sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
-   sudo pacman -S proton-vpn-gtk-app zen-browser-bin brave-nightly-bin --noconfirm
-   paru -S proton-pass-bin --noconfirm
-   sudo pacman -S rnote xournalpp --noconfirm
-   
-   sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
-   sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
-   sudo pacman -S android-tools --noconfirm
-   paru -S topgrade-bin mpvpaper --noconfirm
+	sudo pacman -S resources --noconfirm
+	paru -S anki-bin --noconfirm
+	paru -S localsend-bin onlyoffice-bin --noconfirm
+	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
+	sudo pacman -S proton-vpn-gtk-app zen-browser-bin brave-nightly-bin --noconfirm
+	paru -S proton-pass-bin --noconfirm
+	sudo pacman -S rnote xournalpp --noconfirm
+	
+	sudo pacman -S loupe mpv gnome-sound-recorder qbittorrent --noconfirm
+	sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
+	sudo pacman -S android-tools --noconfirm
+	paru -S topgrade-bin mpvpaper --noconfirm
 
-   sudo pacman -S hyperfine --noconfirm
+	sudo pacman -S hyperfine --noconfirm
 
-   sudo pacman -S steam prismlauncher --noconfirm
-   paru -S osu-lazer-bin protonplus --noconfirm
-   
-   sudo pacman -S torbrowser-launcher calibre --noconfirm
+	sudo pacman -S steam prismlauncher --noconfirm
+	paru -S osu-lazer-bin protonplus --noconfirm
+	
+	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
-   sudo pacman -S hyprpicker --noconfirm
-   sudo pacman -S audacity blender lmms gimp krita kdenlive obs-studio --noconfirm
-   sudo pacman -S godot --noconfirm
-   paru -S pixelorama-bin --noconfirm
+	sudo pacman -S hyprpicker --noconfirm
+	sudo pacman -S audacity blender lmms gimp krita kdenlive obs-studio --noconfirm
+	sudo pacman -S godot --noconfirm
+	paru -S pixelorama-bin --noconfirm
 
-   sudo pacman -S distrobox podman --noconfirm
+	sudo pacman -S distrobox podman --noconfirm
 
-   sudo pacman -S gparted exfatprogs btop --noconfirm
-   
-   sudo pacman -S qemu-full virt-manager swtpm --noconfirm
-   sudo systemctl enable --now libvirtd
+	sudo pacman -S gparted exfatprogs btop --noconfirm
+	
+	sudo pacman -S qemu-full virt-manager swtpm --noconfirm
+	sudo systemctl enable --now libvirtd
 
-   sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
-   sudo systemctl enable --now docker
+	sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
+	sudo systemctl enable --now docker
 
-   sudo pacman -S tailscale --noconfirm
-   sudo systemctl enable --now tailscaled
-   sudo pacman -S nextcloud-client cifs-utils veracrypt --noconfirm
-   
-   paru -S visual-studio-code-bin
+	sudo pacman -S tailscale --noconfirm
+	sudo systemctl enable --now tailscaled
+	sudo pacman -S nextcloud-client cifs-utils veracrypt --noconfirm
+	
+	paru -S visual-studio-code-bin
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
@@ -222,26 +222,26 @@ echo "Do you want to run stow .? y/n"
 read -r STOW
 
 if [[ $STOW == "y" ]]; then
-   rm -rf ~/.config/hypr
-   rm -rf ~/.config/cava
-   rm -rf ~/.config/fcitx5
-   rm -rf ~/.config/nushell
-   rm -rf ~/.config/ghostty
-   rm -rf ~/.config/wezterm
-   rm -rf ~/.config/qt6ct
-   rm ~/.zshrc
-   rm ~/.bashrc
-   stow .
-   bat cache --build
+	rm -rf ~/.config/hypr
+	rm -rf ~/.config/cava
+	rm -rf ~/.config/fcitx5
+	rm -rf ~/.config/nushell
+	rm -rf ~/.config/ghostty
+	rm -rf ~/.config/wezterm
+	rm -rf ~/.config/qt6ct
+	rm ~/.zshrc
+	rm ~/.bashrc
+	stow .
+	bat cache --build
 fi
 
 echo "Do you want cups (printing + hplip)? y/n"
 read -r CUPS
 
 if [[ $CUPS == "y" ]]; then
-   sudo pacman -S cups cups-pdf hplip --noconfirm
-   sudo systemctl enable --now cups
-   sudo pacman -S system-config-printer --noconfirm
+	sudo pacman -S cups cups-pdf hplip --noconfirm
+	sudo systemctl enable --now cups
+	sudo pacman -S system-config-printer --noconfirm
 fi
 
 echo "The end! Here's a list of thing you have to do manually: (because i'm lazy)"

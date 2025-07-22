@@ -9,15 +9,15 @@
 | Shell theme      | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  | Hyprlock                                       |
 | Editor           | [Neovim](https://neovim.io)                                                                      | Wallpaper    | Hyprpaper                                      |
 <div>
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
-   <img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
-   <img width="100" src="https://github.com/user-attachments/assets/fe853809-ba8b-400b-83ab-a9a0da25be8a" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
-   <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-   <img width="100" src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
+	<img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+	<img width="100" src="https://github.com/user-attachments/assets/fe853809-ba8b-400b-83ab-a9a0da25be8a" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+	<img width="100" src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" />
 </div>
 <br />
 

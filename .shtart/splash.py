@@ -6,18 +6,18 @@ from random import randint
 from os import system as sys
 
 stuff = [
-    "こんにちは！",
-    "Hiii! :3",
-    "The cake Is A Lie!",
-    "UwU :3",
-    "Better Call Saul!",
-    "A Smile Is a Valuable Tool My Dear",
-    "This Face Was Made For RADIO",
-    "Custom splashes 'cause Hyprland doesn't let me!",
-    "It's not a bug, it's a feature", # Better Call Saul 1x04 9:05
-    "Afterall, the world is a stage",
-    "and the stage is a world of entertainment!",
-    "Workers of the world, unite!"
+	"こんにちは！",
+	"Hiii! :3",
+	"The cake Is A Lie!",
+	"UwU :3",
+	"Better Call Saul!",
+	"A Smile Is a Valuable Tool My Dear",
+	"This Face Was Made For RADIO",
+	"Custom splashes 'cause Hyprland doesn't let me!",
+	"It's not a bug, it's a feature", # Better Call Saul 1x04 9:05
+	"Afterall, the world is a stage",
+	"and the stage is a world of entertainment!",
+	"Workers of the world, unite!"
 ]
 
 sentence = stuff[randint(0, len(stuff) - 1)]

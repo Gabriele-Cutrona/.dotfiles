@@ -27,25 +27,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: url("./lock.svg");
+	background-image: url("./lock.svg");
 }
 
 #logout {
-    background-image: url("./logout.svg");
+	background-image: url("./logout.svg");
 }
 
 #suspend {
-    background-image: url("./suspend.svg");
+	background-image: url("./suspend.svg");
 }
 
 #hibernate {
-    background-image: url("./hibernate.svg");
+	background-image: url("./hibernate.svg");
 }
 
 #shutdown {
-    background-image: url("./shutdown.svg");
+	background-image: url("./shutdown.svg");
 }
 
 #reboot {
-    background-image: url("./reboot.svg");
+	background-image: url("./reboot.svg");
 }

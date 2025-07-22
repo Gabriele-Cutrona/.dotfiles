@@ -44,7 +44,7 @@ return {
 
 		{ key = "c", mods = "LEADER", action = act({ SpawnTab = "CurrentPaneDomain" }) },
 		{ key = "x", mods = "LEADER", action = act({ CloseCurrentPane = { confirm = true } }) },
-      
+
 		{ key = "t", mods = "LEADER", action = act.EmitEvent("toggle-tabbar") },
 	},
 }

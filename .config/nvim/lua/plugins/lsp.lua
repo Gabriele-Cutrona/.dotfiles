@@ -24,7 +24,19 @@ return {
       "williamboman/mason-lspconfig.nvim",
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "ts_ls", "html", "cssls", "eslint", "lua_ls", "biome", "pyright", "ruff", "rust_analyzer", "tailwindcss", "svelte" },
+            ensure_installed = {
+               "ts_ls",
+               "html",
+               "cssls",
+               "eslint",
+               "lua_ls",
+               "biome",
+               "pyright",
+               "ruff",
+               "rust_analyzer",
+               "tailwindcss",
+               "svelte",
+            },
          })
       end,
    },
