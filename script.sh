@@ -214,7 +214,7 @@ if [[ $APPS == "y" ]]; then
 	sudo systemctl enable --now tailscaled
 	sudo pacman -S nextcloud-client cifs-utils veracrypt --noconfirm
 	
-	paru -S visual-studio-code-bin
+	paru -S visual-studio-code-bin zed --noconfirm
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
