@@ -81,7 +81,7 @@ sudo pacman -S ghostty nushell unzip zip zsh --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
 sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
 sudo pacman -S vivid starship --noconfirm
-chsh -s /usr/bin/nu
+chsh -s /bin/zsh
 
 echo "Do you want to install wezterm-git? (needs compiling from AUR)"
 read -r WEZTERM
