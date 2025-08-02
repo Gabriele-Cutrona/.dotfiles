@@ -59,3 +59,4 @@ esac
 eval "$(mise activate zsh)"
 
 [ -s "/home/gabriele-cutrona/.bun/_bun" ] && source "/home/gabriele-cutrona/.bun/_bun"
+export PATH="/home/gabriele-cutrona/.bun/bin:$PATH"
