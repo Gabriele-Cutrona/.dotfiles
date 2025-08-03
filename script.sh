@@ -121,8 +121,7 @@ cd Colloid-gtk-theme
 ./install.sh --theme purple --color dark --tweaks catppuccin black
 cd ..
 
-sudo pacman -S qt6ct --noconfirm
-paru -S darkly --noconfirm
+sudo pacman -S qt6ct kvantum --noconfirm
 
 echo "sddm and GRUB catppuccin theme"
 ### sddm and GRUB catppuccin ###
