@@ -46,7 +46,7 @@ makepkg -si
 cd ..
 
 echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock hypridle polkit-gnome xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
+sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
 paru -S wlogout --noconfirm
 hyprpm update
 hyprpm add https://github.com/hyprwm/hyprland-plugins
