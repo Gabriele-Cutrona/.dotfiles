@@ -48,9 +48,10 @@ cd ..
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
 paru -S wlogout --noconfirm
+sudo pacman -S cmake meson cpio pkg-config git gcc --noconfirm
 hyprpm update
 hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm enable hyprscoller
+hyprpm enable hyprscolling
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme --noconfirm
@@ -181,7 +182,8 @@ if [[ $APPS == "y" ]]; then
 	paru -S anki-bin --noconfirm
 	paru -S localsend-bin onlyoffice-bin --noconfirm
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
-	sudo pacman -S proton-vpn-gtk-app zen-browser-bin brave-nightly-bin --noconfirm
+	sudo pacman -S proton-vpn-gtk-app --noconfirm
+	paru -S zen-browser-bin brave-nightly-bin --noconfirm
 	paru -S proton-pass-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
