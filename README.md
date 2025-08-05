@@ -10,7 +10,7 @@
 | Editor           | [Neovim](https://neovim.io)                                                                      | Wallpaper    | Hyprpaper                                      |
 <div>
 	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
-        <img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
 	<img width="100" height="100" src="https://wiki.hyprland.org/favicon.svg" />
 	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
 	<img width="100" src="https://github.com/user-attachments/assets/fe853809-ba8b-400b-83ab-a9a0da25be8a" />
@@ -39,4 +39,6 @@ I don't know where to put these things:
 ### Credits
 The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Catppuccin and Kitty logos, which are from the official websites/repos)
 
-<sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
+<details>
+	<sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
+</details>
