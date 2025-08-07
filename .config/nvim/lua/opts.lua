@@ -5,15 +5,12 @@ vim.opt.relativenumber = true
 -- - The Arch Wiki (https://wiki.archlinux.org/title/Arch_is_the_best)
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
--- vim.opt.expandtab = true
 
 vim.opt.termguicolors = true
 
 vim.opt.fillchars = { eob = " " }
 
 vim.o.timeoutlen = 100
-
-vim.cmd("let g:vim_svelte_plugin_use_typescript = 1")
 
 vim.cmd("set clipboard+=unnamedplus")
 

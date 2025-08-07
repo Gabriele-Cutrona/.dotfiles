@@ -45,10 +45,4 @@ return {
       opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",
    },
-   {
-      "leafOfTree/vim-svelte-plugin",
-   },
-   {
-      "leafgarland/typescript-vim",
-   },
 }
