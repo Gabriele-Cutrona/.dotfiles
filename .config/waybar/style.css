@@ -31,6 +31,8 @@ button:hover {
 
 #window {
 	border: solid @mauve 2px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 #tray {
@@ -75,24 +77,24 @@ button:hover {
 	margin-left: 10px;
 }
 
-#workspaces button {
-}
+/* #workspaces button { */
+/* } */
+/**/
+/* #workspaces button:hover { */
+/* } */
+/**/
+/* #workspaces button.active { */
+/* } */
+/**/
+/* #workspaces button.urgent { */
+/* } */
 
-#workspaces button:hover {
-}
-
-#workspaces button.active {
-}
-
-#workspaces button.urgent {
-}
-
-#mode {
-}
-
-#window,
-#workspaces {
-}
+/* #mode { */
+/* } */
+/**/
+/* #window, */
+/* #workspaces { */
+/* } */
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
@@ -108,12 +110,12 @@ button:hover {
 	margin-right: 5px;
 }
 
-#battery {
-}
-
-#battery.charging,
-#battery.plugged {
-}
+/* #battery { */
+/* } */
+/**/
+/* #battery.charging, */
+/* #battery.plugged { */
+/* } */
 
 @keyframes blink {
 	to {
@@ -133,69 +135,69 @@ button:hover {
 	animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-}
-
-#power-profiles-daemon.performance {
-}
-
-#power-profiles-daemon.balanced {
-}
-
-#power-profiles-daemon.power-saver {
-}
+/* #power-profiles-daemon { */
+/* } */
+/**/
+/* #power-profiles-daemon.performance { */
+/* } */
+/**/
+/* #power-profiles-daemon.balanced { */
+/* } */
+/**/
+/* #power-profiles-daemon.power-saver { */
+/* } */
 
 label:focus {
 	background-color: #000000;
 }
-
-#cpu {
-}
-
-#memory {
-}
-
-#disk {
-}
-
-#backlight {
-}
-
-#network {
-}
-
-#network.disconnected {
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
-
-#wireplumber {
-}
-
-#wireplumber.muted {
-}
-
-#custom-media {
-}
-
-#custom-media.custom-spotify {
-}
-
-#custom-media.custom-vlc {
-}
-
-#temperature {
-}
-
-#temperature.critical {
-}
-
-#tray {
-}
+/**/
+/* #cpu { */
+/* } */
+/**/
+/* #memory { */
+/* } */
+/**/
+/* #disk { */
+/* } */
+/**/
+/* #backlight { */
+/* } */
+/**/
+/* #network { */
+/* } */
+/**/
+/* #network.disconnected { */
+/* } */
+/**/
+/* #pulseaudio { */
+/* } */
+/**/
+/* #pulseaudio.muted { */
+/* } */
+/**/
+/* #wireplumber { */
+/* } */
+/**/
+/* #wireplumber.muted { */
+/* } */
+/**/
+/* #custom-media { */
+/* } */
+/**/
+/* #custom-media.custom-spotify { */
+/* } */
+/**/
+/* #custom-media.custom-vlc { */
+/* } */
+/**/
+/* #temperature { */
+/* } */
+/**/
+/* #temperature.critical { */
+/* } */
+/**/
+/* #tray { */
+/* } */
 
 #tray > .passive {
 	-gtk-icon-effect: dim;
@@ -204,73 +206,73 @@ label:focus {
 #tray > .needs-attention {
 	-gtk-icon-effect: highlight;
 }
-
-#idle_inhibitor {
-}
-
-#idle_inhibitor.activated {
-}
-
-#mpd {
-}
-
-#mpd.disconnected {
-}
-
-#mpd.stopped {
-}
-
-#mpd.paused {
-}
-
-#language {
-}
-
-#keyboard-state {
-}
-
-#keyboard-state > label {
-}
-
-#keyboard-state > label.locked {
-}
-
-#scratchpad {
-}
-
-#scratchpad.empty {
-}
-
-#privacy {
-}
-
-#privacy-item {
-}
-
-#privacy-item.screenshare {
-}
-
-#privacy-item.audio-in {
-}
-
-#privacy-item.audio-out {
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-}
+/**/
+/* #idle_inhibitor { */
+/* } */
+/**/
+/* #idle_inhibitor.activated { */
+/* } */
+/**/
+/* #mpd { */
+/* } */
+/**/
+/* #mpd.disconnected { */
+/* } */
+/**/
+/* #mpd.stopped { */
+/* } */
+/**/
+/* #mpd.paused { */
+/* } */
+/**/
+/* #language { */
+/* } */
+/**/
+/* #keyboard-state { */
+/* } */
+/**/
+/* #keyboard-state > label { */
+/* } */
+/**/
+/* #keyboard-state > label.locked { */
+/* } */
+/**/
+/* #scratchpad { */
+/* } */
+/**/
+/* #scratchpad.empty { */
+/* } */
+/**/
+/* #privacy { */
+/* } */
+/**/
+/* #privacy-item { */
+/* } */
+/**/
+/* #privacy-item.screenshare { */
+/* } */
+/**/
+/* #privacy-item.audio-in { */
+/* } */
+/**/
+/* #privacy-item.audio-out { */
+/* } */
+/**/
+/* #clock, */
+/* #battery, */
+/* #cpu, */
+/* #memory, */
+/* #disk, */
+/* #temperature, */
+/* #backlight, */
+/* #network, */
+/* #pulseaudio, */
+/* #wireplumber, */
+/* #custom-media, */
+/* #tray, */
+/* #mode, */
+/* #idle_inhibitor, */
+/* #scratchpad, */
+/* #power-profiles-daemon, */
+/* #mpd { */
+/* } */
