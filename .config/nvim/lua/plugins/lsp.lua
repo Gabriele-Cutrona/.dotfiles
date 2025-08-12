@@ -36,6 +36,8 @@ return {
                "rust_analyzer",
                "tailwindcss",
                "svelte",
+					"clang-format",
+					"clangd"
             },
          })
       end,
