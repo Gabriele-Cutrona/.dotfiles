@@ -10,7 +10,7 @@
 	},
 	"backend": "fastfetch",
 	"args": null,
-	"distro": null,
+	"distro": "arch",
 	"pride_month_shown": [],
 	"pride_month_disable": false
 }
