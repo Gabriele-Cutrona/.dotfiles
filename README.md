@@ -5,7 +5,7 @@
 |:----------------:|:------------------------------------------------------------------------------------------------:|:------------:|:----------------------------------------------:|
 | Operating System | [Arch Linux](https://archlinux.org)                                                              | Compositor   | [Hyprland](https://hyprland.org)               |
 | Terminal         | [Ghostty](https://ghostty.org)                                                                   | App Launcher | [anyrun](https://github.com/anyrun-org/anyrun) |
-| Shell            | [nu](https://www.nushell.sh)                                                                     | Theme        | [Catppuccin](https://github.com/catppuccin)    |
+| Shell            | zsh                                                                     | Theme        | [Catppuccin](https://github.com/catppuccin)    |
 | Shell theme      | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  | Hyprlock                                       |
 | Editor           | [Neovim](https://neovim.io)                                                                      | Wallpaper    | Hyprpaper                                      |
 <div>
