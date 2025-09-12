@@ -46,4 +46,9 @@ return {
       opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",
    },
+	{
+		"davidmh/mdx.nvim",
+		config = true,
+		dependencies = {"nvim-treesitter/nvim-treesitter"}
+	}
 }

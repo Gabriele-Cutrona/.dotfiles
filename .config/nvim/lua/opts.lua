@@ -26,6 +26,5 @@ vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "none" })
 
 vim.opt.cursorline = true
-vim.opt.conceallevel = 2
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cba6f7", bold = true })
