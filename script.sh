@@ -93,7 +93,7 @@ fi
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
-paru -S anyrun-git --noconfirm
+paru -S anyrun --noconfirm
 sudo pacman -S gnome-keyring seahorse --noconfirm
 
 sudo pacman -S pavucontrol --noconfirm

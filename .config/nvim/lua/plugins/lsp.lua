@@ -2,16 +2,15 @@ return {
    {
       "neovim/nvim-lspconfig",
       config = function()
-         local lsp = require("lspconfig")
-         lsp.ts_ls.setup({})
-         lsp.html.setup({})
-         lsp.cssls.setup({})
-         lsp.lua_ls.setup({})
-         lsp.ruff.setup({})
-         lsp.pyright.setup({})
-         lsp.rust_analyzer.setup({})
-         lsp.tailwindcss.setup({})
-         lsp.svelte.setup({})
+         local lsp = vim.lsp.enable
+			lsp("ts_ls")
+			lsp("html")
+			lsp("lua_ls")
+			lsp("ruff")
+			lsp("pyright")
+			lsp("rust_analyzer")
+			lsp("tailwindcss")
+			lsp("svelte")
       end,
    },
    {
