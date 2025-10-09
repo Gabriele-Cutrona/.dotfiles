@@ -49,9 +49,9 @@ echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
 paru -S wlogout --noconfirm
 sudo pacman -S cmake meson cpio pkg-config git gcc --noconfirm
-hyprpm update
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm enable hyprscolling
+
+echo "Installing niri"
+sudo pacman -Sy niri --noconfirm
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme --noconfirm
