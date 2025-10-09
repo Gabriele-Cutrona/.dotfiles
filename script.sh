@@ -56,7 +56,7 @@ sudo pacman -Sy niri xwayland-satellite --noconfirm
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme --noconfirm
 paru -S swaync-git --noconfirm
-sudo pacman -Sy fastfetch onefetch hyfetch eza bat less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl --noconfirm
+sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl --noconfirm
 sudo pacman -S mise sshfs --noconfirm
 mise use -g node@latest
 mise use -g pnpm@latest
