@@ -187,14 +187,14 @@ if [[ $APPS == "y" ]]; then
 	paru -S proton-pass-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
-	sudo pacman -S loupe mpv vlc gnome-sound-recorder qbittorrent --noconfirm
+	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
 	sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
 	sudo pacman -S android-tools --noconfirm
 	paru -S topgrade-bin mpvpaper --noconfirm
 
 	sudo pacman -S hyperfine --noconfirm
 
-	sudo pacman -S steam prismlauncher --noconfirm
+	sudo pacman -S steam prismlauncher gamemode --noconfirm
 	paru -S osu-lazer-bin protonplus --noconfirm
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
