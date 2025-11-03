@@ -32,29 +32,29 @@ button:hover {
 
 #window {
 	background-color: @base;
-	border: solid @mauve 2px;
+	border: solid @blue 2px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
 
 #tray {
 	background-color: @base;
-	border: solid @green 2px;
+	border: solid @blue 2px;
 }
 
 #pulseaudio {
 	background-color: @base;
-	border: solid @peach 2px;
+	border: solid @blue 2px;
 }
 
 #backlight {
 	background-color: @base;
-	border: solid @lavender 2px;
+	border: solid @blue 2px;
 }
 
 #battery {
 	background-color: @base;
-	border: solid @red 2px;
+	border: solid @blue 2px;
 }
 
 #clock {

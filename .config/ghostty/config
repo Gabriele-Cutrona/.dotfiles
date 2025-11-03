@@ -1,6 +1,6 @@
 theme = catppuccin-mocha.conf
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 13
 
 background-opacity = 1
 window-theme = ghostty
