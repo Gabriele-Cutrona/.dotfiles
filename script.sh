@@ -53,10 +53,10 @@ sudo pacman -S cmake meson cpio pkg-config git gcc --noconfirm
 echo "Installing niri"
 sudo pacman -Sy niri xwayland-satellite --noconfirm
 
-echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer brightnessctl grimblast"
+echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl grimblast"
 sudo pacman -S papirus-icon-theme --noconfirm
 paru -S swaync-git --noconfirm
-sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer brightnessctl --noconfirm
+sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S mise sshfs --noconfirm
 mise use -g node@latest
 mise use -g pnpm@latest
@@ -77,7 +77,7 @@ if [[ $TIMESHIFT == "y" ]]; then
 	paru -S timeshift-autosnap --noconfirm
 fi
 
-echo "Configuring the terminal (ghostty nushell)"
+echo "Configuring the terminal (ghostty zsh)"
 sudo pacman -S ghostty nushell unzip zip zsh --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
 sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
@@ -125,7 +125,6 @@ cd ..
 sudo pacman -S qt6ct kvantum --noconfirm
 
 echo "sddm and GRUB catppuccin theme"
-### sddm and GRUB catppuccin ###
 sudo pacman -S sddm --noconfirm
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
@@ -140,7 +139,6 @@ git clone https://github.com/catppuccin/grub.git
 sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
 sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-### End sddm and GRUB catppuccin ###
 
 echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
@@ -165,7 +163,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 sudo pacman -S stow --noconfirm
 
-echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete, alt/altgr = enter on tap) y/n"
+echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete) y/n"
 read -r KEYD
 if [[ $KEYD == "y" ]]; then
 	sudo pacman -S keyd --noconfirm
