@@ -57,7 +57,7 @@ echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide
 sudo pacman -S papirus-icon-theme --noconfirm
 paru -S swaync-git --noconfirm
 sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
-sudo pacman -S mise sshfs --noconfirm
+sudo pacman -S mise sshfs prettier --noconfirm
 mise use -g node@latest
 mise use -g pnpm@latest
 mise use -g bun@latest
