@@ -225,6 +225,7 @@ read -r STOW
 
 if [[ $STOW == "y" ]]; then
 	rm -rf ~/.config/hypr
+	rm -rf ~/.config/niri
 	rm -rf ~/.config/cava
 	rm -rf ~/.config/fcitx5
 	rm -rf ~/.config/nushell

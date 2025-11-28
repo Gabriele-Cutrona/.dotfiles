@@ -5,7 +5,7 @@
 // Input device configuration.
 // https://yalter.github.io/niri/Configuration:-Input
 input {
-	focus-follows-mouse
+	focus-follows-mouse max-scroll-amount="0%"
 	keyboard {
 		xkb {
 			// You can set rules, model, layout, variant and options.
