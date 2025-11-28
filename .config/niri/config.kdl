@@ -104,7 +104,7 @@ output "eDP-1" {
 }
 
 output "DP-1" {
-	mode "2560x1440@240.002"
+	mode "2560x1440@120"
 }
 
 environment {
