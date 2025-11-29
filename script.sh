@@ -182,7 +182,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
 	paru -S zen-browser-bin brave-nightly-bin --noconfirm
-	paru -S proton-pass-bin --noconfirm
+	paru -S proton-pass-bin proton-authenticator-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
