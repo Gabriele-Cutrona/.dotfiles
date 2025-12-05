@@ -232,6 +232,7 @@ if [[ $STOW == "y" ]]; then
 	rm -rf ~/.config/ghostty
 	rm -rf ~/.config/wezterm
 	rm -rf ~/.config/qt6ct
+	rm -rf ~/.config/fastfetch/config.jsonc
 	rm ~/.zshrc
 	rm ~/.bashrc
 	stow .
