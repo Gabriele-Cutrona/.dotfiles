@@ -45,6 +45,11 @@ cd paru-bin
 makepkg -si
 cd ..
 
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+cd ..
+
 echo "Installing hyprland"
 sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
 paru -S wlogout --noconfirm
@@ -219,7 +224,8 @@ if [[ $APPS == "y" ]]; then
 	paru -S visual-studio-code-bin zed --noconfirm
 fi
 
-rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip Colloid-gtk-theme fcitx5 grub paru-bin
+rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
+rm -rfv  Colloid-gtk-theme fcitx5 grub paru-bin yay-bin
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
