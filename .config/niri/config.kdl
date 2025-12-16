@@ -75,10 +75,6 @@ input {
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
 
-output "HDMI-A-1" {
-	mode "1920x1080@75.973"
-}
-
 output "eDP-1" {
 	// off
 
@@ -104,7 +100,11 @@ output "eDP-1" {
 }
 
 output "DP-1" {
-	mode "2560x1440@120"
+	mode "2560x1440@240.002"
+}
+
+output "HDMI-A-1" {
+	mode "1920x1080@74.973"
 }
 
 environment {
