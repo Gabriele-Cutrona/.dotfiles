@@ -207,7 +207,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S godot --noconfirm
 	paru -S pixelorama-bin --noconfirm
 
-	sudo pacman -S distrobox podman --noconfirm
+	sudo pacman -S distrobox podman podman-compose --noconfirm
 
 	sudo pacman -S gparted exfatprogs btop --noconfirm
 	
