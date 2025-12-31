@@ -286,7 +286,7 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "otd-daemon"
 spawn-at-startup "nextcloud"
 spawn-sh-at-startup "discord --start-minimized"
-spawn-sh-at-startup "steam -silent"
+spawn-sh-at-startup "steam -system-composer -silent"
 
 hotkey-overlay {
 	// Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
