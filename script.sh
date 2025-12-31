@@ -216,6 +216,7 @@ if [[ $APPS == "y" ]]; then
 
 	sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
 	sudo systemctl enable --now docker
+	sudo usermod -aG docker $USER
 
 	sudo pacman -S tailscale --noconfirm
 	sudo systemctl enable --now tailscaled
