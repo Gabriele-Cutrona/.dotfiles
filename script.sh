@@ -40,8 +40,8 @@ fi
 
 sudo pacman -S rustup --noconfirm
 rustup default stable
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
+git clone https://aur.archlinux.org/paru-git.git
+cd paru-git
 makepkg -si
 cd ..
 
@@ -226,7 +226,7 @@ if [[ $APPS == "y" ]]; then
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
-rm -rfv  Colloid-gtk-theme fcitx5 grub paru-bin yay-bin
+rm -rfv  Colloid-gtk-theme fcitx5 grub paru-git yay-bin
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
