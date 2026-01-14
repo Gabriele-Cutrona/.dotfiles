@@ -51,7 +51,7 @@ makepkg -si
 cd ..
 
 echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --noconfirm
+sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
 paru -S wlogout --noconfirm
 sudo pacman -S cmake meson cpio pkg-config git gcc --noconfirm
 
@@ -64,7 +64,6 @@ paru -S swaync-git --noconfirm
 sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S mise sshfs prettier --noconfirm
 mise use -g node@latest
-mise use -g pnpm@latest
 mise use -g bun@latest
 mise use -g zig@latest
 sudo pacman -S just uv python --noconfirm
@@ -198,7 +197,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S hyperfine --noconfirm
 
 	sudo pacman -S steam prismlauncher gamemode gamescope --noconfirm
-	paru -S osu-lazer-bin heroic-games-launcher-bin winboat-bin protonplus --noconfirm
+	paru -S osu-lazer-bin heroic-games-launcher-bin winboat-bin protonplus millennium --noconfirm
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
@@ -211,7 +210,7 @@ if [[ $APPS == "y" ]]; then
 
 	sudo pacman -S gparted exfatprogs btop --noconfirm
 	
-	sudo pacman -S qemu-full virt-manager swtpm --noconfirm
+	sudo pacman -S qemu-full virt-manager swtpm quickemu --noconfirm
 	sudo systemctl enable --now libvirtd
 
 	sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
@@ -220,7 +219,7 @@ if [[ $APPS == "y" ]]; then
 
 	sudo pacman -S tailscale --noconfirm
 	sudo systemctl enable --now tailscaled
-	sudo pacman -S nextcloud-client cifs-utils veracrypt --noconfirm
+	sudo pacman -S nextcloud-client cifs-utils nautilus-share gvfs-smb veracrypt --noconfirm
 	
 	paru -S visual-studio-code-bin zed --noconfirm
 fi
