@@ -185,7 +185,7 @@ if [[ $APPS == "y" ]]; then
 	paru -S localsend-bin onlyoffice-bin --noconfirm
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
-	paru -S zen-browser-bin brave-nightly-bin --noconfirm
+	paru -S zen-browser-bin brave-bin --noconfirm
 	paru -S proton-pass-bin proton-authenticator-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
