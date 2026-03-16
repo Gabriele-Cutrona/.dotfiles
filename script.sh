@@ -226,6 +226,10 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S nextcloud-client cifs-utils nautilus-share gvfs-smb veracrypt --noconfirm
 	
 	paru -S visual-studio-code-bin zed --noconfirm
+
+	wget https://github.com/CrealityOfficial/CrealityPrint/releases/download/v7.0.1/CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
+	flatpak install CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
+	rm *.flatpak
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
