@@ -229,7 +229,12 @@ if [[ $APPS == "y" ]]; then
 
 	wget https://github.com/CrealityOfficial/CrealityPrint/releases/download/v7.0.1/CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
 	flatpak install CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
+
+	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.1/OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
+	flatpak install OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
+
 	rm *.flatpak
+
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
