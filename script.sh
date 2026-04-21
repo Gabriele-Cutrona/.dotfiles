@@ -200,7 +200,7 @@ if [[ $APPS == "y" ]]; then
 	paru -S osu-lazer-bin winboat-bin protonplus --noconfirm
 
 	sudo pacman -S flatpak
-	flatpak install flathub com.heroicgameslauncher.hgl
+	paru -S heroic-games-launcher-bin
 	flatpak install flathub org.vinegarhq.Sober
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
