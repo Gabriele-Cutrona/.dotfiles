@@ -181,7 +181,7 @@ read -r APPS
 
 if [[ $APPS == "y" ]]; then
 	sudo pacman -S resources --noconfirm
-	paru -S anki-bin --noconfirm
+	sudo pacman -S anki --noconfirm
 	paru -S localsend-bin onlyoffice-bin --noconfirm
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
