@@ -202,6 +202,11 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S flatpak
 	paru -S heroic-games-launcher-bin
 	flatpak install flathub org.vinegarhq.Sober
+
+	flatpak install flathub com.github.mtkennerly.ludusavi
+
+	flatpak install flathub io.github.wivrn.wivrn
+	paru -S wayvr-bin --noconfirm
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
