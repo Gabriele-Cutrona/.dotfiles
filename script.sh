@@ -51,7 +51,9 @@ makepkg -si
 cd ..
 
 # echo "Installing hyprland"
-# sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+# sudo pacman -Sy hyprland xdg-desktop-portal-hyprland
+
+sudo pacman -Sy hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
 
 paru -S wlogout --noconfirm
 
