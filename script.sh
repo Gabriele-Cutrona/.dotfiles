@@ -50,10 +50,10 @@ cd yay-bin
 makepkg -si
 cd ..
 
-echo "Installing hyprland"
-sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+# echo "Installing hyprland"
+# sudo pacman -Sy hyprland hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+
 paru -S wlogout --noconfirm
-sudo pacman -S cmake meson cpio pkg-config git gcc --noconfirm
 
 echo "Installing niri"
 sudo pacman -Sy niri xwayland-satellite --noconfirm
@@ -62,13 +62,10 @@ echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide
 sudo pacman -S papirus-icon-theme --noconfirm
 paru -S swaync-git --noconfirm
 sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
-sudo pacman -S mise sshfs prettier --noconfirm
-mise use -g node@latest
-mise use -g bun@latest
-mise use -g zig@latest
+sudo pacman -S sshfs prettier --noconfirm
 sudo pacman -S just uv python --noconfirm
 cargo install cargo-update
-cargo install rsmoji
+cargo install rsmoji # my project :3
 
 paru -S cava grimblast --noconfirm
 
@@ -82,9 +79,9 @@ if [[ $TIMESHIFT == "y" ]]; then
 fi
 
 echo "Configuring the terminal (ghostty zsh)"
-sudo pacman -S ghostty nushell unzip zip zsh --noconfirm
+sudo pacman -S ghostty unzip unar zip zsh --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
-sudo pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
+sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
 sudo pacman -S vivid starship --noconfirm
 chsh -s $(which zsh)
 
@@ -129,6 +126,7 @@ cd ..
 sudo pacman -S qt6ct kvantum --noconfirm
 
 echo "sddm and GRUB catppuccin theme"
+
 sudo pacman -S sddm --noconfirm
 wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
 sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
@@ -162,9 +160,6 @@ if [[ $FCITX5 == "y" ]]; then
 	cp -r ./fcitx5/src/* ~/.local/share/fcitx5/themes
 fi
 
-sudo pacman -S tmux --noconfirm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 sudo pacman -S stow --noconfirm
 
 echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete) y/n"
@@ -185,8 +180,8 @@ if [[ $APPS == "y" ]]; then
 	paru -S localsend-bin onlyoffice-bin --noconfirm
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
-	paru -S zen-browser-bin brave-bin --noconfirm
-	paru -S proton-pass-bin proton-authenticator-bin --noconfirm
+	paru -S zen-browser-bin --noconfirm
+	paru -S proton-authenticator-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
@@ -215,9 +210,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S godot --noconfirm
 	paru -S pixelorama-bin --noconfirm
 
-	sudo pacman -S distrobox podman podman-compose --noconfirm
-
-	sudo pacman -S gparted exfatprogs btop --noconfirm
+	sudo pacman -S gparted exfatprogs htop btop --noconfirm
 	
 	sudo pacman -S qemu-full virt-manager swtpm quickemu --noconfirm
 	sudo systemctl enable --now libvirtd
@@ -232,14 +225,10 @@ if [[ $APPS == "y" ]]; then
 	
 	paru -S visual-studio-code-bin zed --noconfirm
 
-	wget https://github.com/CrealityOfficial/CrealityPrint/releases/download/v7.0.1/CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
-	flatpak install CrealityPrint-Linux-flatpak_V7.0.1-Release_x86_64.flatpak
-
 	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.1/OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
 	flatpak install OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
 
 	rm *.flatpak
-
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
@@ -263,7 +252,7 @@ if [[ $STOW == "y" ]]; then
 	bat cache --build
 fi
 
-echo "Do you want cups (printing + hplip)? y/n"
+echo "Do you want printing (cups + hplip)? y/n"
 read -r CUPS
 
 if [[ $CUPS == "y" ]]; then
