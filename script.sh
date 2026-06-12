@@ -69,7 +69,8 @@ sudo pacman -S just uv python --noconfirm
 cargo install cargo-update
 cargo install rsmoji # my project :3
 
-paru -S cava grimblast --noconfirm
+sudo pacman -S cava --noconfirm
+paru -S grimblast --noconfirm
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -179,7 +180,7 @@ read -r APPS
 if [[ $APPS == "y" ]]; then
 	sudo pacman -S resources --noconfirm
 	sudo pacman -S anki --noconfirm
-	paru -S localsend-bin onlyoffice-bin --noconfirm
+	paru -S localsend-bin --noconfirm
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
 	paru -S zen-browser-bin --noconfirm
@@ -223,10 +224,11 @@ if [[ $APPS == "y" ]]; then
 	sudo systemctl enable --now tailscaled
 	sudo pacman -S nextcloud-client cifs-utils nautilus-share gvfs-smb veracrypt --noconfirm
 	
-	paru -S visual-studio-code-bin zed --noconfirm
+	sudo pacman -S zed --noconfirm
+	paru -S visual-studio-code-bin --noconfirm
 
-	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.1/OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
-	flatpak install OrcaSlicer-Linux-flatpak_V2.3.1_x86_64.flatpak
+	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.2/OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
+	flatpak install OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
 
 	rm *.flatpak
 fi
