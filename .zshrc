@@ -56,7 +56,5 @@ case ":$PATH:" in
 	*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-eval "$(mise activate zsh)"
-
 [ -s "/home/$USER/.bun/_bun" ] && source "/home/$USER/.bun/_bun"
 export PATH="/home/$USER/.bun/bin:$PATH"
