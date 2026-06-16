@@ -197,8 +197,8 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S steam prismlauncher gamemode gamescope --noconfirm
 	paru -S osu-lazer-bin winboat-bin protonplus --noconfirm
 
-	sudo pacman -S flatpak
-	paru -S heroic-games-launcher-bin
+	sudo pacman -S flatpak --noconfirm
+	paru -S heroic-games-launcher-bin --noconfirm
 	flatpak install flathub org.vinegarhq.Sober
 
 	flatpak install flathub io.github.wivrn.wivrn
