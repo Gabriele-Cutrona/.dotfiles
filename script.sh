@@ -201,6 +201,8 @@ if [[ $APPS == "y" ]]; then
 	paru -S heroic-games-launcher-bin --noconfirm
 	flatpak install flathub org.vinegarhq.Sober
 
+	flatpak install flathub com.super_productivity.SuperProductivity
+
 	flatpak install flathub io.github.wivrn.wivrn
 	paru -S wayvr-bin --noconfirm
 	
