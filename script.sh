@@ -204,7 +204,6 @@ if [[ $APPS == "y" ]]; then
 	flatpak install flathub com.super_productivity.SuperProductivity
 
 	flatpak install flathub io.github.wivrn.wivrn
-	paru -S wayvr-bin --noconfirm
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
@@ -215,7 +214,8 @@ if [[ $APPS == "y" ]]; then
 
 	sudo pacman -S gparted exfatprogs htop btop --noconfirm
 	
-	sudo pacman -S qemu-full virt-manager swtpm quickemu --noconfirm
+	sudo pacman -S qemu-full virt-manager swtpm --noconfirm
+	paru -S quickemu --noconfirm
 	sudo systemctl enable --now libvirtd
 
 	sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
