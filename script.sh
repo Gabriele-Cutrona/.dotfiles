@@ -40,8 +40,8 @@ fi
 
 sudo pacman -S rustup --noconfirm
 rustup default stable
-git clone https://aur.archlinux.org/paru-git.git
-cd paru-git
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 cd ..
 
@@ -142,7 +142,7 @@ echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
 
 if [[ $OPENTABLETDRIVER == "y" ]]; then
-	paru -S aur/opentabletdriver-git --noconfirm
+	paru -S aur/opentabletdriver --noconfirm
 	systemctl --user enable --now opentabletdriver.service
 fi
 
@@ -230,7 +230,7 @@ if [[ $APPS == "y" ]]; then
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
-rm -rfv  Colloid-gtk-theme fcitx5 grub paru-git
+rm -rfv  Colloid-gtk-theme fcitx5 grub paru
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
