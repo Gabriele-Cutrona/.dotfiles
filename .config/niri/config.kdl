@@ -96,15 +96,15 @@ output "eDP-1" {
 	// so to put another output directly adjacent to it on the right, set its x to 1920.
 	// If the position is unset or results in an overlap, the output is instead placed
 	// automatically.
+}
+
+output "HDMI-A-1" {
+	mode "1920x1080@74.973"
 	position x=0 y=0
 }
 
 output "DP-1" {
 	mode "2560x1440@240.002"
-}
-
-output "HDMI-A-1" {
-	mode "1920x1080@74.973"
 }
 
 environment {
