@@ -45,11 +45,6 @@ cd paru-git
 makepkg -si
 cd ..
 
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si
-cd ..
-
 # echo "Installing hyprland"
 # sudo pacman -Sy hyprland xdg-desktop-portal-hyprland
 
@@ -60,9 +55,9 @@ paru -S wlogout --noconfirm
 echo "Installing niri"
 sudo pacman -Sy niri xwayland-satellite --noconfirm
 
-echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl grimblast"
+echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl"
 sudo pacman -S papirus-icon-theme --noconfirm
-paru -S swaync-git --noconfirm
+sudo pacman -S swaync --noconfirm
 sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S sshfs prettier --noconfirm
 sudo pacman -S just uv python --noconfirm
@@ -70,7 +65,6 @@ cargo install cargo-update
 cargo install rsmoji # my project :3
 
 sudo pacman -S cava --noconfirm
-paru -S grimblast --noconfirm
 
 echo "Do you want to install timeshift for btrfs? y/n"
 read -r TIMESHIFT
@@ -78,7 +72,6 @@ read -r TIMESHIFT
 if [[ $TIMESHIFT == "y" ]]; then
 	echo "Installing timeshift for btrfs"
 	sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
-	paru -S timeshift-autosnap --noconfirm
 fi
 
 echo "Configuring the terminal (ghostty zsh)"
@@ -180,10 +173,10 @@ read -r APPS
 if [[ $APPS == "y" ]]; then
 	sudo pacman -S resources --noconfirm
 	sudo pacman -S anki --noconfirm
-	paru -S localsend-bin --noconfirm
+	flatpak install flathub org.localsend.localsend_app
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
-	paru -S zen-browser-bin --noconfirm
+	flatpak install flathub app.zen_browser.zen
 	paru -S proton-authenticator-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
@@ -195,7 +188,8 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S hyperfine --noconfirm
 
 	sudo pacman -S steam prismlauncher gamemode gamescope --noconfirm
-	paru -S osu-lazer-bin winboat-bin protonplus --noconfirm
+	flatpak install flathub com.vysp3r.ProtonPlus
+	flatpak install flathub sh.ppy.osu
 
 	sudo pacman -S flatpak --noconfirm
 	paru -S heroic-games-launcher-bin --noconfirm
@@ -210,7 +204,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S hyprpicker --noconfirm
 	sudo pacman -S audacity blender lmms gimp krita kdenlive obs-studio --noconfirm
 	sudo pacman -S godot --noconfirm
-	paru -S pixelorama-bin --noconfirm
+	flatpak install flathub com.orama_interactive.Pixelorama
 
 	sudo pacman -S gparted exfatprogs htop btop --noconfirm
 	
@@ -236,7 +230,7 @@ if [[ $APPS == "y" ]]; then
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
-rm -rfv  Colloid-gtk-theme fcitx5 grub paru-git yay-bin
+rm -rfv  Colloid-gtk-theme fcitx5 grub paru-git
 echo "Do you want to run stow .? y/n"
 read -r STOW
 
