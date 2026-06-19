@@ -121,22 +121,30 @@ cd ..
 
 sudo pacman -S qt6ct kvantum --noconfirm
 
-echo "sddm and GRUB catppuccin theme"
+echo "do you want to install sddm and set its theme to catppuccin? (y/n)"
+read -r SDDM
 
-sudo pacman -S sddm --noconfirm
-wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
-sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
-sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
-sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
+if [[ $SDDM == "y" ]]; then
+	sudo pacman -S sddm --noconfirm
+	wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
+	sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
+	sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
+	sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
 
-sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
-sudo sh -c "echo \"Inherits=catppuccin-mocha-mauve-cursors\" >> /usr/share/icons/default/index.theme"
-sudo systemctl enable sddm
+	sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
+	sudo sh -c "echo \"Inherits=catppuccin-mocha-mauve-cursors\" >> /usr/share/icons/default/index.theme"
+	sudo systemctl enable sddm
+fi
 
-git clone https://github.com/catppuccin/grub.git
-sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
-sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo "do you want to set GRUB catppuccin theme? (y/n)"
+read -r GRUB
+
+if [[ $GRUB == "y" ]]; then
+	git clone https://github.com/catppuccin/grub.git
+	sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
+	sudo sh -c "echo \"GRUB_THEME=\"/boot/catppuccin-mocha-grub-theme/theme.txt\"\" >> /etc/default/grub"
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+fi
 
 echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
