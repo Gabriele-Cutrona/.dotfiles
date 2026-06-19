@@ -55,6 +55,9 @@ paru -S wlogout --noconfirm
 echo "Installing niri"
 sudo pacman -Sy niri xwayland-satellite --noconfirm
 
+echo "Installing plasma (base, no apps)"
+sudo pacman -S plasma ark
+
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl"
 sudo pacman -S papirus-icon-theme --noconfirm
 sudo pacman -S swaync --noconfirm
