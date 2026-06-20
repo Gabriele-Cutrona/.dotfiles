@@ -14,7 +14,7 @@ git config --global user.email "$GIT_EMAIL" --replace-all
 git config --global color.ui auto
 git config --global init.defaultBranch main
 
-sudo pacman -S git-delta --noconfirm
+sudo pacman -S git-delta git-cliff --noconfirm
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
