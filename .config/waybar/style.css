@@ -57,12 +57,17 @@ button:hover {
 	border: solid @red 2px;
 }
 
+#power-profiles-daemon {
+	background-color: @base;
+	border: solid @lavender 2px;
+}
+
 #clock {
 	background-color: @base;
 	border: solid @blue 2px;
 }
 
-#workspaces, #window, #tray, #pulseaudio, #battery, #brightness, #backlight, #clock {
+#workspaces, #window, #tray, #pulseaudio, #battery, #brightness, #backlight, #power-profiles-daemon, #clock {
 	border-radius: 10px;
 	padding-right: 8px;
 	padding-left: 8px;
@@ -80,7 +85,7 @@ button:hover {
 	margin-right: 10px;
 }
 
-#pulseaudio, #battery, #battery, #backlight, #clock {
+#pulseaudio, #battery, #battery, #backlight, #power-profiles-daemon, #clock {
 	margin-left: 10px;
 }
 
