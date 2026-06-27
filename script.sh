@@ -78,7 +78,7 @@ if [[ $TIMESHIFT == "y" ]]; then
 fi
 
 echo "Configuring the terminal (ghostty zsh)"
-sudo pacman -S ghostty unzip unar zip zsh --noconfirm
+sudo pacman -S ghostty unzip unarchiver zip zsh --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
 sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
 sudo pacman -S vivid starship --noconfirm
