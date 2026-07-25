@@ -213,7 +213,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
 	sudo pacman -S hyprpicker --noconfirm
-	sudo pacman -S audacity blender lmms gimp krita kdenlive obs-studio --noconfirm
+	sudo pacman -S audacity blender freecad lmms gimp krita kdenlive obs-studio --noconfirm
 	sudo pacman -S godot --noconfirm
 	flatpak install flathub com.orama_interactive.Pixelorama
 
