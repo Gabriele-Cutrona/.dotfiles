@@ -16,7 +16,7 @@ alias s="ssh-add"
 hyfetch # This uses fastfetch as a backend, specified in ~/.config/hyfetch.json
 python ~/.dotfiles/.shtart/splash.py
 
-alias ls="eza --icons"
+alias ls="eza --icons always"
 alias l="eza --icons -lah"
 alias la="eza --icons -a"
 alias exa="eza --icons"
