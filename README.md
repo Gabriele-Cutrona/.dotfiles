@@ -44,7 +44,7 @@ I don't know where to put these things:
 
 ### Credits
 
-The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Niri, Catppuccin and Kitty logos, which are from the official websites/repos)
+The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Niri, Catppuccin and Ghostty logos, which are from the official websites/repos)
 
 <details>
 	<sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>
