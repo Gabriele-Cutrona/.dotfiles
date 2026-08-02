@@ -84,13 +84,6 @@ sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-
 sudo pacman -S vivid starship --noconfirm
 chsh -s $(which zsh)
 
-echo "Do you want to install wezterm-git? (needs compiling from AUR)"
-read -r WEZTERM
-
-if [[ $WEZTERM == "y" ]]; then
-	paru -Syu wezterm-git --noconfirm
-fi
-
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
 paru -S anyrun --noconfirm
@@ -188,13 +181,19 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
 	flatpak install flathub app.zen_browser.zen
-	paru -S proton-authenticator-bin --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
 	sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
 	sudo pacman -S android-tools --noconfirm
-	paru -S topgrade-bin mpvpaper --noconfirm
+
+	paru -S mpvpaper --noconfirm
+
+	wget https://github.com/topgrade-rs/topgrade/releases/download/v17.9.0/topgrade-v17.9.0-x86_64-unknown-linux-musl.tar.gz
+	unar topgrade-v17.9.0-x86_64-unknown-linux-musl.tar.gz
+	mkdir ~/.local/bin -p
+	mv ./topgrade ~/.local/bin
+	rm topgrade-v17.9.0-x86_64-unknown-linux-musl.tar.gz
 
 	sudo pacman -S hyperfine --noconfirm
 
@@ -220,7 +219,6 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S gparted exfatprogs htop btop --noconfirm
 	
 	sudo pacman -S qemu-full virt-manager swtpm --noconfirm
-	paru -S quickemu --noconfirm
 	sudo systemctl enable --now libvirtd
 
 	sudo pacman -S docker docker-compose docker-buildx rclone --noconfirm
@@ -232,7 +230,6 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S nextcloud-client cifs-utils nautilus-share gvfs-smb veracrypt --noconfirm
 	
 	sudo pacman -S zed --noconfirm
-	paru -S visual-studio-code-bin --noconfirm
 
 	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.2/OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
 	flatpak install OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
