@@ -1,13 +1,15 @@
 # dotFiles
 
 ## Tools
-| General          | Specific                                                                                         | General      | Specific                                       |
-|:----------------:|:------------------------------------------------------------------------------------------------:|:------------:|:----------------------------------------------:|
-| Operating System | [Arch Linux](https://archlinux.org)                                                              | Compositor   | [Hyprland](https://hyprland.org) / [Niri](https://github.com/YaLTeR/niri) |
-| Terminal         | [Ghostty](https://ghostty.org)                                                                   | App Launcher | [anyrun](https://github.com/anyrun-org/anyrun) |
-| Shell            | zsh                                                                     | Theme        | [Catppuccin](https://github.com/catppuccin)    |
-| Shell theme      | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  | Hyprlock                                       |
-| Editor           | [Neovim](https://neovim.io)                                                                      | Wallpaper    | Hyprpaper                                      |
+
+|     General      |                                             Specific                                             |   General    |                                 Specific                                  |
+| :--------------: | :----------------------------------------------------------------------------------------------: | :----------: | :-----------------------------------------------------------------------: |
+| Operating System |                               [Arch Linux](https://archlinux.org)                                |  Compositor  | [Hyprland](https://hyprland.org) / [Niri](https://github.com/YaLTeR/niri) |
+|     Terminal     |                                  [Ghostty](https://ghostty.org)                                  | App Launcher |                      [vicinae](https://vicinae.com)                       |
+|      Shell       |                                               zsh                                                |    Theme     |                [Catppuccin](https://github.com/catppuccin)                |
+|   Shell theme    | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  |                                 Hyprlock                                  |
+|      Editor      |                       [Neovim](https://neovim.io) / [Zed](https://zed.dev)                       |  Wallpaper   |                                 Hyprpaper                                 |
+
 <div>
 	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
 	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
@@ -28,16 +30,20 @@ Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), s
 > The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
 
 ## Custom
+
 - To use your own wallpaper (with hyprpaper) put it in .config/hypr/bg.png
 - To use your own hyprlock image put it in .config/hypr/img.png
 - If you want to play a video as background, you can use [mpvpaper](https://github.com/GhostNaN/mpvpaper)
 
 ## Other
+
 I don't know where to put these things:
+
 - Anki addons: [ReColor](https://ankiweb.net/shared/info/688199788) with [Catppuccin](https://github.com/catppuccin/anki), [Review Heatmap](https://ankiweb.net/shared/info/1771074083), [AnkiConnect](https://ankiweb.net/shared/info/2055492159)
 - All catppuccin [userstyles](https://github.com/catppuccin/userstyles)
 
 ### Credits
+
 The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Niri, Catppuccin and Kitty logos, which are from the official websites/repos)
 
 <details>

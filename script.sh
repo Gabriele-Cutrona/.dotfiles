@@ -86,7 +86,10 @@ chsh -s $(which zsh)
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
-paru -S anyrun --noconfirm
+
+paru -S vicinae-bin --noconfirm
+systemctl --user enable --now vicinae.service
+
 sudo pacman -S gnome-keyring seahorse --noconfirm
 
 sudo pacman -S pavucontrol --noconfirm

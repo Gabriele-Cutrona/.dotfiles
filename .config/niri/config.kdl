@@ -380,7 +380,7 @@ binds {
 
 	// Suggested binds for running programs: terminal, app launcher, screen locker.
 	Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-	Mod+D hotkey-overlay-title="Run an Application: anyrun" { spawn-sh "anyrun --close-on-click true"; }
+	Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "vicinae toggle"; }
 	Mod+E hotkey-overlay-title="Run an Application: nautilus" { spawn-sh "nautilus"; }
 
 	// Example volume keys mappings for PipeWire & WirePlumber.
