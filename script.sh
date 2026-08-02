@@ -149,7 +149,7 @@ echo "Do you need opentabletdriver? y/n"
 read -r OPENTABLETDRIVER
 
 if [[ $OPENTABLETDRIVER == "y" ]]; then
-	paru -S aur/opentabletdriver --noconfirm
+	paru -S opentabletdriver --noconfirm
 	systemctl --user enable --now opentabletdriver.service
 fi
 
