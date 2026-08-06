@@ -29,19 +29,23 @@ return {
 			}
 		},
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	lazy = false,
-	-- 	build = ":TSUpdate",
-	-- 	config = function()
-	-- 		require("nvim-treesitter.configs").setup({
-	-- 			auto_install = true,
-	-- 			autotag = { enable = true, },
-	-- 			highlight = { enable = true, additional_vim_regex_highlighting = { "svelte" } },
-	-- 			indent = { enable = true },
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter").setup({
+				auto_install = true,
+				autotag = { enable = true, },
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
+	{
+		"davidmh/mdx.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" }
+	},
 	{
 		"elkasztano/nushell-syntax-vim",
 	},

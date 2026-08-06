@@ -38,6 +38,8 @@ if [[ $GIT_AUTOSIGN == "y" ]]; then
 	git config --global commit.gpgsign true
 fi
 
+sudo pacman -Syu --noconfirm
+
 sudo pacman -S rustup --noconfirm
 rustup default stable
 git clone https://aur.archlinux.org/paru.git
@@ -46,14 +48,14 @@ makepkg -si
 cd ..
 
 # echo "Installing hyprland"
-# sudo pacman -Sy hyprland xdg-desktop-portal-hyprland
+# sudo pacman -S hyprland xdg-desktop-portal-hyprland
 
-sudo pacman -Sy hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+sudo pacman -S hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
 
 paru -S wlogout --noconfirm
 
 echo "Installing niri"
-sudo pacman -Sy niri xwayland-satellite --noconfirm
+sudo pacman -S niri xwayland-satellite --noconfirm
 
 echo "Installing plasma (base, no apps)"
 sudo pacman -S plasma ark
@@ -61,7 +63,7 @@ sudo pacman -S plasma ark
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl"
 sudo pacman -S papirus-icon-theme --noconfirm
 sudo pacman -S swaync --noconfirm
-sudo pacman -Sy fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
+sudo pacman -S fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim tree-sitter-cli yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S sshfs prettier --noconfirm
 sudo pacman -S just uv python --noconfirm
 cargo install cargo-update
@@ -74,7 +76,7 @@ read -r TIMESHIFT
 
 if [[ $TIMESHIFT == "y" ]]; then
 	echo "Installing timeshift for btrfs"
-	sudo pacman -Sy timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
+	sudo pacman -S timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
 fi
 
 echo "Configuring the terminal (ghostty zsh)"

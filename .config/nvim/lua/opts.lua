@@ -28,3 +28,10 @@ vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "none" })
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cba6f7", bold = true })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'svelte' }, -- here go filetypes that are not (for some reason) automatically highlighted
+    callback = function()
+        vim.treesitter.start()
+    end,
+})
