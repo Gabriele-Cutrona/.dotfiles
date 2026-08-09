@@ -1,10 +1,13 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Note the three space indenting used in this project, much like that used by other superior beings.
+-- "Note the three space indenting used in this project, much like that used by other superior beings."
 -- - The Arch Wiki (https://wiki.archlinux.org/title/Arch_is_the_best)
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
+
+vim.opt.expandtab = false -- (I use actual tab characters tho, I'm not THAT crazy to use actual 3 spaces, lol)
+-- hard vs soft tabs, and 2/3/4 spaces can be configured with keybinds inside keymaps/indent.lua
 
 vim.opt.termguicolors = true
 
@@ -29,9 +32,10 @@ vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cba6f7", bold = true })
 
+vim.cmd("TSInstall svelte")
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'svelte' }, -- here go filetypes that are not (for some reason) automatically highlighted
-    callback = function()
-        vim.treesitter.start()
-    end,
+	pattern = { 'svelte' },  -- here go filetypes that are not (for some reason) automatically highlighted
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
