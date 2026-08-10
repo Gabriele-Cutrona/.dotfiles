@@ -1,8 +1,4 @@
-#!/usr/bin/env sh
-
-echo "Enabling systemd-timesyncd and systemd-resolved"
-sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-sudo systemctl enable --now systemd-timesyncd systemd-resolved
+#!/usr/bin/env bash
 
 sudo pacman -S git git-lfs --noconfirm
 echo "Insert here your git user.name"
@@ -25,19 +21,61 @@ echo "git config --global gpg.format ssh"
 echo "git config --global user.signingkey ~/.ssh/id_ed25519.pub"
 read -r GIT_SIGNING
 
-if [[ $GIT_SIGNING == "y" ]]; then
-	git config --global gpg.format ssh
-	git config --global user.signingkey ~/.ssh/id_ed25519.pub
-fi
+echo "Do you want to install timeshift for btrfs? y/n"
+read -r TIMESHIFT
 
 echo "Do you want to enable automatic gpg signing? y/n"
 echo "(git config --global commit.gpgsign true)"
 read -r GIT_AUTOSIGN
 
+echo "Do you want to install hyprland? y/n"
+read -r HYPR
+
+echo "Do you want to install KDE plasma (base, no apps)? y/n"
+read -r KDE
+
+echo "Do you want bluetooth? y/n"
+read -r BLUETOOTH
+
+echo "do you want to install sddm and set its theme to catppuccin? (y/n)"
+read -r SDDM
+
+echo "do you want to set GRUB catppuccin theme? (y/n)"
+read -r GRUB
+
+echo "Do you need opentabletdriver? y/n"
+read -r OPENTABLETDRIVER
+
+echo "Do you want to install fcitx5-im and fcitx5-mozc? y/n"
+read -r FCITX5
+
+echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete) y/n"
+read -r KEYD
+
+echo "Do you want to install some apps I use? y/n"
+read -r APPS
+
+echo "Do you want printing (cups + hplip)? y/n"
+read -r CUPS
+
+sudo pacman -S zsh --noconfirm
+chsh -s "$(which zsh)"
+
+if [[ $GIT_SIGNING == "y" ]]; then
+	git config --global gpg.format ssh
+	git config --global user.signingkey ~/.ssh/id_ed25519.pub
+fi
+
+
 if [[ $GIT_AUTOSIGN == "y" ]]; then
 	git config --global commit.gpgsign true
 fi
 
+echo "Enabling systemd-timesyncd and systemd-resolved"
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sudo systemctl enable --now systemd-timesyncd systemd-resolved
+
+echo "pacman system update"
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S rustup --noconfirm
@@ -47,23 +85,27 @@ cd paru
 makepkg -si
 cd ..
 
-# echo "Installing hyprland"
-# sudo pacman -S hyprland xdg-desktop-portal-hyprland
 
-sudo pacman -S hyprpaper hyprlock hypridle hyprpolkitagent xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+sudo pacman -S hyprpaper hyprlock hypridle hyprpolkitagent --noconfirm
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
+sudo pacman -S swaync swayosd --noconfirm
+sudo systemctl enable --now swayosd-libinput-backend.service
 
 paru -S wlogout --noconfirm
 
 echo "Installing niri"
 sudo pacman -S niri xwayland-satellite --noconfirm
 
-echo "Installing plasma (base, no apps)"
-sudo pacman -S plasma ark --noconfirm
+if [[ $HYPR == "y" ]]; then
+	sudo pacman -S hyprland xdg-desktop-portal-hyprland --noconfirm
+fi
 
-echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl"
+if [[ $KDE == "y" ]]; then
+	sudo pacman -S plasma ark --noconfirm
+fi
+
+
 sudo pacman -S papirus-icon-theme --noconfirm
-sudo pacman -S swaync swayosd --noconfirm
-sudo systemctl enable --now swayosd-libinput-backend.service
 sudo pacman -S fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim tree-sitter-cli yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S sshfs prettier --noconfirm
 sudo pacman -S just uv python --noconfirm
@@ -72,20 +114,16 @@ cargo install rsmoji # my project :3
 
 sudo pacman -S cava --noconfirm
 
-echo "Do you want to install timeshift for btrfs? y/n"
-read -r TIMESHIFT
-
 if [[ $TIMESHIFT == "y" ]]; then
 	echo "Installing timeshift for btrfs"
 	sudo pacman -S timeshift btrfs-progs grub-btrfs xorg-xhost --noconfirm
 fi
 
 echo "Configuring the terminal (ghostty zsh)"
-sudo pacman -S ghostty unzip unarchiver zip zsh --noconfirm
+sudo pacman -S ghostty unzip unarchiver zip --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
 sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
 sudo pacman -S vivid starship --noconfirm
-chsh -s $(which zsh)
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
@@ -96,9 +134,6 @@ systemctl --user enable --now vicinae.service
 sudo pacman -S gnome-keyring seahorse --noconfirm
 
 sudo pacman -S pavucontrol --noconfirm
-
-echo "Do you want bluetooth? y/n"
-read -r BLUETOOTH
 
 if [[ $BLUETOOTH == "y" ]]; then
 	sudo pacman -S bluez bluez-utils blueman --noconfirm
@@ -123,9 +158,6 @@ cd ..
 
 sudo pacman -S qt6ct kvantum --noconfirm
 
-echo "do you want to install sddm and set its theme to catppuccin? (y/n)"
-read -r SDDM
-
 if [[ $SDDM == "y" ]]; then
 	sudo pacman -S sddm --noconfirm
 	wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
@@ -138,9 +170,6 @@ if [[ $SDDM == "y" ]]; then
 	sudo systemctl enable sddm
 fi
 
-echo "do you want to set GRUB catppuccin theme? (y/n)"
-read -r GRUB
-
 if [[ $GRUB == "y" ]]; then
 	git clone https://github.com/catppuccin/grub.git
 	sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
@@ -148,16 +177,10 @@ if [[ $GRUB == "y" ]]; then
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
-echo "Do you need opentabletdriver? y/n"
-read -r OPENTABLETDRIVER
-
 if [[ $OPENTABLETDRIVER == "y" ]]; then
 	paru -S opentabletdriver --noconfirm
 	systemctl --user enable --now opentabletdriver.service
 fi
-
-echo "Do you want to install fcitx5-im and fcitx5-mozc? y/n"
-read -r FCITX5
 
 if [[ $FCITX5 == "y" ]]; then
 	sudo pacman -S fcitx5-im fcitx5-mozc --noconfirm
@@ -168,8 +191,6 @@ fi
 
 sudo pacman -S stow --noconfirm
 
-echo "Keyd with my config? (caps lock = esc if pressed, ctrl if hold / alt + hjkl = arrows, alt+shift+h/l = backspace/delete) y/n"
-read -r KEYD
 if [[ $KEYD == "y" ]]; then
 	sudo pacman -S keyd --noconfirm
 	sudo systemctl enable keyd
@@ -177,16 +198,15 @@ if [[ $KEYD == "y" ]]; then
 	sudo systemctl start keyd
 fi
 
-echo "Do you want to install some apps I use? y/n"
-read -r APPS
-
 if [[ $APPS == "y" ]]; then
+	sudo pacman -S flatpak --noconfirm
+
 	sudo pacman -S resources --noconfirm
 	sudo pacman -S anki --noconfirm
-	flatpak install flathub org.localsend.localsend_app -y
+	flatpak install flathub org.localsend.localsend_app --assumeyes
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
-	flatpak install flathub app.zen_browser.zen
+	flatpak install flathub app.zen_browser.zen --assumeyes
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
@@ -204,23 +224,21 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S hyperfine --noconfirm
 
 	sudo pacman -S steam prismlauncher gamemode gamescope --noconfirm
-	flatpak install flathub com.vysp3r.ProtonPlus
-	flatpak install flathub sh.ppy.osu
-
-	sudo pacman -S flatpak --noconfirm
+	flatpak install flathub com.vysp3r.ProtonPlus --assumeyes
+	flatpak install flathub sh.ppy.osu --assumeyes
 	paru -S heroic-games-launcher-bin --noconfirm
-	flatpak install flathub org.vinegarhq.Sober
+	flatpak install flathub org.vinegarhq.Sober --assumeyes
 
-	flatpak install flathub com.super_productivity.SuperProductivity
+	flatpak install flathub com.super_productivity.SuperProductivity --assumeyes
 
-	flatpak install flathub io.github.wivrn.wivrn
+	flatpak install flathub io.github.wivrn.wivrn --assumeyes
 	
 	sudo pacman -S torbrowser-launcher calibre --noconfirm
 
 	sudo pacman -S hyprpicker --noconfirm
 	sudo pacman -S audacity blender freecad lmms gimp krita kdenlive obs-studio --noconfirm
 	sudo pacman -S godot --noconfirm
-	flatpak install flathub com.orama_interactive.Pixelorama
+	flatpak install flathub com.orama_interactive.Pixelorama --assumeyes
 
 	sudo pacman -S gparted exfatprogs htop btop --noconfirm
 	
@@ -238,35 +256,28 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S zed --noconfirm
 
 	wget https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v2.3.2/OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
-	flatpak install OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak
+	flatpak install OrcaSlicer-Linux-flatpak_V2.3.2_x86_64.flatpak --assumeyes
 
 	rm *.flatpak
 fi
 
 rm -rfv catppuccin-mocha-mauve-cursors.zip catppuccin-mocha.zip
 rm -rfv  Colloid-gtk-theme fcitx5 grub paru
-echo "Do you want to run stow .? y/n"
-read -r STOW
 
-if [[ $STOW == "y" ]]; then
-	rm -rf ~/.config/hypr
-	rm -rf ~/.config/niri
-	rm -rf ~/.config/cava
-	rm -rf ~/.config/fcitx5
-	rm -rf ~/.config/nushell
-	rm -rf ~/.config/ghostty
-	rm -rf ~/.config/wezterm
-	rm -rf ~/.config/qt6ct
-	rm -rf ~/.config/fastfetch/config.jsonc
-	rm -rf ~/.config/lazygit
-	rm ~/.zshrc
-	rm ~/.bashrc
-	stow .
-	bat cache --build
-fi
-
-echo "Do you want printing (cups + hplip)? y/n"
-read -r CUPS
+rm -rf ~/.config/hypr
+rm -rf ~/.config/niri
+rm -rf ~/.config/cava
+rm -rf ~/.config/fcitx5
+rm -rf ~/.config/nushell
+rm -rf ~/.config/ghostty
+rm -rf ~/.config/wezterm
+rm -rf ~/.config/qt6ct
+rm -rf ~/.config/fastfetch/config.jsonc
+rm -rf ~/.config/lazygit
+rm ~/.zshrc
+rm ~/.bashrc
+stow .
+bat cache --build
 
 if [[ $CUPS == "y" ]]; then
 	sudo pacman -S cups cups-pdf hplip --noconfirm
