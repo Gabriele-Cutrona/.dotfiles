@@ -58,11 +58,12 @@ echo "Installing niri"
 sudo pacman -S niri xwayland-satellite --noconfirm
 
 echo "Installing plasma (base, no apps)"
-sudo pacman -S plasma ark
+sudo pacman -S plasma ark --noconfirm
 
 echo "Installing papirus-icon-theme swaync fastfetch (hyfetch) eza bat sl zoxide fzf cava neovim yazi wl-clipboard lazygit pamixer playerctl brightnessctl"
 sudo pacman -S papirus-icon-theme --noconfirm
-sudo pacman -S swaync --noconfirm
+sudo pacman -S swaync swayosd --noconfirm
+sudo systemctl enable --now swayosd-libinput-backend.service
 sudo pacman -S fastfetch onefetch hyfetch eza bat jq less sl lolcat toilet zoxide fzf neovim tree-sitter-cli yazi ripgrep fd duf wl-clipboard lazygit pamixer playerctl brightnessctl --noconfirm
 sudo pacman -S sshfs prettier --noconfirm
 sudo pacman -S just uv python --noconfirm
@@ -182,7 +183,7 @@ read -r APPS
 if [[ $APPS == "y" ]]; then
 	sudo pacman -S resources --noconfirm
 	sudo pacman -S anki --noconfirm
-	flatpak install flathub org.localsend.localsend_app
+	flatpak install flathub org.localsend.localsend_app -y
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
 	flatpak install flathub app.zen_browser.zen

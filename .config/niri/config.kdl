@@ -285,6 +285,7 @@ spawn-at-startup "swaync"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "otd-daemon"
 spawn-at-startup "nextcloud"
+spawn-at-startup "swayosd-server"
 spawn-sh-at-startup "discord --start-minimized"
 spawn-sh-at-startup "steam -system-composer -silent"
 
@@ -364,42 +365,25 @@ window-rule {
 }
 
 binds {
-	// Keys consist of modifiers separated by + signs, followed by an XKB key name
-	// in the end. To find an XKB name for a particular key, you may use a program
-	// like wev.
-	//
-	// "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
-	// when running as a winit window.
-	//
-	// Most actions that you can bind here can also be invoked programmatically with
-	// `niri msg action do-something`.
-
 	// Mod-Shift-/, which is usually the same as Mod-?,
 	// shows a list of important hotkeys.
 	Mod+Shift+Slash { show-hotkey-overlay; }
 
-	// Suggested binds for running programs: terminal, app launcher, screen locker.
 	Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 	Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "vicinae toggle"; }
-	Mod+E hotkey-overlay-title="Run an Application: nautilus" { spawn-sh "nautilus"; }
+	Mod+E hotkey-overlay-title="Run an Application: nautilus" { spawn "nautilus"; }
 
-	// Example volume keys mappings for PipeWire & WirePlumber.
-	// The allow-when-locked=true property makes them work even when the session is locked.
-	// Using spawn-sh allows to pass multiple arguments together with the command.
-	XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ && notify-send -t 250 $(pamixer --get-volume-human)"; }
-	XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- && notify-send -t 250 $(pamixer --get-volume-human)"; }
-	XF86AudioMute		 allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-	XF86AudioMicMute	 allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+	XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume raise"; }
+	XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume lower"; }
+	XF86AudioMute		 allow-when-locked=true { spawn-sh "swayosd-client --output-volume mute-toggle"; }
+	XF86AudioMicMute	 allow-when-locked=true { spawn-sh "swayosd-client --input-volume mute-toggle"; }
 
-	XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-	XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
-	XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+	XF86AudioPlay allow-when-locked=true { spawn-sh "swayosd-client --playerctl play-pause"; }
+	XF86AudioNext allow-when-locked=true { spawn-sh "swayosd-client --playerctl next"; }
+	XF86AudioPrev allow-when-locked=true { spawn-sh "swayosd-client --playerctl prev"; }
 
-	// Example brightness key mappings for brightnessctl.
-	// You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-	// but you need to manually put each argument in separate "" quotes.
-	XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-	XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+	XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
+	XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness"  "-5"; }
 
 	Mod+O repeat=false { toggle-overview; }
 
