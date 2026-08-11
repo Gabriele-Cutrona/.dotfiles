@@ -43,6 +43,10 @@ return {
 		end,
 	},
 	{
+		'nmac427/guess-indent.nvim',
+		config = function() require('guess-indent').setup({}) end,
+	},
+	{
 		"davidmh/mdx.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" }
 	},
