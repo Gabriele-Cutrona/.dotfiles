@@ -58,7 +58,7 @@ read -r APPS
 echo "Do you want printing (cups + hplip)? y/n"
 read -r CUPS
 
-sudo pacman -S zsh --noconfirm
+sudo pacman -S zsh nushell --noconfirm
 chsh -s "$(which zsh)"
 
 if [[ $GIT_SIGNING == "y" ]]; then

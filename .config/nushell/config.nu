@@ -2,7 +2,6 @@ $env.TERM = "xterm-256color"
 
 source ./catppuccin_mocha.nu
 source ~/.cache/.zoxide.nu
-source ~/.cache/.mise.nu
 
 $env.LS_COLORS = (vivid generate catppuccin-mocha)
 $env.config.show_banner = false
@@ -15,7 +14,7 @@ python ~/.dotfiles/.shtart/splash.py
 
 alias s = ssh-add
 
-def l [folder?] { ls -la ($folder | default ".") | select mode name target user group size }
+alias l = ls -la
 alias la = ls -a
 alias cat = bat
 alias z = zoxide
