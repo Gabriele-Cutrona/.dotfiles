@@ -10,24 +10,25 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:yellow bg:green)\
-$c\
-$rust\
-$golang\
-$nodejs\
-$bun\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
 [](fg:green bg:sapphire)\
-$conda\
 [](fg:sapphire bg:lavender)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
-$line_break\
+\n
 $character"""
+
+# $c\
+# $rust\
+# $golang\
+# $nodejs\
+# $bun\
+# $php\
+# $java\
+# $kotlin\
+# $haskell\
+# $python\
+# $conda\
 
 palette = 'catppuccin_mocha'
 
