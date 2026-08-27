@@ -15,7 +15,7 @@ $git_status\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
-\n
+$line_break
 $character"""
 
 # $c\
