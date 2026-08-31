@@ -2,13 +2,13 @@
 
 ## Tools
 
-|     General      |                                             Specific                                             |   General    |                                 Specific                                  |
-| :--------------: | :----------------------------------------------------------------------------------------------: | :----------: | :-----------------------------------------------------------------------: |
-| Operating System |                               [Arch Linux](https://archlinux.org)                                |  Compositor  | [Hyprland](https://hyprland.org) / [Niri](https://github.com/YaLTeR/niri) |
-|     Terminal     |                                  [Ghostty](https://ghostty.org)                                  | App Launcher |                      [vicinae](https://vicinae.com)                       |
-|      Shell       |                                               zsh                                                |    Theme     |                [Catppuccin](https://github.com/catppuccin)                |
-|   Shell theme    | [starship](https://starship.rs) ([catppuccin](https://starship.rs/presets/catppuccin-powerline)) | Screen Lock  |                                 Hyprlock                                  |
-|      Editor      |                       [Neovim](https://neovim.io) / [Zed](https://zed.dev)                       |  Wallpaper   |                                 Hyprpaper                                 |
+|     General      |                                Specific                                 |   General    |                                  Specific                                  |
+| :--------------: | :---------------------------------------------------------------------: | :----------: | :------------------------------------------------------------------------: |
+| Operating System |                   [Arch Linux](https://archlinux.org)                   |  Compositor  | [Hyprland](https://hyprland.org) / [Niri](https://github.com/niri-wm/niri) |
+|     Terminal     |                     [Ghostty](https://ghostty.org)                      | App Launcher |                       [vicinae](https://vicinae.com)                       |
+|      Shell       |                                   zsh                                   |    Theme     |                [Catppuccin](https://github.com/catppuccin)                 |
+|   Shell theme    | [starship-catppuccin](https://starship.rs/presets/catppuccin-powerline) | Screen Lock  |                                  Hyprlock                                  |
+|      Editor      |                       [Neovim](https://neovim.io)                       |  Wallpaper   |                                 Hyprpaper                                  |
 
 <div>
 	<img width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg" />
@@ -27,7 +27,8 @@
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), so to apply everything (the script should do it automatically if you say so) you can just `cd ~/.dotfiles` (clone the repo there) and then run `stow .`
 
-> The script.sh is very basic, it asks you some questions but I think you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
+> The script.sh is very basic, it asks you some questions but you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
+> A better script / config manager is coming soon!
 
 ## Custom
 
@@ -44,7 +45,7 @@ I don't know where to put these things:
 
 ### Credits
 
-The icons up there are from [devicon.dev](https://devicon.dev) (except for the Hyprland, Niri, Catppuccin and Ghostty logos, which are from the official websites/repos)
+All icons up there are direct links, most are from [devicon.dev](https://devicon.dev) (the others, like the Hyprland, Niri, Catppuccin and Ghostty logos, are from the official websites/repos)
 
 <details>
 	<sup>All logos are property of their respective owners. This repo is not endorsed by any of them.</sup>

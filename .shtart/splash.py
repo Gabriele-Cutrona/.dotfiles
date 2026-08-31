@@ -2,8 +2,8 @@
 # But 1. I'm lazy 2. I don't know python 3. :3
 # Update: actually maybe let's fix this (don't get me wrong, I still don't know python, but...)
 
-from random import randint
 from os import system as sys
+from random import randint
 
 stuff = [
 	"こんにちは！",

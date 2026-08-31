@@ -65,3 +65,5 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env --shell zsh)"
 fi
+
+export PATH="$PATH:/home/$USER/.ghcup/bin"
