@@ -1,6 +1,7 @@
 // This config is in the KDL format: https://kdl.dev
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+include optional=true "./monitor.kdl"
 
 // Input device configuration.
 // https://yalter.github.io/niri/Configuration:-Input
@@ -96,11 +97,6 @@ output "eDP-1" {
 	// so to put another output directly adjacent to it on the right, set its x to 1920.
 	// If the position is unset or results in an overlap, the output is instead placed
 	// automatically.
-}
-
-output "HDMI-A-1" {
-	mode "1920x1080@74.973"
-	position x=0 y=0
 }
 
 output "DP-1" {
@@ -369,6 +365,8 @@ binds {
 	// Mod-Shift-/, which is usually the same as Mod-?,
 	// shows a list of important hotkeys.
 	Mod+Shift+Slash { show-hotkey-overlay; }
+
+	Mod+Space { spawn "~/.dotfiles/.config/niri/vertical-monitor.sh"; }
 
 	Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 	Mod+D hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "vicinae toggle"; }
