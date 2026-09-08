@@ -206,6 +206,7 @@ if [[ $APPS == "y" ]]; then
 	flatpak install flathub org.localsend.localsend_app --assumeyes
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
+	sudo pacman -S firefox-developer-edition
 	flatpak install flathub app.zen_browser.zen --assumeyes
 	sudo pacman -S rnote xournalpp --noconfirm
 	
