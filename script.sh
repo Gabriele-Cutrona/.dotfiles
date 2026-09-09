@@ -37,9 +37,6 @@ read -r KDE
 echo "Do you want bluetooth? y/n"
 read -r BLUETOOTH
 
-echo "do you want to install sddm and set its theme to catppuccin? (y/n)"
-read -r SDDM
-
 echo "do you want to set GRUB catppuccin theme? (y/n)"
 read -r GRUB
 
@@ -158,18 +155,6 @@ cd ..
 
 sudo pacman -S qt6ct kvantum --noconfirm
 
-if [[ $SDDM == "y" ]]; then
-	sudo pacman -S sddm --noconfirm
-	wget https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-mocha.zip
-	sudo unzip catppuccin-mocha.zip -d /usr/share/sddm/themes
-	sudo sh -c "echo \"[Theme]\" > /etc/sddm.conf"
-	sudo sh -c "echo \"Current=catppuccin-mocha\" >> /etc/sddm.conf"
-
-	sudo sh -c "echo \"[IconTheme]\" > /usr/share/icons/default/index.theme"
-	sudo sh -c "echo \"Inherits=catppuccin-mocha-mauve-cursors\" >> /usr/share/icons/default/index.theme"
-	sudo systemctl enable sddm
-fi
-
 if [[ $GRUB == "y" ]]; then
 	git clone https://github.com/catppuccin/grub.git
 	sudo cp -r grub/src/catppuccin-mocha-grub-theme /boot
@@ -207,7 +192,6 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
 	sudo pacman -S firefox-developer-edition
-	flatpak install flathub app.zen_browser.zen --assumeyes
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm

@@ -41,6 +41,8 @@ alias xit="exit"
 alias it="exit"
 alias t="exit"
 
+alias bye="niri msg action quit"
+
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 
