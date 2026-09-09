@@ -27,8 +27,14 @@
 
 Configurations are managed with [GNU Stow](https://www.gnu.org/software/stow), so to apply everything (the script should do it automatically if you say so) you can just `cd ~/.dotfiles` (clone the repo there) and then run `stow .`
 
-> The script.sh is very basic, it asks you some questions but you should read it before executing it (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
+> The script.sh is very basic, it asks you some questions but you should read it before executing it
+> (and if you want to run it, make sure you're on Arch Linux, or an Arch based distro)
 > A better script / config manager is coming soon!
+
+I do not currently use a login/display manager, I just setup [getty autologin](https://wiki.archlinux.org/title/Getty)
+and run `niri-session`. My gnome-keyring is not encrypted, because if you use LUKS then it's pointless
+
+> this way I only type my password once: for disk encryption, which is the only one that really matters
 
 ## Custom
 
