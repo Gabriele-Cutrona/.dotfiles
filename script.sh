@@ -55,6 +55,8 @@ read -r APPS
 echo "Do you want printing (cups + hplip)? y/n"
 read -r CUPS
 
+sudo pacman -S base-devel --noconfirm
+
 sudo pacman -S zsh nushell --noconfirm
 chsh -s "$(which zsh)"
 
@@ -87,8 +89,6 @@ sudo pacman -S hyprpaper hyprlock hypridle hyprpolkitagent --noconfirm
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome --noconfirm
 sudo pacman -S swaync swayosd --noconfirm
 sudo systemctl enable --now swayosd-libinput-backend.service
-
-paru -S wlogout --noconfirm
 
 echo "Installing niri"
 sudo pacman -S niri xwayland-satellite --noconfirm
@@ -191,7 +191,7 @@ if [[ $APPS == "y" ]]; then
 	flatpak install flathub org.localsend.localsend_app --assumeyes
 	sudo pacman -S obsidian telegram-desktop signal-desktop discord --noconfirm
 	sudo pacman -S proton-vpn-gtk-app --noconfirm
-	sudo pacman -S firefox-developer-edition
+	sudo pacman -S firefox-developer-edition --noconfirm
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
