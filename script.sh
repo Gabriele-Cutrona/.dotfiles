@@ -259,6 +259,7 @@ rm -rf ~/.config/wezterm
 rm -rf ~/.config/qt6ct
 rm -rf ~/.config/fastfetch/config.jsonc
 rm -rf ~/.config/lazygit
+rm -rf ~/.config/kak
 rm ~/.zshrc
 rm ~/.bashrc
 stow .

@@ -42,3 +42,11 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.treesitter.start()
 	end,
 })
+
+vim.opt.list = true
+vim.opt.listchars = {
+	tab = '→ ',
+	space = '·',
+	trail = '×', -- highlights trailing whitespace at the end of lines
+	nbsp = '␣'
+}
