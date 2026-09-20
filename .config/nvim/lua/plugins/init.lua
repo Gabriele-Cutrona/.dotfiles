@@ -9,6 +9,11 @@ return {
 		opts = {},
 	},
 	{
+		"NStefan002/screenkey.nvim",
+		lazy = false,
+		version = "*",
+	},
+	{
 		"epwalsh/obsidian.nvim",
 		version = "*",
 		lazy = true,
