@@ -195,7 +195,7 @@ if [[ $APPS == "y" ]]; then
 	sudo pacman -S rnote xournalpp --noconfirm
 	
 	sudo pacman -S loupe mpv vlc vlc-plugin-x264 gnome-sound-recorder qbittorrent --noconfirm
-	sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli --noconfirm
+	sudo pacman -S dua-cli ncdu rsync yt-dlp tealdeer trash-cli asciinema --noconfirm
 	sudo pacman -S android-tools --noconfirm
 
 	paru -S mpvpaper --noconfirm
