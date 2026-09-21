@@ -7,38 +7,38 @@ Remap("n", "]", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true 
 Remap("n", "[", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
 Remap("n", "<Leader>lea", function()
-   require("lint").try_lint()
+	require("lint").try_lint()
 end, { desc = "Trigger lint for current file" })
 
 Remap("n", "<Leader>lee", function()
-   require("lint").try_lint("eslint")
+	require("lint").try_lint("eslint")
 end, { desc = "Trigger eslint for current file" })
 
 Remap("n", "<Leader>leb", function()
-   require("lint").try_lint("biomejs")
+	require("lint").try_lint("biomejs")
 end, { desc = "Trigger biomejs for current file" })
 
 Remap({ "n", "v" }, "<Leader>lpa", function()
-   require("conform").format({
-      lsp_fallback = true,
-      async = false,
-   })
+	require("conform").format({
+		lsp_fallback = true,
+		async = false,
+	})
 end, { desc = "Format file or range" })
 
 Remap({ "n", "v" }, "<Leader>lpp", function()
-   require("conform").format({
-      lsp_fallback = true,
-      async = false,
-      formatters = { "prettier" },
-   })
+	require("conform").format({
+		lsp_fallback = true,
+		async = false,
+		formatters = { "prettier" },
+	})
 end, { desc = "Format file or range with prettier" })
 
 Remap({ "n", "v" }, "<Leader>lpb", function()
-   require("conform").format({
-      lsp_fallback = true,
-      async = false,
-      formatters = { "biome" },
-   })
+	require("conform").format({
+		lsp_fallback = true,
+		async = false,
+		formatters = { "biome" },
+	})
 end, { desc = "Format file or range with biome" })
 
 Remap("n", "<C-p>", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true })
@@ -57,14 +57,14 @@ Remap("n", "<Leader>td", "<cmd>Trouble diagnostics toggle<CR>", {})
 local lualine_visible = true
 
 function ToggleLualine()
-   if lualine_visible then
-      require("lualine").hide({ unhide = false })
-      vim.o.laststatus = 0 -- hides built-in statusline
-   else
-      vim.o.laststatus = 2 -- restores statusline
-      require("lualine").hide({ unhide = true })
-   end
-   lualine_visible = not lualine_visible
+	if lualine_visible then
+		require("lualine").hide({ unhide = false })
+		vim.o.laststatus = 0 -- hides built-in statusline
+	else
+		vim.o.laststatus = 2 -- restores statusline
+		require("lualine").hide({ unhide = true })
+	end
+	lualine_visible = not lualine_visible
 end
 
 vim.keymap.set("n", "<leader>sl", ToggleLualine, { desc = "Toggle Lualine" })
