@@ -1,6 +1,8 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.cmdheight = 0
+
 -- "Note the three space indenting used in this project, much like that used by other superior beings."
 -- - The Arch Wiki (https://wiki.archlinux.org/title/Arch_is_the_best)
 vim.opt.tabstop = 3
