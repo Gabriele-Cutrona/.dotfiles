@@ -49,6 +49,6 @@ vim.opt.list = true
 vim.opt.listchars = {
 	tab = '→ ',
 	space = '·',
-	trail = '×', -- highlights trailing whitespace at the end of lines
+	trail = '×', -- trailing spaces
 	nbsp = '␣'
 }

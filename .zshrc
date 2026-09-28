@@ -27,9 +27,9 @@ alias z="zoxide"
 alias vi="nvim"
 alias vim="nvim"
 alias lg="lazygit"
-bindkey -v
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
+bindkey -e
+# bindkey '^A' beginning-of-line
+# bindkey '^E' end-of-line
 KEYTIMEOUT=10
 
 alias cp="cp -v"
