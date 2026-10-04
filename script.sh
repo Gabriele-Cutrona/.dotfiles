@@ -123,6 +123,10 @@ sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-
 sudo pacman -S vivid starship --noconfirm
 sudo pacman -S zellij tmux --noconfirm
 
+echo "Installing tmux catppuccin theme (v2.3.1)"
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.3.1 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
 
