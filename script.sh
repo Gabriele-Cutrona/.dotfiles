@@ -121,6 +121,7 @@ sudo pacman -S ghostty unzip unarchiver zip --noconfirm
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting --noconfirm
 sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-cjk noto-fonts-emoji otf-font-awesome --noconfirm
 sudo pacman -S vivid starship --noconfirm
+sudo pacman -S zellij tmux --noconfirm
 
 echo "Installing libnotify nautilus waybar gnome-keyring seahorse"
 sudo pacman -S libnotify nautilus waybar nwg-drawer network-manager-applet python --noconfirm
